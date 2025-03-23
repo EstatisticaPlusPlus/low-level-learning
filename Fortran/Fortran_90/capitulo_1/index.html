@@ -1,0 +1,1550 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Fortran_77/capitulo_1/">
+      
+      
+        <link rel="next" href="../../../Julia/capitulo_1/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Visão Geral - Estatística++</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitulo-1-introducao" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Estatística++" class="md-header__button md-logo" aria-label="Estatística++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Estatística++
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visão Geral
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Estatística++" class="md-nav__button md-logo" aria-label="Estatística++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Estatística++
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fortran
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fortran
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fortran 77
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Fortran 77
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fortran_77/capitulo_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fortran 90
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fortran 90
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-da-linguagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características da Linguagem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilacao-e-suas-etapas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilação e suas Etapas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilação e suas Etapas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacao-e-uso-do-compilador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalação e Uso do Compilador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-basica-de-um-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura Básica de um Programa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura Básica de um Programa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variáveis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variáveis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-declaracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Declaração:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precisao-de-variaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precisão de Variáveis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-basicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Básicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comentários
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcoes-e-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções e Módulos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funções e Módulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-intrinsecas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções Intrínsecas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-condicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estruturas Condicionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeticao-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repetição - DO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subrotinas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subrotinas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construindo-o-metodo-da-bissecao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construindo o Método da Bisseção
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatacao-de-saidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatação de Saídas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatação de Saídas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-codigos-de-formatacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Códigos de Formatação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeticao-goto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repetição - GOTO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imports-e-linkagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports e Linkagem
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Julia
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Julia
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Julia/capitulo_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linguagem C
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linguagem C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Compilando Programas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Flags do Compilador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Depuração
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Componentes do Compilador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Compilando com Otimização
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/gloss%C3%A1rio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossário
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-da-linguagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características da Linguagem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilacao-e-suas-etapas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilação e suas Etapas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilação e suas Etapas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacao-e-uso-do-compilador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalação e Uso do Compilador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-basica-de-um-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura Básica de um Programa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura Básica de um Programa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variáveis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variáveis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-declaracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Declaração:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precisao-de-variaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precisão de Variáveis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-basicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Básicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comentários
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcoes-e-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções e Módulos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funções e Módulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-intrinsecas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções Intrínsecas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-condicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estruturas Condicionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeticao-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repetição - DO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subrotinas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subrotinas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construindo-o-metodo-da-bissecao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construindo o Método da Bisseção
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatacao-de-saidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatação de Saídas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatação de Saídas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-codigos-de-formatacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Códigos de Formatação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeticao-goto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repetição - GOTO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imports-e-linkagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports e Linkagem
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="capitulo-1-introducao">Capítulo 1 - Introdução</h1>
+<p>Neste capítulo, visamos apresentar a linguagem Fortran (na versão Fortran 90) do zero, assumindo pouca familiaridade com programação, mas algum conhecimento de métodos numéricos – que, embora não obrigatórios, facilitarão a compreensão de algumas motivações e métodos. Ao longo deste capítulo, serão apresentados os conceitos básicos necessários para construir, por exemplo, uma implementação funcional do Método da Bisseção.</p>
+<h2 id="caracteristicas-da-linguagem">Características da Linguagem</h2>
+<ul>
+<li><strong>Diferenças para o Fortran 77:</strong><br />
+<em>Fixed-form vs. free-form</em>  </li>
+<li><strong>Vantagens e desvantagens</strong> para determinadas aplicações.</li>
+</ul>
+<h2 id="compilacao-e-suas-etapas">Compilação e suas Etapas</h2>
+<p>Antes de começarmos a programar, é importante entender alguns termos:</p>
+<ul>
+<li>
+<p><strong>Código-fonte:</strong><br />
+  Arquivo escrito em Fortran (extensão <code>.f90</code>) contendo as instruções do programa.<br />
+<em>Exemplo visual: imagem de código fonte (não incluída aqui).</em></p>
+</li>
+<li>
+<p><strong>Compilador:</strong><br />
+  Programa (por exemplo, <code>gfortran</code>) que traduz o código-fonte em instruções que o computador pode executar.</p>
+</li>
+<li>
+<p><strong>Arquivo Executável:</strong><br />
+  Arquivo resultante da compilação, que é executado pelo sistema operacional.<br />
+<em>Exemplo visual: imagem de um executável aberto em um editor de texto.</em></p>
+</li>
+</ul>
+<h3 id="instalacao-e-uso-do-compilador">Instalação e Uso do Compilador</h3>
+<ul>
+<li>
+<p><strong>Como instalar o compilador (<code>gfortran</code>):</strong><br />
+  Siga as instruções específicas para seu sistema operacional.</p>
+</li>
+<li>
+<p><strong>Compilando um Código-Fonte:</strong><br />
+<code>bash
+  gfortran -o programa exemplo.f90</code></p>
+</li>
+<li>
+<p><strong>Executando o Programa Compilado:</strong><br />
+<code>bash
+  ./programa</code></p>
+</li>
+</ul>
+<h2 id="estrutura-basica-de-um-programa">Estrutura Básica de um Programa</h2>
+<p>Todo programa em Fortran deve ter um bloco <code>program</code> com o nome do programa. Veja o exemplo clássico "Olá mundo!":</p>
+<pre><code class="language-fortran">program exemplo
+    print *, 'Olá mundo!'
+end program exemplo
+</code></pre>
+<p>O comando <code>print</code> usa um argumento de formatação (aqui <code>*</code>, que significa formatação padrão) seguido dos dados a serem impressos.</p>
+<h3 id="variaveis">Variáveis</h3>
+<p>Fortran é <strong>fortemente tipado</strong>, ou seja, todas as variáveis devem ser declaradas com seu tipo. Os tipos básicos são:</p>
+<ul>
+<li><code>integer</code> – números inteiros (positivos ou negativos)</li>
+<li><code>real</code> – números em ponto flutuante</li>
+<li><code>complex</code> – números complexos (parte real e imaginária)</li>
+<li><code>character</code> – cadeias de caracteres</li>
+<li><code>logical</code> – valores booleanos (.true. ou .false.)</li>
+</ul>
+<h4 id="exemplo-de-declaracao">Exemplo de Declaração:</h4>
+<pre><code class="language-fortran">program variaveis
+    implicit none
+
+    integer :: i
+    real :: distancia
+    complex :: frequencia
+    character :: inicial
+    logical :: eh_primo
+
+    i = 1
+    distancia = 1.41421356
+    frequencia = (1.0, -0.5)
+    inicial = &quot;f&quot;
+    eh_primo = .false.
+end program variaveis
+</code></pre>
+<p><em>Nota:</em> Use <code>implicit none</code> para evitar tipagem implícita (por exemplo, variáveis iniciadas com I, J, K... são automaticamente inteiros em versões antigas).</p>
+<h4 id="precisao-de-variaveis">Precisão de Variáveis</h4>
+<ul>
+<li><strong>Float32 (real padrão):</strong> Aproximadamente 6–9 dígitos de precisão.  </li>
+<li><strong>Float64:</strong> Para maior precisão, use o módulo <code>iso_fortran_env</code>:
+  ```fortran
+  use, intrinsic :: iso_fortran_env
+  implicit none</li>
+</ul>
+<p>real(real64) :: valor
+  <code>``
+  Literais de 64 bits podem ser escritos com um sufixo, por exemplo,</code>1.0_real64`.</p>
+<h3 id="operacoes-basicas">Operações Básicas</h3>
+<p>Fortran possui os seguintes operadores aritméticos (em ordem de precedência):</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Operação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>**</td>
+<td>Exponenciação</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplicação</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Divisão</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Adição</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtração</td>
+</tr>
+</tbody>
+</table>
+<p><em>Exemplo:</em>  </p>
+<pre><code class="language-fortran">program media
+    print *, (3 + 4 + 5) / 2
+end program media
+</code></pre>
+<p><em>Dica:</em> Lembre-se de usar parênteses para alterar a ordem natural de precedência.<br />
+<em>Observação:</em> Operações entre inteiros geram inteiros; para obter frações, use números reais.</p>
+<h3 id="comentarios">Comentários</h3>
+<p>Comentários iniciam com <code>!</code> e são úteis para documentar o código.</p>
+<pre><code class="language-fortran">program comentarios
+    implicit none
+    ! Esta linha é um comentário
+    real :: alpha  ! Coeficiente do termo linear
+    print *, alpha
+end program comentarios
+</code></pre>
+<h2 id="funcoes-e-modulos">Funções e Módulos</h2>
+<p>Funções e módulos promovem a modularidade e a reutilização de código.</p>
+<h3 id="funcoes">Funções</h3>
+<p>Funções retornam um valor único. A sintaxe básica é:</p>
+<pre><code class="language-fortran">function nome_funcao(arg1, arg2) result(var_result)
+    implicit none
+    tipo1, intent(in) :: arg1
+    tipo2, intent(in) :: arg2
+    tipo3 :: var_result
+
+    ! Corpo da função
+    return
+end function nome_funcao
+</code></pre>
+<p><em>Exemplo – Calculando a norma do dobro de um vetor em R² (cuidado com efeitos colaterais):</em></p>
+<pre><code class="language-fortran">function norma_dobro(v1, v2) result(norma)
+    real, intent(in) :: v1, v2
+    real :: norma
+
+    norma = sqrt((2*v1)**2 + (2*v2)**2)
+    return
+end function norma_dobro
+</code></pre>
+<p>Se for necessário evitar modificar os argumentos, use variáveis auxiliares.</p>
+<h3 id="funcoes-intrinsecas">Funções Intrínsecas</h3>
+<p>Fortran possui diversas funções intrínsecas que são otimizadas, como:
+- <code>ABS</code>
+- <code>MAX</code>
+- <code>LOG</code>
+- <code>SQRT</code>
+- <code>ATAN</code>
+- <code>CONJG</code></p>
+<p>Utilize-as sempre que possível.</p>
+<h3 id="modulos">Módulos</h3>
+<p>Módulos permitem agrupar funções e variáveis:</p>
+<pre><code class="language-fortran">module normas
+    implicit none
+contains
+    function norma_do_dobro(v1, v2) result(norma)
+        real, intent(in) :: v1, v2
+        real :: coord1, coord2, norma
+        coord1 = 2*v1
+        coord2 = 2*v2
+        norma = sqrt(coord1**2 + coord2**2)
+        return
+    end function norma_do_dobro
+end module normas
+</code></pre>
+<p>Para utilizar o módulo:</p>
+<pre><code class="language-fortran">program calcula_norma
+    use normas
+    implicit none
+    real :: norma_calculada, vec1, vec2
+
+    vec1 = 1.0
+    vec2 = 1.0
+
+    print *, vec1, vec2
+    norma_calculada = norma_do_dobro(vec1, vec2)
+    print *, norma_calculada
+    print *, vec1, vec2
+end program calcula_norma
+</code></pre>
+<h2 id="estruturas-condicionais">Estruturas Condicionais</h2>
+<p>Para executar trechos de código dependendo de condições:</p>
+<pre><code class="language-fortran">if (expressao_logica) then
+    ! Código se verdadeiro
+else
+    ! Código se falso
+end if
+</code></pre>
+<p><em>Exemplo – Função Valor Absoluto:</em></p>
+<pre><code class="language-fortran">function absoluto(x) result(y)
+    real, intent(in) :: x
+    real :: y
+    y = x
+    if (x &lt; 0) then
+        y = -y
+    end if
+    return
+end function absoluto
+</code></pre>
+<p><em>Exemplo – Função Heaviside:</em></p>
+<pre><code class="language-fortran">function heaviside(x) result(y)
+    real, intent(in) :: x
+    real :: y
+    if (x &gt;= 0) then
+        y = 1
+    else
+        y = 0
+    end if
+    return
+end function heaviside
+</code></pre>
+<p><em>Dica:</em> Para evitar muitos IF's aninhados, utilize a técnica de inversão lógica (testar condições opostas com <code>return</code>) ou extraia o teste em uma função separada.</p>
+<h2 id="repeticao-do">Repetição - <code>DO</code></h2>
+<p>A repetição é feita com o comando <code>do</code>:</p>
+<pre><code class="language-fortran">do iterador = valor_inicial, valor_final, passo
+    ! Código a repetir
+end do
+</code></pre>
+<p><em>Exemplo – Somatório de 1/(k²) de k = 1 até n:</em></p>
+<pre><code class="language-fortran">program somatorio
+    implicit none
+    real :: valor
+    integer :: k, n
+    valor = 0.0
+    n = 100
+    do k = 1, n
+        valor = valor + 1.0/(k*k)
+    end do
+    print *, valor
+end program somatorio
+</code></pre>
+<p><em>Observações:</em>
+- O passo padrão é 1 (pode ser omitido).
+- Para passos fracionários, itere com inteiros e ajuste (por exemplo, <code>k/10.0</code>).
+- É possível iterar com passos negativos.</p>
+<h2 id="subrotinas">Subrotinas</h2>
+<p>Subrotinas são usadas quando se deseja modificar os argumentos e/ou retornar múltiplos valores. A sintaxe é:</p>
+<pre><code class="language-fortran">subroutine nome_subrotina(arg1, arg2, arg3)
+    implicit none
+    tipo1, intent(in) :: arg1
+    tipo2, intent(inout) :: arg2
+    tipo3, intent(out) :: arg3
+
+    ! Corpo da subrotina
+    return
+end subroutine nome_subrotina
+</code></pre>
+<p><em>Exemplo:</em></p>
+<pre><code class="language-fortran">program chama_subrotina
+    implicit none
+    integer :: N, QUADRADO, CUBO
+    print *, 'Digite um número:'
+    read *, N
+    call calcula_quadrado_e_cubo(N, QUADRADO, CUBO)
+    print *, 'O quadrado de', N, 'é', QUADRADO
+    print *, 'O cubo de', N, 'é', CUBO
+end program chama_subrotina
+
+subroutine calcula_quadrado_e_cubo(X, QUAD, CUB)
+    implicit none
+    integer, intent(in) :: X
+    integer, intent(out) :: QUAD, CUB
+    QUAD = X * X
+    CUB = X * X * X
+    return
+end subroutine calcula_quadrado_e_cubo
+</code></pre>
+<h2 id="construindo-o-metodo-da-bissecao">Construindo o Método da Bisseção</h2>
+<p>O método da bisseção segue os seguintes passos:
+1. Definir a função cuja raiz se deseja encontrar e o intervalo inicial.
+2. Calcular o ponto médio do intervalo.
+3. Verificar se a função no ponto médio é zero.
+4. Se sim, retornar o ponto; caso contrário, determinar o novo intervalo baseado no sinal da função.
+5. Repetir até que um critério de parada seja atingido (por exemplo, número máximo de iterações).</p>
+<p><em>Você deverá estruturar uma função que implemente esses passos conforme o exercício proposto.</em></p>
+<h2 id="formatacao-de-saidas">Formatação de Saídas</h2>
+<p>O comando <code>write</code> permite formatar a saída. Sua sintaxe é:</p>
+<pre><code class="language-fortran">write (*, label) lista_de_variaveis
+label format-code
+</code></pre>
+<h3 id="exemplos-de-codigos-de-formatacao">Exemplos de Códigos de Formatação</h3>
+<ul>
+<li><strong>A:</strong> string</li>
+<li><strong>D:</strong> números double precision (notação exponencial)</li>
+<li><strong>E:</strong> números reais (notação exponencial)</li>
+<li><strong>F:</strong> números reais (formato fixo)</li>
+<li><strong>I:</strong> inteiro</li>
+<li><strong>X:</strong> espaço horizontal</li>
+<li><strong>/</strong>: salto de linha</li>
+</ul>
+<p><em>Exemplo:</em></p>
+<pre><code class="language-fortran">program formatacao
+    data m/10/, n/20/, x/2.5/, y/2.5/
+    real :: m, n, x, y
+    write (*,100) m
+100 format (I2)
+    write (*,'(I2)') n  
+    write (*,300) x
+300 format (F4.1)
+    write (*,400) y
+400 format (E8.2)
+    stop
+end program formatacao
+</code></pre>
+<h2 id="repeticao-goto">Repetição - <code>GOTO</code></h2>
+<p>Embora Fortran 90 possua estruturas modernas, em Fortran 77 é comum usar <code>do</code> junto com <code>goto</code> para simular loops <em>while</em>.</p>
+<p><em>Exemplo de loop com GOTO:</em></p>
+<pre><code class="language-fortran">program exemplo_while
+    implicit none
+    integer :: a(10), I
+    data a /1, 2, 3, 4, 5, 6, 7, 8, 9, 10/
+    I = 1
+10  if (a(I) /= 5) then
+       print *, 'Elemento', I, ':', a(I)
+       I = I + 1
+       goto 10
+    end if
+end program exemplo_while
+</code></pre>
+<h2 id="imports-e-linkagem">Imports e Linkagem</h2>
+<p>Este tópico aborda como importar módulos e ligar bibliotecas externas para compilar programas mais complexos.</p>
+<h1 id="capitulo-2-matrizes-vetores-e-operacoes-vetoriais">Capítulo 2 - Matrizes, Vetores e Operações Vetoriais</h1>
+<p><em>Conteúdo deste capítulo a ser desenvolvido – abordará a declaração e manipulação de vetores, matrizes e operações vetoriais, com exemplos e técnicas específicas para Fortran.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

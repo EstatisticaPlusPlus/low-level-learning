@@ -1,0 +1,1994 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../../Fortran_90/capitulo_1/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Visão Geral - Estatística++</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitulo-3-fortran-77" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Estatística++" class="md-header__button md-logo" aria-label="Estatística++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Estatística++
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visão Geral
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Estatística++" class="md-nav__button md-logo" aria-label="Estatística++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Estatística++
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fortran
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fortran
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fortran 77
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Fortran 77
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Básico
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-tipos-e-declaracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variáveis, Tipos e Declarações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressoes-e-atribuicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressões e Atribuições
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expressões e Atribuições">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expressoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressões
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atribuições
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversao-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conversão de Tipos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-logicos-e-condicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores Lógicos e Condicionais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores Lógicos e Condicionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores Lógicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condicionais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Condicionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-cadastro-de-numeros-telefonicos-com-ddd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo: Cadastro de Números Telefônicos com DDD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do Loops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while-loops-condicao-de-progresso" class="md-nav__link">
+    <span class="md-ellipsis">
+      While Loops (Condição de Progresso)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#until-loops-condicao-de-parada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Until Loops (Condição de Parada)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subprogramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subprogramas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subprogramas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subrotinas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subrotinas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manipulacao-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulação de Arrays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manipulação de Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inicializacao-em-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inicialização em Loop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soma-de-elementos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Soma de Elementos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produto-de-elementos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Produto de Elementos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Blocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-e-block-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data e Block Statements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      File I.O.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliotecas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliotecas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bibliotecas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blas" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLAS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lapack" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAPACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fortran 90
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fortran 90
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fortran_90/capitulo_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Julia
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Julia
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Julia/capitulo_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linguagem C
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linguagem C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Compilando Programas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Flags do Compilador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Depuração
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Componentes do Compilador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/capitulo_6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Compilando com Otimização
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linguagem_C/gloss%C3%A1rio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossário
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Básico
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-tipos-e-declaracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variáveis, Tipos e Declarações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressoes-e-atribuicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressões e Atribuições
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expressões e Atribuições">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expressoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressões
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atribuições
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversao-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conversão de Tipos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-logicos-e-condicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores Lógicos e Condicionais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores Lógicos e Condicionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores Lógicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condicionais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Condicionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-cadastro-de-numeros-telefonicos-com-ddd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo: Cadastro de Números Telefônicos com DDD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do Loops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while-loops-condicao-de-progresso" class="md-nav__link">
+    <span class="md-ellipsis">
+      While Loops (Condição de Progresso)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#until-loops-condicao-de-parada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Until Loops (Condição de Parada)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subprogramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subprogramas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subprogramas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subrotinas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subrotinas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manipulacao-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulação de Arrays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manipulação de Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inicializacao-em-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inicialização em Loop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soma-de-elementos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Soma de Elementos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produto-de-elementos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Produto de Elementos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Blocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-e-block-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data e Block Statements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      File I.O.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliotecas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliotecas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bibliotecas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blas" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLAS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lapack" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAPACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="capitulo-3-fortran-77">Capítulo 3 - Fortran 77</h1>
+<p>Neste capítulo vamos retomar vários tópicos já abordados, adequando-os ao Fortran 77. Sua leitura fica a critério da curiosidade ou necessidade do leitor.</p>
+<p>Este material foi fortemente inspirado no guia de Stanford para F77, disponível em <a href="https://web.stanford.edu/class/me200c/tutorial_77/03_basics.html">Stanford ME200C Tutorial</a>.</p>
+<h2 id="basico">Básico</h2>
+<p>A estrutura primária do código F77 é da forma:</p>
+<pre><code class="language-fortran">      c234567   
+      program *nome*
+
+      *declarações de variáveis*
+
+      *comandos*
+
+      stop
+      end
+</code></pre>
+<p>A formatação da versão 77 é rígida, seguindo um padrão ditado pelo número referente à coluna no editor de texto, da seguinte forma:</p>
+<ul>
+<li><strong>Coluna 1:</strong> Vazia ou preencha com "c" ou "*" para usar a linha como comentário.</li>
+<li><strong>Colunas 1-5:</strong> Categoria da declaração da linha.</li>
+<li><strong>Coluna 6:</strong> Indica a continuação da linha prévia (opcional).</li>
+<li><strong>Colunas 7-72:</strong> Comando.</li>
+<li><strong>Colunas 73-80:</strong> Número de sequência (uso incomum).</li>
+</ul>
+<p>Importante salientar que não podemos ter uma variável com o mesmo nome que o programa.</p>
+<pre><code class="language-fortran">      c234567
+      PROGRAM HELLO
+      WRITE(UNIT=*, FMT=*) 'Hello World'
+      STOP
+      END
+
+      *exemplo do programa básico usual, note que os comandos começam a partir da coluna 7*
+</code></pre>
+<p>Note que no código acima o comando <code>write(UNIT=*, FMT=*)</code> também poderá ser escrito como <code>write(*,*)</code>, o que é uma simplificação usual na atribuição desses argumentos compulsórios.</p>
+<h2 id="variaveis-tipos-e-declaracoes">Variáveis, Tipos e Declarações</h2>
+<p>Variáveis em Fortran consistem em no máximo 6 caracteres alfanuméricos, iniciando com uma letra, sem diferenciar maiúsculas e minúsculas. Palavras reservadas como <code>program</code>, <code>real</code>, <code>stop</code> e <code>end</code> não podem ser usadas como nomes de variáveis.</p>
+<p>Toda variável deve ser definida em uma declaração que estabelece seu tipo, como:</p>
+<ul>
+<li><strong>integer</strong></li>
+<li><strong>real</strong></li>
+<li><strong>double precision</strong></li>
+<li><strong>complex</strong></li>
+<li><strong>logical</strong></li>
+<li><strong>character</strong></li>
+</ul>
+<p>Embora o Fortran utilize regras implícitas se a variável não for declarada, é boa prática usar <code>implicit none</code> para evitar ambiguidades e forçar a declaração de todas as variáveis.</p>
+<ul>
+<li>O tipo <strong>integer</strong> geralmente tem 32 bits, com limite aproximado de ±2×10⁹.</li>
+<li>Existem dois tipos de float: <strong>real</strong> (4 bytes) e <strong>double precision</strong> (8 bytes).</li>
+</ul>
+<p>Para definir constantes, declara-se um parâmetro na sintaxe:</p>
+<pre><code class="language-fortran">      parameter (name = constant, ..., name = constant)
+</code></pre>
+<p>O parâmetro deve ser definido antes da primeira execução do código.</p>
+<pre><code class="language-fortran">      c234567
+      PROGRAM TYPES
+      IMPLICIT NONE
+
+      ! Determina a declaração do tipo de variáveis
+      INTEGER alfa, beta, delta
+
+      PARAMETER (alfa = 5, beta = 10)
+
+      delta = alfa + beta
+      write (*,*) 'Resulta em', delta
+
+      STOP
+      END
+</code></pre>
+<h2 id="expressoes-e-atribuicoes">Expressões e Atribuições</h2>
+<h3 id="expressoes">Expressões</h3>
+<p>Uma expressão é uma combinação de operandos e operadores, como em <code>x + y</code> (onde <code>x</code> e <code>y</code> são operandos e <code>+</code> é o operador). O resultado de uma expressão torna-se um novo operando, permitindo <em>nesting</em> (expressões aninhadas).</p>
+<p>Existem constantes de seis tipos: integer, real, double precision, complex, logical e character.<br />
+- O uso de <code>E</code> em um valor, como <code>2.0E6</code>, implica que o valor anterior à <code>E</code> deve ser multiplicado por 10 elevado ao número à direita de <code>E</code> (ou seja, <code>2.0E6 = 2 * 10^6</code>).
+- Valores complexos são expressos como um par de constantes (por exemplo, <code>(2, -3)</code> ou <code>(1., 9.9E-1)</code>), onde o primeiro é a parte real e o segundo a parte imaginária.
+- Constantes lógicas são expressas como <code>.True.</code> ou <code>.False.</code> (os pontos são obrigatórios).
+- Constantes de caractere, ou strings, são delimitadas por aspas simples (ex.: <code>'ABC'</code>, <code>'potato potato'</code>) e são sensíveis a maiúsculas e minúsculas.</p>
+<h3 id="atribuicoes">Atribuições</h3>
+<p>A sintaxe para atribuições é:</p>
+<pre><code>nome_da_variavel = expressão
+</code></pre>
+<p>O valor da expressão à direita é avaliado e atribuído à variável à esquerda.</p>
+<h3 id="conversao-de-tipos">Conversão de Tipos</h3>
+<p>Quando diferentes tipos de dados são usados em uma expressão, pode ocorrer conversão implícita ou é necessário forçar a conversão usando funções como:
+- <code>int</code> (para converter para integer)
+- <code>real</code> (para converter para real)
+- <code>dble</code> (para converter para double precision)
+- <code>ichar</code> (converte caractere em inteiro)
+- <code>char</code> (converte inteiro em caractere)</p>
+<p>Note que <code>w = dble(x) * dble(y)</code> difere de <code>w = dble(x*y)</code> para variáveis reais <code>x</code> e <code>y</code>.</p>
+<h2 id="operadores-logicos-e-condicionais">Operadores Lógicos e Condicionais</h2>
+<h3 id="operadores-logicos">Operadores Lógicos</h3>
+<p>Para comparar expressões, utilizamos operadores relacionais que avaliam como <code>.True.</code> ou <code>.False.</code>:</p>
+<ul>
+<li><code>.LT.</code> : "menor que" (equivalente a <code>&lt;</code>)</li>
+<li><code>.GT.</code> : "maior que" (equivalente a <code>&gt;</code>)</li>
+<li><code>.LE.</code> : "menor ou igual" (equivalente a <code>&lt;=</code>)</li>
+<li><code>.GE.</code> : "maior ou igual" (equivalente a <code>&gt;=</code>)</li>
+<li><code>.EQ.</code> : "igual" (equivalente a <code>=</code>)</li>
+<li><code>.NQ.</code> : "diferente" (equivalente a <code>!=</code>)</li>
+</ul>
+<p>Outros termos úteis são:
+- <code>.AND.</code>
+- <code>.OR.</code>
+- <code>.NOT.</code></p>
+<h3 id="condicionais">Condicionais</h3>
+<p>Condições são estruturadas de três maneiras:</p>
+<ol>
+<li>
+<p><strong>Condição em linha única:</strong><br />
+   Se a condição lógica for verdadeira, execute o comando.
+   <code>fortran
+         if (x .LT. 0) x = -x</code></p>
+</li>
+<li>
+<p><strong>Condição com múltiplos comandos:</strong><br />
+<code>fortran
+         if (condição lógica) then
+             comandos
+         endif</code></p>
+</li>
+<li>
+<p><strong>Condição com alternativas:</strong><br />
+<code>fortran
+         if (condição lógica) then
+             comandos
+         elseif (outra condição lógica) then
+             comandos
+         else
+             comandos
+         endif</code></p>
+</li>
+</ol>
+<h4 id="exemplo-cadastro-de-numeros-telefonicos-com-ddd">Exemplo: Cadastro de Números Telefônicos com DDD</h4>
+<pre><code class="language-fortran">      c234567
+      PROGRAM CONDITIONALS
+      IMPLICIT NONE
+      CHARACTER*11 NUMBER
+      CHARACTER*9 REST
+      INTEGER LEN
+
+      write (*,*) 'Input Number:'
+      read (*,*) NUMBER
+
+      LEN = LEN_TRIM(NUMBER)
+
+      IF (LEN .GT. 3) THEN
+          REST = NUMBER(3:LEN)
+      ELSE
+          REST = ''
+      END IF
+
+      IF (LEN .LT. 8 .OR. LEN .GT. 11) then
+          write(*,*) 'Invalid Number'
+      ELSE IF (LEN .EQ. 8 .OR. LEN .EQ. 9) then
+          write(*,*) NUMBER
+      ELSE IF (LEN .EQ. 10 .OR. LEN .EQ. 11) then         
+          write(*,*) 'DDD and number are ', NUMBER(1:2) // ' ' // REST
+      END IF
+
+      STOP
+      END
+</code></pre>
+<p><em>Funcionamento do Programa:</em><br />
+- Solicita ao usuário um número de telefone (string).
+- Calcula o comprimento real da string com <code>LEN_TRIM</code>.
+- Se o comprimento for menor que 8 ou maior que 11, imprime "Invalid Number".
+- Se for 8 ou 9, imprime o número diretamente.
+- Se for entre 10 e 11, imprime o DDD (dois primeiros caracteres), um espaço e o restante do número.</p>
+<h2 id="loops">Loops</h2>
+<h3 id="do-loops">Do Loops</h3>
+<p>A sintaxe geral é:</p>
+<pre><code class="language-fortran">      c23456789
+      do label var = expr1, expr2, expr3
+          statements
+      label continue
+</code></pre>
+<ul>
+<li><strong>var:</strong> variável do loop (deve ser inteiro)</li>
+<li><strong>expr1:</strong> valor inicial</li>
+<li><strong>expr2:</strong> valor limitante</li>
+<li><strong>expr3:</strong> incremento</li>
+</ul>
+<p><em>Exemplo:</em></p>
+<pre><code class="language-fortran">      c234567
+      PROGRAM SHOW
+      IMPLICIT NONE
+
+      INTEGER a(10), I
+
+      DATA a /1, 2, 3, 4, 5, 6, 7, 8, 9, 10/
+
+      DO 10 I = 1, 10
+          PRINT *, 'Elemento', I, ':', a(I)
+10    CONTINUE
+
+      END
+</code></pre>
+<h3 id="while-loops-condicao-de-progresso">While Loops (Condição de Progresso)</h3>
+<p>Embora o método abaixo seja o mais intuitivo, ele não é ANSI Fortran 77. O adequado é:</p>
+<pre><code class="language-fortran">      c23456789
+      label if (logical expr) then
+          statements
+          goto label
+      end if
+</code></pre>
+<p><em>Exemplo com While:</em></p>
+<pre><code class="language-fortran">      c234567
+      PROGRAM WOW
+      IMPLICIT NONE
+
+      INTEGER a(10), I
+
+      DATA a /1, 2, 3, 4, 5, 6, 7, 8, 9, 10/
+
+      I = 1
+
+10    IF (a(I) /= 5) THEN
+          PRINT *, 'Elemento', I, ':', a(I)
+          I = I + 1
+          GOTO 10
+      END IF
+
+      END
+</code></pre>
+<h3 id="until-loops-condicao-de-parada">Until Loops (Condição de Parada)</h3>
+<p>Um exemplo de loop "until" usando <code>goto</code>:</p>
+<pre><code class="language-fortran">      c23456789
+10    CONTINUE
+      PRINT *, 'Elemento', I, ':', a(I)
+      I = I + 1
+      IF (a(I) /= 9) THEN       
+          GOTO 10
+      END IF
+      END
+</code></pre>
+<h2 id="subprogramas">Subprogramas</h2>
+<p>Subprogramas são blocos de código que resolvem tarefas específicas, podendo ser funções ou subrotinas.</p>
+<h3 id="funcoes">Funções</h3>
+<p>Funções recebem um ou mais argumentos e retornam um valor. A maioria das funções inatas (como <code>abs</code>, <code>min</code>, <code>max</code>, <code>sqrt</code>) são genéricas, mas funções definidas pelo usuário geralmente precisam especificar o tipo de retorno. O valor de retorno é atribuído à variável com o mesmo nome da função e o bloco termina com <code>RETURN</code>.</p>
+<pre><code class="language-fortran">      c23456789
+      PROGRAM CHOOSE
+      IMPLICIT NONE
+
+      INTEGER P, R, QUADRADO
+
+      WRITE(*,*) 'CHOOSE A NUMBER 1 TO 10'
+      READ (*,*) P
+
+      R = QUADRADO(P)
+
+      WRITE(*,*) 'O RESULTADO É', R
+
+      END
+
+      INTEGER FUNCTION QUADRADO(X)
+      IMPLICIT NONE
+      INTEGER X
+
+      QUADRADO = X * X
+
+      RETURN
+      END
+</code></pre>
+<h3 id="subrotinas">Subrotinas</h3>
+<p>Subrotinas podem retornar mais de um valor e são invocadas com <code>CALL</code>. Elas não possuem tipo.</p>
+<pre><code class="language-fortran">      c2345678
+      PROGRAM CHAMA_SUBROTINA
+      IMPLICIT NONE
+
+      INTEGER N, QUADRADO, CUBO
+
+      PRINT *, 'Digite um número:'
+      READ *, N
+
+      CALL CALCULA_QUADRADO_E_CUBO(N, QUADRADO, CUBO)
+
+      PRINT *, 'O quadrado de', N, 'é', QUADRADO
+      PRINT *, 'O cubo de', N, 'é', CUBO
+
+      END
+
+      SUBROUTINE CALCULA_QUADRADO_E_CUBO(X, QUAD, CUB)
+      IMPLICIT NONE
+      INTEGER X, QUAD, CUB
+
+      QUAD = X * X
+      CUB = X * X * X
+
+      RETURN
+      END
+</code></pre>
+<h2 id="arrays">Arrays</h2>
+<p>Para declarar vetores e matrizes:</p>
+<pre><code class="language-fortran">      c23456789
+      real a(20)
+      ! Declara um vetor com 20 componentes reais, indexados de 1 a 20
+
+      real A(3,5)
+      ! Declara uma matriz 3x5
+
+      logical B(20,5,39,29152)
+      ! Declara um array 20x5x39x2
+</code></pre>
+<p>Fortran 77 permite arrays de até 7 dimensões.</p>
+<h3 id="manipulacao-de-arrays">Manipulação de Arrays</h3>
+<h4 id="inicializacao-em-loop">Inicialização em Loop</h4>
+<pre><code class="language-fortran">      c23456789
+      PROGRAM EXEMPLO_ARRAY
+      IMPLICIT NONE
+
+      INTEGER :: N = 5
+      INTEGER :: A(N)
+      INTEGER :: I
+
+      DO I = 1, N
+          A(I) = I * 2   
+      END DO
+
+      PRINT *, 'Elementos do array A:'
+      DO I = 1, N
+          PRINT *, 'A(', I, ') = ', A(I)
+      END DO
+
+      END
+</code></pre>
+<h4 id="soma-de-elementos">Soma de Elementos</h4>
+<pre><code class="language-fortran">      c23456789
+      PROGRAM SOMA_ARRAY
+      IMPLICIT NONE
+
+      INTEGER :: N = 5
+      INTEGER :: A(N) = (/1, 2, 3, 4, 5/)
+      INTEGER :: SUM
+      INTEGER :: I
+
+      SUM = 0
+
+      DO I = 1, N
+          SUM = SUM + A(I)
+      END DO
+
+      PRINT *, 'Soma dos elementos de A:', SUM
+
+      END
+</code></pre>
+<h4 id="produto-de-elementos">Produto de Elementos</h4>
+<pre><code class="language-fortran">      c23456789
+      PROGRAM MULTIPLICACAO_ARRAY
+      IMPLICIT NONE
+
+      INTEGER :: N = 5
+      INTEGER :: A(N) = (/1, 2, 3, 4, 5/)
+      INTEGER :: PRODUTO
+      INTEGER :: I
+
+      PRODUTO = 1
+
+      DO I = 1, N
+          PRODUTO = PRODUTO * A(I)
+      END DO
+
+      PRINT *, 'Produto dos elementos de A:', PRODUTO
+
+      END
+</code></pre>
+<h2 id="common-blocks">Common Blocks</h2>
+<p>Common blocks permitem compartilhar variáveis entre subprogramas. O bloco comum deve ser declarado antes das execuções.</p>
+<pre><code class="language-fortran">      program main
+      ! Declarações
+      real alpha, beta
+      common /coeff/ alpha, beta
+
+      ! Statements
+      stop
+      end
+
+      subroutine sub1(...)
+      real alpha, beta
+      common /coeff/ alpha, beta
+
+      ! Statements
+      return
+      end
+
+      subroutine sub2(...)
+      real alpha, beta
+      common /coeff/ alpha, beta
+
+      ! Statements
+      return
+      end
+</code></pre>
+<p>Regras importantes:
+- O bloco comum deve ser declarado antes da execução do código.
+- Blocos comuns distintos devem ter nomes distintos.
+- Uma variável não pode aparecer em dois blocos comuns diferentes.
+- Variáveis devem ser listadas na mesma ordem, com o mesmo tipo e tamanho em todas as rotinas que utilizam o mesmo bloco comum.
+- Arrays com dimensões variáveis não devem constar em blocos comuns.</p>
+<h2 id="data-e-block-statements">Data e Block Statements</h2>
+<p>O <code>data</code> statement é usado para inicializar variáveis antes da execução do programa.</p>
+<pre><code class="language-fortran">      c23456789
+      program main
+      data m/10/, n/20/, x/2.5/, y/2.5/
+      real m, n, x, y
+
+      write (*,*) m
+      write (*,*) n 
+      write (*,*) x
+      write (*,*) y
+      STOP
+      END
+</code></pre>
+<p>Outra forma:</p>
+<pre><code class="language-fortran">      c23456789
+      program main
+      data m,n/10,20/, x,y/2*2.5/
+      real m, n, x, y
+
+      write (*,*) m
+      write (*,*) n
+      write (*,*) x
+      write (*,*) y
+      STOP
+      END
+</code></pre>
+<p>Com matrizes:</p>
+<pre><code class="language-fortran">      c23456789
+      program main
+      real A(10,20)
+      data A/ 200 * 0.0/
+      ...
+</code></pre>
+<p>O exemplo acima inicializa uma matriz 10x20 com todos os 200 valores iguais a zero.</p>
+<h2 id="file-io">File I.O.</h2>
+<p>O comando principal para acessar um arquivo é:</p>
+<pre><code class="language-fortran">      open ([UNIT=]u [, IOSTAT=ios, ERR=err, STATUS=sta])
+</code></pre>
+<p>Especificadores comuns:
+- <strong>unidade ("u"):</strong> valor inteiro único de 1 a 99 que identifica o arquivo.
+- <strong>status ("ios"):</strong> variável inteira que retorna zero se a operação for bem-sucedida.
+- <strong>error ("err"):</strong> determina para qual comando o programa deve saltar em caso de erro.
+- <strong>nome ("fname"):</strong> nome do arquivo a ser acessado (string).
+- <strong>status ("sta"):</strong> deve ser NEW, OLD ou SCRATCH; define se o arquivo já existe ou se deve ser criado e se será deletado após o fechamento.
+- <strong>final ("end"):</strong> determina para qual comando o programa deve saltar ao chegar ao fim do arquivo (usado em <code>read</code> ou <code>write</code>).</p>
+<p>Para fechar o arquivo, usa-se:</p>
+<pre><code class="language-fortran">      close ([UNIT=]u [, IOSTAT=ios, ERR=err, STATUS=sta])
+</code></pre>
+<p>Os comandos <code>read</code> e <code>write</code> são usados com o especificador de unidade obrigatório.</p>
+<p><em>Exemplo:</em></p>
+<pre><code class="language-fortran">      c234567
+      program inpdat
+      ! Este programa lê n pontos de um arquivo e os armazena em 3 arrays: x, y, z.
+
+      integer nmax, u
+      parameter (nmax=1000, u=20)
+      real x(nmax), y(nmax), z(nmax)
+
+      ! Abre o arquivo de dados
+      open (u, FILE='points.dat', STATUS='OLD')
+
+      ! Lê o número de pontos
+      read(u,*) n
+      if (n.GT.nmax) then
+          write(*,*) 'Error: n = ', n, 'is larger than nmax =', nmax
+          goto 9999
+      endif
+
+      ! Loop sobre os pontos
+      do 10 i= 1, n
+          read(u,100) x(i), y(i), z(i)
+10    enddo
+100   format (3(F10.4))
+
+      ! Fecha o arquivo
+      close (u)
+
+      ! (Parte faltante para processar os dados)
+
+9999  stop
+      end
+</code></pre>
+<h2 id="format">Format</h2>
+<p>A formatação é definida com o comando <code>write</code> seguido de um label que especifica o formato.</p>
+<pre><code class="language-fortran">      c23456789
+      program main
+      data m/10/, n/20/, x/2.5/, y/2.5/
+      real m, n, x, y
+
+      write (*,*) m
+      write (*,*) n
+      write (*,*) x
+      write (*,*) y
+      STOP
+      END
+</code></pre>
+<p>A saída deste código seria algo como:</p>
+<pre><code>10.0000000
+20.0000000
+2.50000000
+2.50000000
+</code></pre>
+<p>A formatação pode ser alterada seguindo o padrão:</p>
+<pre><code class="language-fortran">      c234567      
+      write(*,label) lista_de_variaveis
+      label format-code 
+</code></pre>
+<p>Códigos comuns de formatação:
+- <strong>A:</strong> string de texto
+- <strong>D:</strong> números em double precision, notação exponencial
+- <strong>E:</strong> números reais, notação exponencial
+- <strong>F:</strong> números reais, formato fixo
+- <strong>I:</strong> inteiro
+- <strong>X:</strong> espaço horizontal
+- <strong>/</strong>: salto de linha</p>
+<p>Exemplo:</p>
+<pre><code class="language-fortran">      c23456789
+      program main
+      data m/10/, n/20/, x/2.5/, y/2.5/
+
+      ! Escreve m com formato I2
+      write (*,100) m
+100   format (I2)
+
+      ! Escreve n com formato inline
+      write (*,'(I2)') n  
+
+      ! Escreve x com formato F4.1
+      write (*,300) x
+300   format (F4.1)
+
+      ! Escreve y com formato E8.2
+      write (*,400) y
+400   format (E8.2)
+
+      STOP
+      END
+</code></pre>
+<p>Saída esperada:</p>
+<pre><code>10
+20
+2.5
+0.25E+01
+</code></pre>
+<h2 id="bibliotecas">Bibliotecas</h2>
+<p>Como em qualquer outra linguagem, é possível utilizar pacotes já criados (muitos gratuitos) para resolver problemas comuns. Para problemas numéricos, por exemplo, a plataforma Netlib disponibiliza softwares e databases de interesse científico, como os pacotes <strong>BLAS</strong> e <strong>LAPACK</strong>.</p>
+<h3 id="blas">BLAS</h3>
+<ul>
+<li>Acrônimo de Basic Linear Algebra Subroutines.</li>
+<li>Contém subprogramas para operações com vetores e matrizes.</li>
+<li>Suas rotinas são organizadas em três níveis:</li>
+<li><strong>Nível 1:</strong> Operações vetor x vetor.</li>
+<li><strong>Nível 2:</strong> Operações matriz x vetor.</li>
+<li><strong>Nível 3:</strong> Operações matriz x matriz.</li>
+<li>A primeira letra dos nomes dos subprogramas indica a precisão:</li>
+<li><strong>S:</strong> Real precisão única.</li>
+<li><strong>D:</strong> Real precisão dupla.</li>
+<li><strong>C:</strong> Complexo precisão única.</li>
+<li><strong>Z:</strong> Complexo precisão dupla.</li>
+</ul>
+<h3 id="lapack">LAPACK</h3>
+<ul>
+<li>Construído sobre BLAS, é uma coleção para problemas avançados de álgebra linear.</li>
+<li>Documentação disponível em:</li>
+<li><a href="http://www.netlib.org/lapack/">LAPACK Home</a></li>
+<li><a href="http://www.netlib.org/lapack/lug/lapack_lug.html">LAPACK User's Guide</a></li>
+<li>Ao instalar, coloque os arquivos <code>.lib</code> (no Windows) ou <code>.a</code> (no Linux) em um diretório apropriado. Certifique-se de ajustar os caminhos de compilação conforme necessário. O BLAS deve ser especificado por último no comando de compilação.</li>
+</ul>
+<p><em>Exemplo para resolver um sistema linear simples:</em></p>
+<pre><code class="language-fortran">      c234567
+      PROGRAM SolveLinearSystem
+      IMPLICIT NONE
+
+      INTEGER :: n, nrhs, lda, ldb, info
+      PARAMETER (n = 3, nrhs = 1, lda = n, ldb = n)
+
+      REAL :: A(lda, n), B(ldb, nrhs)
+      INTEGER :: ipiv(n)
+
+      EXTERNAL SGESV
+
+      DATA A / 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0 /
+      DATA B / 6.0, 15.0, 25.0 /
+
+      PRINT *, 'Starting the linear system solver...'
+
+      CALL SGESV(n, nrhs, A, lda, ipiv, B, ldb, info)
+
+      PRINT *, 'SGESV call completed.'
+
+      IF (info .EQ. 0) THEN
+          PRINT *, 'The solution is:'
+          PRINT *, B
+      ELSE
+          PRINT *, 'An error occurred: info =', info
+      END IF
+
+      PRINT *, 'Program finished.'
+
+      STOP      
+      END
+</code></pre>
+<p>Para compilar:</p>
+<pre><code class="language-bash">$ gfortran -o solve_system solve_system.f -LC:/msys64/mingw64/lib -llapack -lblas
+</code></pre>
+<p><em>Observação:</em> O diretório especificado após <code>-LC:</code> deve conter as bibliotecas necessárias. Lembre-se que o LAPACK depende do BLAS, o qual deve ser listado por último no comando.</p>
+<p>A maior complicação pode estar na depuração de erros relacionados a versões de DLLs e compatibilidade com a arquitetura da CPU. Em edições futuras, abordaremos a construção de pacotes e a compilação de versões específicas da BLAS ou LAPACK para sua máquina.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
