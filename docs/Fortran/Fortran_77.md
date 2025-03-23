@@ -1,5 +1,5 @@
 ---
-title: "Visão Geral"
+title: "Fortran 77"
 ---
 
 # Capítulo 3 - Fortran 77
@@ -743,3 +743,4 @@ $ gfortran -o solve_system solve_system.f -LC:/msys64/mingw64/lib -llapack -lbla
 *Observação:* O diretório especificado após `-LC:` deve conter as bibliotecas necessárias. Lembre-se que o LAPACK depende do BLAS, o qual deve ser listado por último no comando.
 
 A maior complicação pode estar na depuração de erros relacionados a versões de DLLs e compatibilidade com a arquitetura da CPU. Em edições futuras, abordaremos a construção de pacotes e a compilação de versões específicas da BLAS ou LAPACK para sua máquina.
+
