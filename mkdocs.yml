@@ -1,8 +1,8 @@
 site_name: Estatística++
 theme:
   name: material
-  logo: assets/favicon.png
-  favicon: assets/favicon.png
+  logo: assets/estatisticamaismais_logo_branco_transparente.png
+  favicon: assets/estatisticamaismais_logo.png
   features:
     - content.code.copy
 
