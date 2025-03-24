@@ -25,3 +25,9 @@ entusiastas das linguagens.
 
 - **Fortran 77:** [Guia de Stanford para F77](https://web.stanford.edu/class/me200c/tutorial_77/03_basics.html)
 - **Fortran 90:** ...
+
+## Referências
+
+UGH, Brian J.; STALLMAN, Richard M. An Introduction to GCC. Network Theory Ltd., 2004. ISBN 978-0954161798.
+
+TANFORD UNIVERSITY. **ME 200C - Basics of the Finite Element Method**. Disponível em: [https://web.stanford.edu/class/me200c/tutorial_77/03_basics.html](https://web.stanford.edu/class/me200c/tutorial_77/03_basics.html). Acesso em: 23 mar. 2025.
