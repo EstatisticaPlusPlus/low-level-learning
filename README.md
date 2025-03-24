@@ -8,7 +8,7 @@ source .venv/bin/activate
 pip install mkdocs mkdocs-material
 ```
 
-Você poderá usar [uv](https://docs.astral.sh/uv://docs.astral.sh/uv/) se preferir.
+Você poderá usar [uv](https://docs.astral.sh/uv) se preferir.
 
 Para servir localmente, faça:
 
