@@ -1,4 +1,5 @@
 site_name: Estatística++
 theme:
   name: material
+  logo: assets/favicon.png
   favicon: assets/favicon.png
