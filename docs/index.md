@@ -1,6 +1,6 @@
-[#](#) Estatística++
-
-## Sobre
+---
+title: "Sobre"
+---
 
 o projeto de extensão visa criar materiais educacionais sobre as linguagens de
 programação C e Fortran. Inicialmente, os materiais foram feitos em LaTeX,
