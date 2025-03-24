@@ -1244,16 +1244,16 @@
 <p>Este material foi fortemente inspirado no guia de Stanford para F77, disponível em <a href="https://web.stanford.edu/class/me200c/tutorial_77/03_basics.html">Stanford ME200C Tutorial</a>.</p>
 <h2 id="basico">Básico</h2>
 <p>A estrutura primária do código F77 é da forma:</p>
-<pre><code class="language-fortran">      c234567   
-      program *nome*
-
-      *declarações de variáveis*
-
-      *comandos*
-
-      stop
-      end
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">      </span><span class="n">c234567</span><span class="w">   </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">      </span><span class="k">program</span><span class="w"> </span><span class="o">*</span><span class="n">nome</span><span class="o">*</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="o">*</span><span class="n">declarações</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">variáveis</span><span class="o">*</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="o">*</span><span class="n">comandos</span><span class="o">*</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="k">stop</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">      end</span>
+</span></code></pre></div>
 <p>A formatação da versão 77 é rígida, seguindo um padrão ditado pelo número referente à coluna no editor de texto, da seguinte forma:</p>
 <ul>
 <li><strong>Coluna 1:</strong> Vazia ou preencha com "c" ou "*" para usar a linha como comentário.</li>
@@ -1263,14 +1263,14 @@
 <li><strong>Colunas 73-80:</strong> Número de sequência (uso incomum).</li>
 </ul>
 <p>Importante salientar que não podemos ter uma variável com o mesmo nome que o programa.</p>
-<pre><code class="language-fortran">      c234567
-      PROGRAM HELLO
-      WRITE(UNIT=*, FMT=*) 'Hello World'
-      STOP
-      END
-
-      *exemplo do programa básico usual, note que os comandos começam a partir da coluna 7*
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">      </span><span class="n">c234567</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">HELLO</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">      </span><span class="k">WRITE</span><span class="p">(</span><span class="n">UNIT</span><span class="o">=*</span><span class="p">,</span><span class="w"> </span><span class="n">FMT</span><span class="o">=*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Hello World&#39;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="k">STOP</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">      END</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="o">*</span><span class="n">exemplo</span><span class="w"> </span><span class="k">do </span><span class="n">programa</span><span class="w"> </span><span class="n">básico</span><span class="w"> </span><span class="n">usual</span><span class="p">,</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">os</span><span class="w"> </span><span class="n">comandos</span><span class="w"> </span><span class="n">começam</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">partir</span><span class="w"> </span><span class="n">da</span><span class="w"> </span><span class="n">coluna</span><span class="w"> </span><span class="mi">7</span><span class="o">*</span>
+</span></code></pre></div>
 <p>Note que no código acima o comando <code>write(UNIT=*, FMT=*)</code> também poderá ser escrito como <code>write(*,*)</code>, o que é uma simplificação usual na atribuição desses argumentos compulsórios.</p>
 <h2 id="variaveis-tipos-e-declaracoes">Variáveis, Tipos e Declarações</h2>
 <p>Variáveis em Fortran consistem em no máximo 6 caracteres alfanuméricos, iniciando com uma letra, sem diferenciar maiúsculas e minúsculas. Palavras reservadas como <code>program</code>, <code>real</code>, <code>stop</code> e <code>end</code> não podem ser usadas como nomes de variáveis.</p>
@@ -1289,24 +1289,24 @@
 <li>Existem dois tipos de float: <strong>real</strong> (4 bytes) e <strong>double precision</strong> (8 bytes).</li>
 </ul>
 <p>Para definir constantes, declara-se um parâmetro na sintaxe:</p>
-<pre><code class="language-fortran">      parameter (name = constant, ..., name = constant)
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">      </span><span class="k">parameter</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constant</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constant</span><span class="p">)</span>
+</span></code></pre></div>
 <p>O parâmetro deve ser definido antes da primeira execução do código.</p>
-<pre><code class="language-fortran">      c234567
-      PROGRAM TYPES
-      IMPLICIT NONE
-
-      ! Determina a declaração do tipo de variáveis
-      INTEGER alfa, beta, delta
-
-      PARAMETER (alfa = 5, beta = 10)
-
-      delta = alfa + beta
-      write (*,*) 'Resulta em', delta
-
-      STOP
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">      </span><span class="n">c234567</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">TYPES</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="c">! Determina a declaração do tipo de variáveis</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="kt">INTEGER </span><span class="n">alfa</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">delta</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="k">PARAMETER</span><span class="w"> </span><span class="p">(</span><span class="n">alfa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alfa</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beta</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Resulta em&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">delta</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="k">STOP</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">      END</span>
+</span></code></pre></div>
 <h2 id="expressoes-e-atribuicoes">Expressões e Atribuições</h2>
 <h3 id="expressoes">Expressões</h3>
 <p>Uma expressão é uma combinação de operandos e operadores, como em <code>x + y</code> (onde <code>x</code> e <code>y</code> são operandos e <code>+</code> é o operador). O resultado de uma expressão torna-se um novo operando, permitindo <em>nesting</em> (expressões aninhadas).</p>
@@ -1317,8 +1317,8 @@
 - Constantes de caractere, ou strings, são delimitadas por aspas simples (ex.: <code>'ABC'</code>, <code>'potato potato'</code>) e são sensíveis a maiúsculas e minúsculas.</p>
 <h3 id="atribuicoes">Atribuições</h3>
 <p>A sintaxe para atribuições é:</p>
-<pre><code>nome_da_variavel = expressão
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nome_da_variavel = expressão
+</span></code></pre></div>
 <p>O valor da expressão à direita é avaliado e atribuído à variável à esquerda.</p>
 <h3 id="conversao-de-tipos">Conversão de Tipos</h3>
 <p>Quando diferentes tipos de dados são usados em uma expressão, pode ocorrer conversão implícita ou é necessário forçar a conversão usando funções como:
@@ -1349,58 +1349,58 @@
 <li>
 <p><strong>Condição em linha única:</strong><br />
    Se a condição lógica for verdadeira, execute o comando.
-   <code>fortran
-         if (x .LT. 0) x = -x</code></p>
+   <div class="language-fortran highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="p">.</span><span class="n">LT</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">x</span>
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Condição com múltiplos comandos:</strong><br />
-<code>fortran
-         if (condição lógica) then
-             comandos
-         endif</code></p>
+   <div class="language-fortran highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condição</span><span class="w"> </span><span class="n">lógica</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">          </span><span class="n">comandos</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">      </span><span class="k">endif</span>
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Condição com alternativas:</strong><br />
-<code>fortran
-         if (condição lógica) then
-             comandos
-         elseif (outra condição lógica) then
-             comandos
-         else
-             comandos
-         endif</code></p>
+   <div class="language-fortran highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condição</span><span class="w"> </span><span class="n">lógica</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">          </span><span class="n">comandos</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="k">elseif</span><span class="w"> </span><span class="p">(</span><span class="n">outra</span><span class="w"> </span><span class="n">condição</span><span class="w"> </span><span class="n">lógica</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">          </span><span class="n">comandos</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">      </span><span class="k">else</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">          </span><span class="n">comandos</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">      </span><span class="k">endif</span>
+</span></code></pre></div></p>
 </li>
 </ol>
 <h4 id="exemplo-cadastro-de-numeros-telefonicos-com-ddd">Exemplo: Cadastro de Números Telefônicos com DDD</h4>
-<pre><code class="language-fortran">      c234567
-      PROGRAM CONDITIONALS
-      IMPLICIT NONE
-      CHARACTER*11 NUMBER
-      CHARACTER*9 REST
-      INTEGER LEN
-
-      write (*,*) 'Input Number:'
-      read (*,*) NUMBER
-
-      LEN = LEN_TRIM(NUMBER)
-
-      IF (LEN .GT. 3) THEN
-          REST = NUMBER(3:LEN)
-      ELSE
-          REST = ''
-      END IF
-
-      IF (LEN .LT. 8 .OR. LEN .GT. 11) then
-          write(*,*) 'Invalid Number'
-      ELSE IF (LEN .EQ. 8 .OR. LEN .EQ. 9) then
-          write(*,*) NUMBER
-      ELSE IF (LEN .EQ. 10 .OR. LEN .EQ. 11) then         
-          write(*,*) 'DDD and number are ', NUMBER(1:2) // ' ' // REST
-      END IF
-
-      STOP
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">      </span><span class="n">c234567</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">CONDITIONALS</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="mi">11</span><span class="w"> </span><span class="n">NUMBER</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="mi">9</span><span class="w"> </span><span class="n">REST</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">      </span><span class="kt">INTEGER </span><span class="nb">LEN</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nb">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Input Number:&#39;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">      </span><span class="k">read</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">NUMBER</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">      </span><span class="nb">LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">LEN_TRIM</span><span class="p">(</span><span class="n">NUMBER</span><span class="p">)</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">      </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="nb">LEN</span><span class="w"> </span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">          </span><span class="n">REST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NUMBER</span><span class="p">(</span><span class="mi">3</span><span class="p">:</span><span class="nb">LEN</span><span class="p">)</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">      </span><span class="k">ELSE</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">          </span><span class="n">REST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">      </span><span class="k">END IF</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="k">      IF</span><span class="w"> </span><span class="p">(</span><span class="nb">LEN</span><span class="w"> </span><span class="p">.</span><span class="n">LT</span><span class="p">.</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">.</span><span class="nb">OR</span><span class="p">.</span><span class="w"> </span><span class="nb">LEN</span><span class="w"> </span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="w"> </span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="k">          write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Invalid Number&#39;</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">      </span><span class="k">ELSE IF</span><span class="w"> </span><span class="p">(</span><span class="nb">LEN</span><span class="w"> </span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">.</span><span class="nb">OR</span><span class="p">.</span><span class="w"> </span><span class="nb">LEN</span><span class="w"> </span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="k">          write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">NUMBER</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">      </span><span class="k">ELSE IF</span><span class="w"> </span><span class="p">(</span><span class="nb">LEN</span><span class="w"> </span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">.</span><span class="nb">OR</span><span class="p">.</span><span class="w"> </span><span class="nb">LEN</span><span class="w"> </span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="w"> </span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">then         </span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="k">          write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;DDD and number are &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">NUMBER</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">REST</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">      </span><span class="k">END IF</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="k">      STOP</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="k">      END</span>
+</span></code></pre></div>
 <p><em>Funcionamento do Programa:</em><br />
 - Solicita ao usuário um número de telefone (string).
 - Calcula o comprimento real da string com <code>LEN_TRIM</code>.
@@ -1410,11 +1410,11 @@
 <h2 id="loops">Loops</h2>
 <h3 id="do-loops">Do Loops</h3>
 <p>A sintaxe geral é:</p>
-<pre><code class="language-fortran">      c23456789
-      do label var = expr1, expr2, expr3
-          statements
-      label continue
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">      </span><span class="k">do </span><span class="n">label</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">expr1</span><span class="p">,</span><span class="w"> </span><span class="n">expr2</span><span class="p">,</span><span class="w"> </span><span class="n">expr3</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">          </span><span class="n">statements</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">      </span><span class="n">label</span><span class="w"> </span><span class="k">continue</span>
+</span></code></pre></div>
 <ul>
 <li><strong>var:</strong> variável do loop (deve ser inteiro)</li>
 <li><strong>expr1:</strong> valor inicial</li>
@@ -1422,215 +1422,215 @@
 <li><strong>expr3:</strong> incremento</li>
 </ul>
 <p><em>Exemplo:</em></p>
-<pre><code class="language-fortran">      c234567
-      PROGRAM SHOW
-      IMPLICIT NONE
-
-      INTEGER a(10), I
-
-      DATA a /1, 2, 3, 4, 5, 6, 7, 8, 9, 10/
-
-      DO 10 I = 1, 10
-          PRINT *, 'Elemento', I, ':', a(I)
-10    CONTINUE
-
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">      </span><span class="n">c234567</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">SHOW</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">      </span><span class="kt">INTEGER </span><span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">I</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">      </span><span class="k">DATA </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">/</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">      </span><span class="k">DO </span><span class="mi">10</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">          </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Elemento&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="mi">10</span><span class="w">    </span><span class="k">CONTINUE</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="k">      END</span>
+</span></code></pre></div>
 <h3 id="while-loops-condicao-de-progresso">While Loops (Condição de Progresso)</h3>
 <p>Embora o método abaixo seja o mais intuitivo, ele não é ANSI Fortran 77. O adequado é:</p>
-<pre><code class="language-fortran">      c23456789
-      label if (logical expr) then
-          statements
-          goto label
-      end if
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">      </span><span class="n">label</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">logical </span><span class="n">expr</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">          </span><span class="n">statements</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">          </span><span class="k">goto</span><span class="w"> </span><span class="n">label</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">      </span><span class="k">end if</span>
+</span></code></pre></div>
 <p><em>Exemplo com While:</em></p>
-<pre><code class="language-fortran">      c234567
-      PROGRAM WOW
-      IMPLICIT NONE
-
-      INTEGER a(10), I
-
-      DATA a /1, 2, 3, 4, 5, 6, 7, 8, 9, 10/
-
-      I = 1
-
-10    IF (a(I) /= 5) THEN
-          PRINT *, 'Elemento', I, ':', a(I)
-          I = I + 1
-          GOTO 10
-      END IF
-
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">      </span><span class="n">c234567</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">WOW</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">      </span><span class="kt">INTEGER </span><span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">I</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">      </span><span class="k">DATA </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">/</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">      </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="mi">10</span><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="k">          PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Elemento&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">          </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">          </span><span class="k">GOTO</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">      </span><span class="k">END IF</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="k">      END</span>
+</span></code></pre></div>
 <h3 id="until-loops-condicao-de-parada">Until Loops (Condição de Parada)</h3>
 <p>Um exemplo de loop "until" usando <code>goto</code>:</p>
-<pre><code class="language-fortran">      c23456789
-10    CONTINUE
-      PRINT *, 'Elemento', I, ':', a(I)
-      I = I + 1
-      IF (a(I) /= 9) THEN       
-          GOTO 10
-      END IF
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="mi">10</span><span class="w">    </span><span class="k">CONTINUE</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">      PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Elemento&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">      </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">      </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">THEN       </span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="k">          GOTO</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">      </span><span class="k">END IF</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="k">      END</span>
+</span></code></pre></div>
 <h2 id="subprogramas">Subprogramas</h2>
 <p>Subprogramas são blocos de código que resolvem tarefas específicas, podendo ser funções ou subrotinas.</p>
 <h3 id="funcoes">Funções</h3>
 <p>Funções recebem um ou mais argumentos e retornam um valor. A maioria das funções inatas (como <code>abs</code>, <code>min</code>, <code>max</code>, <code>sqrt</code>) são genéricas, mas funções definidas pelo usuário geralmente precisam especificar o tipo de retorno. O valor de retorno é atribuído à variável com o mesmo nome da função e o bloco termina com <code>RETURN</code>.</p>
-<pre><code class="language-fortran">      c23456789
-      PROGRAM CHOOSE
-      IMPLICIT NONE
-
-      INTEGER P, R, QUADRADO
-
-      WRITE(*,*) 'CHOOSE A NUMBER 1 TO 10'
-      READ (*,*) P
-
-      R = QUADRADO(P)
-
-      WRITE(*,*) 'O RESULTADO É', R
-
-      END
-
-      INTEGER FUNCTION QUADRADO(X)
-      IMPLICIT NONE
-      INTEGER X
-
-      QUADRADO = X * X
-
-      RETURN
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">CHOOSE</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">      </span><span class="kt">INTEGER </span><span class="n">P</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">QUADRADO</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">      </span><span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;CHOOSE A NUMBER 1 TO 10&#39;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">      </span><span class="k">READ</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">P</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">      </span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QUADRADO</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">      </span><span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;O RESULTADO É&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">R</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">      </span><span class="k">END</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="k">      </span><span class="kt">INTEGER </span><span class="k">FUNCTION </span><span class="n">QUADRADO</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="k">      </span><span class="kt">INTEGER </span><span class="n">X</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="w">      </span><span class="n">QUADRADO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">      </span><span class="k">RETURN</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="k">      END</span>
+</span></code></pre></div>
 <h3 id="subrotinas">Subrotinas</h3>
 <p>Subrotinas podem retornar mais de um valor e são invocadas com <code>CALL</code>. Elas não possuem tipo.</p>
-<pre><code class="language-fortran">      c2345678
-      PROGRAM CHAMA_SUBROTINA
-      IMPLICIT NONE
-
-      INTEGER N, QUADRADO, CUBO
-
-      PRINT *, 'Digite um número:'
-      READ *, N
-
-      CALL CALCULA_QUADRADO_E_CUBO(N, QUADRADO, CUBO)
-
-      PRINT *, 'O quadrado de', N, 'é', QUADRADO
-      PRINT *, 'O cubo de', N, 'é', CUBO
-
-      END
-
-      SUBROUTINE CALCULA_QUADRADO_E_CUBO(X, QUAD, CUB)
-      IMPLICIT NONE
-      INTEGER X, QUAD, CUB
-
-      QUAD = X * X
-      CUB = X * X * X
-
-      RETURN
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">      </span><span class="n">c2345678</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">CHAMA_SUBROTINA</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="k">      </span><span class="kt">INTEGER </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">QUADRADO</span><span class="p">,</span><span class="w"> </span><span class="n">CUBO</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Digite um número:&#39;</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">      </span><span class="k">READ</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">      </span><span class="k">CALL </span><span class="n">CALCULA_QUADRADO_E_CUBO</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">QUADRADO</span><span class="p">,</span><span class="w"> </span><span class="n">CUBO</span><span class="p">)</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;O quadrado de&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;é&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">QUADRADO</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;O cubo de&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;é&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">CUBO</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">      </span><span class="k">END</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="k">      SUBROUTINE </span><span class="n">CALCULA_QUADRADO_E_CUBO</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">QUAD</span><span class="p">,</span><span class="w"> </span><span class="n">CUB</span><span class="p">)</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="k">      </span><span class="kt">INTEGER </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">QUAD</span><span class="p">,</span><span class="w"> </span><span class="n">CUB</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="w">      </span><span class="n">QUAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">      </span><span class="n">CUB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">      </span><span class="k">RETURN</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="k">      END</span>
+</span></code></pre></div>
 <h2 id="arrays">Arrays</h2>
 <p>Para declarar vetores e matrizes:</p>
-<pre><code class="language-fortran">      c23456789
-      real a(20)
-      ! Declara um vetor com 20 componentes reais, indexados de 1 a 20
-
-      real A(3,5)
-      ! Declara uma matriz 3x5
-
-      logical B(20,5,39,29152)
-      ! Declara um array 20x5x39x2
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">      </span><span class="kt">real </span><span class="n">a</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">      </span><span class="c">! Declara um vetor com 20 componentes reais, indexados de 1 a 20</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">      </span><span class="kt">real </span><span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">      </span><span class="c">! Declara uma matriz 3x5</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">      </span><span class="kt">logical </span><span class="n">B</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">29152</span><span class="p">)</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">      </span><span class="c">! Declara um array 20x5x39x2</span>
+</span></code></pre></div>
 <p>Fortran 77 permite arrays de até 7 dimensões.</p>
 <h3 id="manipulacao-de-arrays">Manipulação de Arrays</h3>
 <h4 id="inicializacao-em-loop">Inicialização em Loop</h4>
-<pre><code class="language-fortran">      c23456789
-      PROGRAM EXEMPLO_ARRAY
-      IMPLICIT NONE
-
-      INTEGER :: N = 5
-      INTEGER :: A(N)
-      INTEGER :: I
-
-      DO I = 1, N
-          A(I) = I * 2   
-      END DO
-
-      PRINT *, 'Elementos do array A:'
-      DO I = 1, N
-          PRINT *, 'A(', I, ') = ', A(I)
-      END DO
-
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">EXEMPLO_ARRAY</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">I</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">      </span><span class="k">DO </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">          </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">      </span><span class="k">END DO</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="k">      PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Elementos do array A:&#39;</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">      </span><span class="k">DO </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">          </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A(&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;) = &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">      </span><span class="k">END DO</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="k">      END</span>
+</span></code></pre></div>
 <h4 id="soma-de-elementos">Soma de Elementos</h4>
-<pre><code class="language-fortran">      c23456789
-      PROGRAM SOMA_ARRAY
-      IMPLICIT NONE
-
-      INTEGER :: N = 5
-      INTEGER :: A(N) = (/1, 2, 3, 4, 5/)
-      INTEGER :: SUM
-      INTEGER :: I
-
-      SUM = 0
-
-      DO I = 1, N
-          SUM = SUM + A(I)
-      END DO
-
-      PRINT *, 'Soma dos elementos de A:', SUM
-
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">SOMA_ARRAY</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="k">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">/</span><span class="p">)</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">SUM</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="nb">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">I</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">      </span><span class="nb">SUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">      </span><span class="k">DO </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">          </span><span class="nb">SUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">SUM</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">      </span><span class="k">END DO</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="k">      PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Soma dos elementos de A:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">SUM</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="nb">      </span><span class="k">END</span>
+</span></code></pre></div>
 <h4 id="produto-de-elementos">Produto de Elementos</h4>
-<pre><code class="language-fortran">      c23456789
-      PROGRAM MULTIPLICACAO_ARRAY
-      IMPLICIT NONE
-
-      INTEGER :: N = 5
-      INTEGER :: A(N) = (/1, 2, 3, 4, 5/)
-      INTEGER :: PRODUTO
-      INTEGER :: I
-
-      PRODUTO = 1
-
-      DO I = 1, N
-          PRODUTO = PRODUTO * A(I)
-      END DO
-
-      PRINT *, 'Produto dos elementos de A:', PRODUTO
-
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">MULTIPLICACAO_ARRAY</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">/</span><span class="p">)</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">PRODUTO</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">I</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">      </span><span class="n">PRODUTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">      </span><span class="k">DO </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">          </span><span class="n">PRODUTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PRODUTO</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">      </span><span class="k">END DO</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="k">      PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Produto dos elementos de A:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">PRODUTO</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">      </span><span class="k">END</span>
+</span></code></pre></div>
 <h2 id="common-blocks">Common Blocks</h2>
 <p>Common blocks permitem compartilhar variáveis entre subprogramas. O bloco comum deve ser declarado antes das execuções.</p>
-<pre><code class="language-fortran">      program main
-      ! Declarações
-      real alpha, beta
-      common /coeff/ alpha, beta
-
-      ! Statements
-      stop
-      end
-
-      subroutine sub1(...)
-      real alpha, beta
-      common /coeff/ alpha, beta
-
-      ! Statements
-      return
-      end
-
-      subroutine sub2(...)
-      real alpha, beta
-      common /coeff/ alpha, beta
-
-      ! Statements
-      return
-      end
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="w">      </span><span class="k">program </span><span class="n">main</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">      </span><span class="c">! Declarações</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">      </span><span class="kt">real </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">      </span><span class="k">common</span><span class="w"> </span><span class="o">/</span><span class="n">coeff</span><span class="o">/</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">      </span><span class="c">! Statements</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">      </span><span class="k">stop</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="k">      end</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="k">      subroutine </span><span class="n">sub1</span><span class="p">(...)</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">      </span><span class="kt">real </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">      </span><span class="k">common</span><span class="w"> </span><span class="o">/</span><span class="n">coeff</span><span class="o">/</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">      </span><span class="c">! Statements</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">      </span><span class="k">return</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="k">      end</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="k">      subroutine </span><span class="n">sub2</span><span class="p">(...)</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">      </span><span class="kt">real </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">      </span><span class="k">common</span><span class="w"> </span><span class="o">/</span><span class="n">coeff</span><span class="o">/</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">      </span><span class="c">! Statements</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="w">      </span><span class="k">return</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="k">      end</span>
+</span></code></pre></div>
 <p>Regras importantes:
 - O bloco comum deve ser declarado antes da execução do código.
 - Blocos comuns distintos devem ter nomes distintos.
@@ -1639,43 +1639,43 @@
 - Arrays com dimensões variáveis não devem constar em blocos comuns.</p>
 <h2 id="data-e-block-statements">Data e Block Statements</h2>
 <p>O <code>data</code> statement é usado para inicializar variáveis antes da execução do programa.</p>
-<pre><code class="language-fortran">      c23456789
-      program main
-      data m/10/, n/20/, x/2.5/, y/2.5/
-      real m, n, x, y
-
-      write (*,*) m
-      write (*,*) n 
-      write (*,*) x
-      write (*,*) y
-      STOP
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">      </span><span class="k">program </span><span class="n">main</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">      </span><span class="k">data </span><span class="n">m</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">/</span><span class="mf">2.5</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">/</span><span class="mf">2.5</span><span class="o">/</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">      </span><span class="kt">real </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">n</span><span class="w"> </span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">x</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">      </span><span class="k">STOP</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="k">      END</span>
+</span></code></pre></div>
 <p>Outra forma:</p>
-<pre><code class="language-fortran">      c23456789
-      program main
-      data m,n/10,20/, x,y/2*2.5/
-      real m, n, x, y
-
-      write (*,*) m
-      write (*,*) n
-      write (*,*) x
-      write (*,*) y
-      STOP
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">      </span><span class="k">program </span><span class="n">main</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">      </span><span class="k">data </span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="mf">2.5</span><span class="o">/</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">      </span><span class="kt">real </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">x</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">      </span><span class="k">STOP</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="k">      END</span>
+</span></code></pre></div>
 <p>Com matrizes:</p>
-<pre><code class="language-fortran">      c23456789
-      program main
-      real A(10,20)
-      data A/ 200 * 0.0/
-      ...
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">      </span><span class="k">program </span><span class="n">main</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">      </span><span class="kt">real </span><span class="n">A</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">      </span><span class="k">data </span><span class="n">A</span><span class="o">/</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.0</span><span class="o">/</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">      </span><span class="p">...</span>
+</span></code></pre></div>
 <p>O exemplo acima inicializa uma matriz 10x20 com todos os 200 valores iguais a zero.</p>
 <h2 id="file-io">File I.O.</h2>
 <p>O comando principal para acessar um arquivo é:</p>
-<pre><code class="language-fortran">      open ([UNIT=]u [, IOSTAT=ios, ERR=err, STATUS=sta])
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="w">      </span><span class="k">open</span><span class="w"> </span><span class="p">([</span><span class="n">UNIT</span><span class="o">=</span><span class="p">]</span><span class="n">u</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="n">IOSTAT</span><span class="o">=</span><span class="n">ios</span><span class="p">,</span><span class="w"> </span><span class="n">ERR</span><span class="o">=</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="n">STATUS</span><span class="o">=</span><span class="n">sta</span><span class="p">])</span>
+</span></code></pre></div>
 <p>Especificadores comuns:
 - <strong>unidade ("u"):</strong> valor inteiro único de 1 a 99 que identifica o arquivo.
 - <strong>status ("ios"):</strong> variável inteira que retorna zero se a operação for bem-sucedida.
@@ -1684,67 +1684,67 @@
 - <strong>status ("sta"):</strong> deve ser NEW, OLD ou SCRATCH; define se o arquivo já existe ou se deve ser criado e se será deletado após o fechamento.
 - <strong>final ("end"):</strong> determina para qual comando o programa deve saltar ao chegar ao fim do arquivo (usado em <code>read</code> ou <code>write</code>).</p>
 <p>Para fechar o arquivo, usa-se:</p>
-<pre><code class="language-fortran">      close ([UNIT=]u [, IOSTAT=ios, ERR=err, STATUS=sta])
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="w">      </span><span class="k">close</span><span class="w"> </span><span class="p">([</span><span class="n">UNIT</span><span class="o">=</span><span class="p">]</span><span class="n">u</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="n">IOSTAT</span><span class="o">=</span><span class="n">ios</span><span class="p">,</span><span class="w"> </span><span class="n">ERR</span><span class="o">=</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="n">STATUS</span><span class="o">=</span><span class="n">sta</span><span class="p">])</span>
+</span></code></pre></div>
 <p>Os comandos <code>read</code> e <code>write</code> são usados com o especificador de unidade obrigatório.</p>
 <p><em>Exemplo:</em></p>
-<pre><code class="language-fortran">      c234567
-      program inpdat
-      ! Este programa lê n pontos de um arquivo e os armazena em 3 arrays: x, y, z.
-
-      integer nmax, u
-      parameter (nmax=1000, u=20)
-      real x(nmax), y(nmax), z(nmax)
-
-      ! Abre o arquivo de dados
-      open (u, FILE='points.dat', STATUS='OLD')
-
-      ! Lê o número de pontos
-      read(u,*) n
-      if (n.GT.nmax) then
-          write(*,*) 'Error: n = ', n, 'is larger than nmax =', nmax
-          goto 9999
-      endif
-
-      ! Loop sobre os pontos
-      do 10 i= 1, n
-          read(u,100) x(i), y(i), z(i)
-10    enddo
-100   format (3(F10.4))
-
-      ! Fecha o arquivo
-      close (u)
-
-      ! (Parte faltante para processar os dados)
-
-9999  stop
-      end
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="w">      </span><span class="n">c234567</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">      </span><span class="k">program </span><span class="n">inpdat</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">      </span><span class="c">! Este programa lê n pontos de um arquivo e os armazena em 3 arrays: x, y, z.</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">      </span><span class="kt">integer </span><span class="n">nmax</span><span class="p">,</span><span class="w"> </span><span class="n">u</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">      </span><span class="k">parameter</span><span class="w"> </span><span class="p">(</span><span class="n">nmax</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">      </span><span class="kt">real </span><span class="n">x</span><span class="p">(</span><span class="n">nmax</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="n">nmax</span><span class="p">),</span><span class="w"> </span><span class="n">z</span><span class="p">(</span><span class="n">nmax</span><span class="p">)</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">      </span><span class="c">! Abre o arquivo de dados</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">      </span><span class="k">open</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="k">FILE</span><span class="o">=</span><span class="s1">&#39;points.dat&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">STATUS</span><span class="o">=</span><span class="s1">&#39;OLD&#39;</span><span class="p">)</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">      </span><span class="c">! Lê o número de pontos</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="w">      </span><span class="k">read</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="n">nmax</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="k">          write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Error: n = &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;is larger than nmax =&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">nmax</span>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="w">          </span><span class="k">goto</span><span class="w"> </span><span class="mi">9999</span>
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="w">      </span><span class="k">endif</span>
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="w">      </span><span class="c">! Loop sobre os pontos</span>
+</span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="w">      </span><span class="k">do </span><span class="mi">10</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="w">          </span><span class="k">read</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">z</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-26-22"><a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="mi">10</span><span class="w">    </span><span class="k">enddo</span>
+</span><span id="__span-26-23"><a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="mi">100</span><span class="w">   </span><span class="k">format</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">(</span><span class="n">F10</span><span class="p">.</span><span class="mi">4</span><span class="p">))</span>
+</span><span id="__span-26-24"><a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>
+</span><span id="__span-26-25"><a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a><span class="w">      </span><span class="c">! Fecha o arquivo</span>
+</span><span id="__span-26-26"><a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a><span class="w">      </span><span class="k">close</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+</span><span id="__span-26-27"><a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a>
+</span><span id="__span-26-28"><a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a><span class="w">      </span><span class="c">! (Parte faltante para processar os dados)</span>
+</span><span id="__span-26-29"><a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a>
+</span><span id="__span-26-30"><a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a><span class="mi">9999</span><span class="w">  </span><span class="k">stop</span>
+</span><span id="__span-26-31"><a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a><span class="k">      end</span>
+</span></code></pre></div>
 <h2 id="format">Format</h2>
 <p>A formatação é definida com o comando <code>write</code> seguido de um label que especifica o formato.</p>
-<pre><code class="language-fortran">      c23456789
-      program main
-      data m/10/, n/20/, x/2.5/, y/2.5/
-      real m, n, x, y
-
-      write (*,*) m
-      write (*,*) n
-      write (*,*) x
-      write (*,*) y
-      STOP
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">      </span><span class="k">program </span><span class="n">main</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">      </span><span class="k">data </span><span class="n">m</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">/</span><span class="mf">2.5</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">/</span><span class="mf">2.5</span><span class="o">/</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">      </span><span class="kt">real </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">x</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">      </span><span class="k">STOP</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="k">      END</span>
+</span></code></pre></div>
 <p>A saída deste código seria algo como:</p>
-<pre><code>10.0000000
-20.0000000
-2.50000000
-2.50000000
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>10.0000000
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>20.0000000
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>2.50000000
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>2.50000000
+</span></code></pre></div>
 <p>A formatação pode ser alterada seguindo o padrão:</p>
-<pre><code class="language-fortran">      c234567      
-      write(*,label) lista_de_variaveis
-      label format-code 
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="w">      </span><span class="n">c234567</span><span class="w">      </span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="n">label</span><span class="p">)</span><span class="w"> </span><span class="n">lista_de_variaveis</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">      </span><span class="n">label</span><span class="w"> </span><span class="k">format</span><span class="o">-</span><span class="n">code</span><span class="w"> </span>
+</span></code></pre></div>
 <p>Códigos comuns de formatação:
 - <strong>A:</strong> string de texto
 - <strong>D:</strong> números em double precision, notação exponencial
@@ -1754,34 +1754,34 @@
 - <strong>X:</strong> espaço horizontal
 - <strong>/</strong>: salto de linha</p>
 <p>Exemplo:</p>
-<pre><code class="language-fortran">      c23456789
-      program main
-      data m/10/, n/20/, x/2.5/, y/2.5/
-
-      ! Escreve m com formato I2
-      write (*,100) m
-100   format (I2)
-
-      ! Escreve n com formato inline
-      write (*,'(I2)') n  
-
-      ! Escreve x com formato F4.1
-      write (*,300) x
-300   format (F4.1)
-
-      ! Escreve y com formato E8.2
-      write (*,400) y
-400   format (E8.2)
-
-      STOP
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="w">      </span><span class="n">c23456789</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">      </span><span class="k">program </span><span class="n">main</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">      </span><span class="k">data </span><span class="n">m</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">/</span><span class="mf">2.5</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">/</span><span class="mf">2.5</span><span class="o">/</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">      </span><span class="c">! Escreve m com formato I2</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="mi">100</span><span class="w">   </span><span class="k">format</span><span class="w"> </span><span class="p">(</span><span class="n">I2</span><span class="p">)</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="w">      </span><span class="c">! Escreve n com formato inline</span>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(I2)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">n</span><span class="w">  </span>
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="w">      </span><span class="c">! Escreve x com formato F4.1</span>
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="n">x</span>
+</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="mi">300</span><span class="w">   </span><span class="k">format</span><span class="w"> </span><span class="p">(</span><span class="n">F4</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>
+</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="w">      </span><span class="c">! Escreve y com formato E8.2</span>
+</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a><span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-30-18"><a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a><span class="mi">400</span><span class="w">   </span><span class="k">format</span><span class="w"> </span><span class="p">(</span><span class="n">E8</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-30-19"><a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>
+</span><span id="__span-30-20"><a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a><span class="w">      </span><span class="k">STOP</span>
+</span><span id="__span-30-21"><a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a><span class="k">      END</span>
+</span></code></pre></div>
 <p>Saída esperada:</p>
-<pre><code>10
-20
-2.5
-0.25E+01
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>10
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>20
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>2.5
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>0.25E+01
+</span></code></pre></div>
 <h2 id="bibliotecas">Bibliotecas</h2>
 <p>Como em qualquer outra linguagem, é possível utilizar pacotes já criados (muitos gratuitos) para resolver problemas comuns. Para problemas numéricos, por exemplo, a plataforma Netlib disponibiliza softwares e databases de interesse científico, como os pacotes <strong>BLAS</strong> e <strong>LAPACK</strong>.</p>
 <h3 id="blas">BLAS</h3>
@@ -1807,42 +1807,42 @@
 <li>Ao instalar, coloque os arquivos <code>.lib</code> (no Windows) ou <code>.a</code> (no Linux) em um diretório apropriado. Certifique-se de ajustar os caminhos de compilação conforme necessário. O BLAS deve ser especificado por último no comando de compilação.</li>
 </ul>
 <p><em>Exemplo para resolver um sistema linear simples:</em></p>
-<pre><code class="language-fortran">      c234567
-      PROGRAM SolveLinearSystem
-      IMPLICIT NONE
-
-      INTEGER :: n, nrhs, lda, ldb, info
-      PARAMETER (n = 3, nrhs = 1, lda = n, ldb = n)
-
-      REAL :: A(lda, n), B(ldb, nrhs)
-      INTEGER :: ipiv(n)
-
-      EXTERNAL SGESV
-
-      DATA A / 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0 /
-      DATA B / 6.0, 15.0, 25.0 /
-
-      PRINT *, 'Starting the linear system solver...'
-
-      CALL SGESV(n, nrhs, A, lda, ipiv, B, ldb, info)
-
-      PRINT *, 'SGESV call completed.'
-
-      IF (info .EQ. 0) THEN
-          PRINT *, 'The solution is:'
-          PRINT *, B
-      ELSE
-          PRINT *, 'An error occurred: info =', info
-      END IF
-
-      PRINT *, 'Program finished.'
-
-      STOP      
-      END
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="w">      </span><span class="n">c234567</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">      </span><span class="k">PROGRAM </span><span class="n">SolveLinearSystem</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">      </span><span class="k">IMPLICIT NONE</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="k">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">nrhs</span><span class="p">,</span><span class="w"> </span><span class="n">lda</span><span class="p">,</span><span class="w"> </span><span class="n">ldb</span><span class="p">,</span><span class="w"> </span><span class="n">info</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">      </span><span class="k">PARAMETER</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">nrhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">lda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ldb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w">      </span><span class="kt">REAL</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">lda</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">ldb</span><span class="p">,</span><span class="w"> </span><span class="n">nrhs</span><span class="p">)</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w">      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ipiv</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">      </span><span class="k">EXTERNAL </span><span class="n">SGESV</span>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="w">      </span><span class="k">DATA </span><span class="n">A</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">,</span><span class="w"> </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="mf">0.0</span><span class="w"> </span><span class="o">/</span>
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="w">      </span><span class="k">DATA </span><span class="n">B</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">6.0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="mf">5.0</span><span class="w"> </span><span class="o">/</span>
+</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>
+</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="w">      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Starting the linear system solver...&#39;</span>
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>
+</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a><span class="w">      </span><span class="k">CALL </span><span class="n">SGESV</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">nrhs</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">lda</span><span class="p">,</span><span class="w"> </span><span class="n">ipiv</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">ldb</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="p">)</span>
+</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>
+</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="w">      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SGESV call completed.&#39;</span>
+</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>
+</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a><span class="w">      </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">info</span><span class="w"> </span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a><span class="k">          PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;The solution is:&#39;</span>
+</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a><span class="w">          </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">B</span>
+</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a><span class="w">      </span><span class="k">ELSE</span>
+</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a><span class="k">          PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;An error occurred: info =&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">info</span>
+</span><span id="__span-32-27"><a id="__codelineno-32-27" name="__codelineno-32-27" href="#__codelineno-32-27"></a><span class="w">      </span><span class="k">END IF</span>
+</span><span id="__span-32-28"><a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a>
+</span><span id="__span-32-29"><a id="__codelineno-32-29" name="__codelineno-32-29" href="#__codelineno-32-29"></a><span class="k">      PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Program finished.&#39;</span>
+</span><span id="__span-32-30"><a id="__codelineno-32-30" name="__codelineno-32-30" href="#__codelineno-32-30"></a>
+</span><span id="__span-32-31"><a id="__codelineno-32-31" name="__codelineno-32-31" href="#__codelineno-32-31"></a><span class="w">      </span><span class="k">STOP      </span>
+</span><span id="__span-32-32"><a id="__codelineno-32-32" name="__codelineno-32-32" href="#__codelineno-32-32"></a><span class="k">      END</span>
+</span></code></pre></div>
 <p>Para compilar:</p>
-<pre><code class="language-bash">$ gfortran -o solve_system solve_system.f -LC:/msys64/mingw64/lib -llapack -lblas
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>$<span class="w"> </span>gfortran<span class="w"> </span>-o<span class="w"> </span>solve_system<span class="w"> </span>solve_system.f<span class="w"> </span>-LC:/msys64/mingw64/lib<span class="w"> </span>-llapack<span class="w"> </span>-lblas
+</span></code></pre></div>
 <p><em>Observação:</em> O diretório especificado após <code>-LC:</code> deve conter as bibliotecas necessárias. Lembre-se que o LAPACK depende do BLAS, o qual deve ser listado por último no comando.</p>
 <p>A maior complicação pode estar na depuração de erros relacionados a versões de DLLs e compatibilidade com a arquitetura da CPU. Em edições futuras, abordaremos a construção de pacotes e a compilação de versões específicas da BLAS ou LAPACK para sua máquina.</p>
 
@@ -1894,7 +1894,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

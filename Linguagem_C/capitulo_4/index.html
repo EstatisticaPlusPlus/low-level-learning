@@ -692,83 +692,83 @@
 <p>Durante o desenvolvimento de software, a <strong>depuração</strong> ou <strong><em>debugging</em></strong> desempenha um papel fundamental na identificação e correção eficiente de erros no código. Ao compilar programas em C, existe uma prática recomendada para facilitar a depuração: a utilização da opção <code>-g</code> ao chamar o GCC. Essa opção instrui o compilador a incluir informações de depuração no executável gerado. Essas informações, como símbolos de função, variáveis locais e localizações de linha, permitem uma análise detalhada do código durante a depuração. Por exemplo, ao executar o programa em um depurador, é possível definir pontos de interrupção, inspecionar valores de variáveis e rastrear a execução do código passo a passo.</p>
 <p>Abaixo está um exemplo de código que podemos usar para ilustrar como compilar programas em C para depuração:</p>
 <h3 id="exemploc">exemplo.c</h3>
-<pre><code class="language-c">int foo (int *p);
-
-int main (void)
-{
-  int *p = 0;
-  /* ponteiro nulo */
-  return foo (p);
-}
-
-int foo (int *p)
-{
-  int y = *p;
-  return y;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="cm">/* ponteiro nulo */</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">{</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Nesse código, temos duas funções: <code>int main()</code> e <code>int foo()</code>. A função <code>main</code> inicializa um ponteiro <code>p</code> com o valor nulo (0) e, em seguida, chama a função <code>foo</code> passando esse ponteiro como argumento. A função <code>foo</code> recebe um ponteiro como parâmetro e tenta acessar o valor apontado por ele. No entanto, como <code>p</code> é nulo, essa operação resulta em um erro. Para compilar esse código com a opção de depuração, você pode usar o seguinte comando:</p>
-<pre><code class="language-bash">$ gcc -Wall -g exemplo.c -o exemplo
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>-g<span class="w"> </span>exemplo.c<span class="w"> </span>-o<span class="w"> </span>exemplo
+</span></code></pre></div>
 <p>Ao executá-lo, receberemos uma mensagem de erro, indicando que houve uma violação de segmentação, <code>segmentation fault</code>. Essa mensagem é exibida quando ocorre uma tentativa de acessar uma área da memória que não é permitida, como no caso em que o ponteiro <code>p</code> aponta para o valor nulo.</p>
-<pre><code class="language-bash">$ ./exemplo
-segmentation fault (core dumped)
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>./exemplo
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>segmentation<span class="w"> </span>fault<span class="w"> </span><span class="o">(</span>core<span class="w"> </span>dumped<span class="o">)</span>
+</span></code></pre></div>
 <p>Vamos falar sobre o arquivo <strong>core</strong> mencionado na mensagem de erro. Ele é um arquivo de despejo de memória que pode ser gerado quando ocorre uma falha grave em um programa e contém informações sobre o estado da memória no momento da falha, sendo útil para analisar e depurar o problema. Nem todos os sistemas geram automaticamente o <strong>core</strong> por padrão. Se ele não for gerado, essa funcionalidade pode ser habilitada executando o comando abaixo, que define temporariamente o tamanho máximo do arquivo core como ilimitado, permitindo a geração do <strong>core</strong> em caso de falha no programa:</p>
-<pre><code class="language-bash">$ ulimit -c unlimited
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span><span class="nb">ulimit</span><span class="w"> </span>-c<span class="w"> </span>unlimited
+</span></code></pre></div>
 <p>É possível que, ainda assim, o arquivo <strong>core</strong> não seja gerado. Caso você utilize o Ubuntu ou algum de seus derivados, é possível que ao desativar o Apport, o programa que reporta erros no Ubuntu, resolva o problema. Isso pode ser feito com o seguinte comando:</p>
-<pre><code class="language-bash">$ sudo service apport stop
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>service<span class="w"> </span>apport<span class="w"> </span>stop
+</span></code></pre></div>
 <p>É importante ressaltar que, se o <strong>core</strong> não tiver sido gerado durante a primeira execução do programa, o <strong>core</strong> terá que ser gerado novamente.</p>
 <h2 id="42-depurando-programas">4.2. Depurando Programas</h2>
 <p>Vamos agora usar o gdb para depurar o nosso executável <strong>exemplo</strong>. Para isso, escrevemos o seguinte comando:</p>
-<pre><code class="language-bash">$ gdb exemplo core
-(...)
-Core was generated by './exemplo'.
-Program terminated with signal SIGSEGV, Segmentation fault.
-
-warning: Section '.reg-xstate/17012' in core file too small.
-#0  0x00005636c35b715b in foo (p=0x0) at exemplo.c:12
-11    int y = *p;
-(gdb)
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>gdb<span class="w"> </span>exemplo<span class="w"> </span>core
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">(</span>...<span class="o">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Core<span class="w"> </span>was<span class="w"> </span>generated<span class="w"> </span>by<span class="w"> </span><span class="s1">&#39;./exemplo&#39;</span>.
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Program<span class="w"> </span>terminated<span class="w"> </span>with<span class="w"> </span>signal<span class="w"> </span>SIGSEGV,<span class="w"> </span>Segmentation<span class="w"> </span>fault.
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>warning:<span class="w"> </span>Section<span class="w"> </span><span class="s1">&#39;.reg-xstate/17012&#39;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>core<span class="w"> </span>file<span class="w"> </span>too<span class="w"> </span>small.
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1">#0  0x00005636c35b715b in foo (p=0x0) at exemplo.c:12</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="m">11</span><span class="w">    </span>int<span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>*p<span class="p">;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="o">(</span>gdb<span class="o">)</span>
+</span></code></pre></div>
 <p>O GDB aponta a linha do código onde ocorreu a falha do programa. Nesse caso, o erro ocorreu quando o programa tentou desreferenciar o ponteiro <code>p</code>. Para entender melhor o motivo da falha, podemos examinar o valor de <code>p</code> com o comando <code>print</code>:</p>
-<pre><code class="language-bash">(gdb) print p
-$1 = (int *) 0x0
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>p
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">$1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span>*<span class="o">)</span><span class="w"> </span>0x0
+</span></code></pre></div>
 <p>Como visto acima, o ponteiro <code>p</code> é nulo, explicando a falha ao tentarmos desreferenciá-lo. Para investigar a sequência de chamadas de funções que conduziu ao estado atual do programa, pode-se exibir um rastreamento de pilha com o comando <code>backtrace</code>:</p>
-<pre><code class="language-bash">(gdb) backtrace
-#0  0x000055661c11315b in foo (p=0x0) at exemplo.c:12
-#1  0x000055661c113149 in main () at exemplo.c:7
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>backtrace
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">#0  0x000055661c11315b in foo (p=0x0) at exemplo.c:12</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">#1  0x000055661c113149 in main () at exemplo.c:7</span>
+</span></code></pre></div>
 <p>Outra funcionalidade importante do GDB é a capacidade de definir pontos de interrupção usando o comando <code>break</code>, permitindo a parada da execução do programa em pontos específicos. Tais pontos podem ser determinados para funções específicas, linhas ou locais na memória. Vamos definir um ponto de interrupção no início da função <code>main</code>:</p>
-<pre><code class="language-bash">(gdb) break main
-Breakpoint 1 at 0x55661c113135: file exemplo.c, line 5.
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span>main
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Breakpoint<span class="w"> </span><span class="m">1</span><span class="w"> </span>at<span class="w"> </span>0x55661c113135:<span class="w"> </span>file<span class="w"> </span>exemplo.c,<span class="w"> </span>line<span class="w"> </span><span class="m">5</span>.
+</span></code></pre></div>
 <p>Agora, quando executarmos o programa no GDB, ele irá parar assim que a função <code>main</code> for executada. Poderemos, então, avançar pela execução do programa passo a passo com o comando <code>step</code>, aprimorando a observação do comportamento do programa:</p>
-<pre><code class="language-bash">(gdb) run
-Starting program: exemplo
-Breakpoint 1, main () at exemplo.c:5
-5    int *p = 0;
-(gdb) step
-7    return foo(p);
-(gdb) print p
-$2 = (int *) 0x0    /* ponteiro nulo */
-(gdb)
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>run
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Starting<span class="w"> </span>program:<span class="w"> </span>exemplo
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Breakpoint<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>main<span class="w"> </span><span class="o">()</span><span class="w"> </span>at<span class="w"> </span>exemplo.c:5
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="m">5</span><span class="w">    </span>int<span class="w"> </span>*p<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>step
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="m">7</span><span class="w">    </span><span class="k">return</span><span class="w"> </span>foo<span class="o">(</span>p<span class="o">)</span><span class="p">;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>p
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nv">$2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span>*<span class="o">)</span><span class="w"> </span>0x0<span class="w">    </span>/*<span class="w"> </span>ponteiro<span class="w"> </span>nulo<span class="w"> </span>*/
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="o">(</span>gdb<span class="o">)</span>
+</span></code></pre></div>
 <p>As variáveis podem ser modificadas durante a depuração com o comando <code>set var</code>, o que é útil para testar diferentes cenários. Vamos continuar com o nosso exemplo e modificar os valores de <code>p</code> e <code>*p</code>. Por fim, após modificarmos as variáveis, retomaremos a execução do programa com o comando <code>continue</code>:</p>
-<pre><code class="language-bash">(gdb) set variable p = malloc(sizeof(int))
-(gdb) print p
-$3 = (int *) 0x5555555592a0
-(gdb) set variable *p = 255
-(gdb) print *p
-$4 = 255
-(gdb) continue
-Continuing.
-[Inferior 1 (process 17673) exited with code 0377]    /* 0377 base 8 = 255 base 10 */
-(gdb)
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>variable<span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>malloc<span class="o">(</span>sizeof<span class="o">(</span>int<span class="o">))</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>p
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">$3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span>*<span class="o">)</span><span class="w"> </span>0x5555555592a0
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>variable<span class="w"> </span>*p<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">255</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>*p
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nv">$4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">255</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span><span class="k">continue</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Continuing.
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="o">[</span>Inferior<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>process<span class="w"> </span><span class="m">17673</span><span class="o">)</span><span class="w"> </span>exited<span class="w"> </span>with<span class="w"> </span>code<span class="w"> </span><span class="m">0377</span><span class="o">]</span><span class="w">    </span>/*<span class="w"> </span><span class="m">0377</span><span class="w"> </span>base<span class="w"> </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">255</span><span class="w"> </span>base<span class="w"> </span><span class="m">10</span><span class="w"> </span>*/
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="o">(</span>gdb<span class="o">)</span>
+</span></code></pre></div>
 <p>Em resumo, introduzimos o processo de depuração de programas em C usando o depurador GNU, GDB. Abrangemos os comandos essenciais, incluindo como iniciar o GDB, definir pontos de interrupção, inspecionar variáveis e alterar seus valores, bem como rastrear a sequência de chamadas de funções, técnicas vitais para entender e resolver os problemas que ocorrem durante a execução do seu código.</p>
 
 
@@ -819,7 +819,7 @@ Continuing.
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

@@ -805,91 +805,91 @@
 <h2 id="21-primeiros-passos">2.1. Primeiros Passos</h2>
 <p>Um dos primeiros programas que muitos programadores aprendem a escrever é o famoso <code>"Hello, World!"</code>. A seguir, mostraremos como compilar esse programa em C utilizando o compilador GCC:</p>
 <h3 id="helloworldc">helloworld.c</h3>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-int main() {
-  printf(&quot;Hello, World!&quot;);
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>No entanto, o código-fonte ainda não pode ser entendido pelo computador, sendo necessário compilá-lo para gerar um arquivo executável. Para isso, usamos um compilador de C, como o GCC. No caso deste exemplo, o arquivo com o código fonte se chama <strong>helloworld.c</strong> e o executável, <strong>hello</strong>. A compilação é feita pelo terminal:</p>
-<pre><code class="language-bash">$ gcc helloworld.c -o hello
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>helloworld.c<span class="w"> </span>-o<span class="w"> </span>hello
+</span></code></pre></div>
 <p>O parâmetro <code>-o</code> indica que queremos criar um executável com o nome <strong>hello</strong>. Além disso, é recomendável utilizar a <em>flag</em> <code>-Wall</code> para habilitar avisos de possíveis problemas:</p>
-<pre><code class="language-bash">$ gcc -Wall helloworld.c -o hello
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>helloworld.c<span class="w"> </span>-o<span class="w"> </span>hello
+</span></code></pre></div>
 <p>Para executar o programa, digite:</p>
-<pre><code class="language-bash">$ ./hello
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>./hello
+</span></code></pre></div>
 <p>Se tudo ocorrer bem, a mensagem <code>Hello, World!</code> será exibida no terminal.</p>
 <h2 id="22-trabalhando-com-multiplos-arquivos">2.2. Trabalhando com Múltiplos Arquivos</h2>
 <p>Em projetos em C, é comum dividir o código em múltiplos arquivos para melhorar a organização e reduzir o tempo de compilação. Por exemplo, para criar um programa que calcula o quadrado de um número, podemos usar:</p>
 <h3 id="mainc">main.c</h3>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#include &quot;quadrado.h&quot;
-
-int main() {
-  int x;
-  printf(&quot;Digite um número: &quot;);
-  scanf(&quot;%d&quot;, &amp;x);
-  printf(&quot;O quadrado de %d é %d\n&quot;, x, calc_quadrado(x));
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;quadrado.h&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Digite um número: &quot;</span><span class="p">);</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;O quadrado de %d é %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">calc_quadrado</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="quadradoc">quadrado.c</h3>
-<pre><code class="language-c">int calc_quadrado(int x) {
-  return x * x;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">calc_quadrado</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="quadradoh">quadrado.h</h3>
-<pre><code class="language-c">int calc_quadrado(int x);
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">calc_quadrado</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+</span></code></pre></div>
 <p>Se incluíssemos diretamente <strong>quadrado.c</strong> em <strong>main.c</strong>, teríamos duas definições da função <code>int calc_quadrado(int x)</code>, o que causaria um erro. Assim, usamos <strong>quadrado.h</strong> para declarar a função. Para compilar todos os arquivos de uma vez, execute:</p>
-<pre><code class="language-bash">$ gcc -Wall main.c quadrado.c -o programa
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>main.c<span class="w"> </span>quadrado.c<span class="w"> </span>-o<span class="w"> </span>programa
+</span></code></pre></div>
 <p>E para rodar o programa:</p>
-<pre><code class="language-bash">$ ./programa
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>./programa
+</span></code></pre></div>
 <p>Para evitar recompilar o programa inteiro após uma alteração, compile cada arquivo em um objeto:</p>
-<pre><code class="language-bash">$ gcc -Wall main.c -c
-$ gcc -Wall quadrado.c -c
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>main.c<span class="w"> </span>-c
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>quadrado.c<span class="w"> </span>-c
+</span></code></pre></div>
 <p>Isso gera os arquivos <strong>main.o</strong> e <strong>quadrado.o</strong>. Em seguida, ligue-os para criar o executável:</p>
-<pre><code class="language-bash">$ gcc main.o quadrado.o -o programa
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>main.o<span class="w"> </span>quadrado.o<span class="w"> </span>-o<span class="w"> </span>programa
+</span></code></pre></div>
 <p>Assim, você pode compilar apenas os arquivos modificados e ligar os objetos pré-compilados.</p>
 <h2 id="23-utilizando-makefiles">2.3. Utilizando Makefiles</h2>
 <p>Em projetos grandes com muitos arquivos, é comum que apenas alguns precisem ser recompilados após alterações. Para gerenciar essas dependências, utiliza-se o <code>make</code> com um <strong>Makefile</strong>. Esse arquivo especifica como os arquivos-fonte são compilados e ligados para criar o programa final.</p>
 <p>A estrutura básica de um <strong>Makefile</strong> é:</p>
-<pre><code class="language-makefile">alvo: dependencia
-  comando
-
-dependencia:
-  comando
-</code></pre>
+<div class="language-makefile highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nf">alvo</span><span class="o">:</span><span class="w"> </span><span class="n">dependencia</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span>comando
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nf">dependencia</span><span class="o">:</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span>comando
+</span></code></pre></div>
 <p>Por exemplo, um <strong>Makefile</strong> simples para imprimir uma mensagem:</p>
-<pre><code class="language-makefile">saudacao:
-    echo &quot;Ola, mundo!&quot;
-</code></pre>
+<div class="language-makefile highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nf">saudacao</span><span class="o">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ola, mundo!&quot;</span>
+</span></code></pre></div>
 <p>Se o arquivo <strong>saudacao</strong> não existe, o comando é executado. Para forçar sua execução, chame:</p>
-<pre><code class="language-bash">$ make saudacao
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>make<span class="w"> </span>saudacao
+</span></code></pre></div>
 <p>Um exemplo mais complexo:</p>
-<pre><code class="language-makefile">hello: hello.o
-  gcc hello.o -o hello
-
-hello.o: hello.c
-  gcc -Wall hello.c -c
-</code></pre>
+<div class="language-makefile highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nf">hello</span><span class="o">:</span><span class="w"> </span><span class="n">hello</span>.<span class="n">o</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span>gcc<span class="w"> </span>hello.o<span class="w"> </span>-o<span class="w"> </span>hello
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nf">hello.o</span><span class="o">:</span><span class="w"> </span><span class="n">hello</span>.<span class="n">c</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>hello.c<span class="w"> </span>-c
+</span></code></pre></div>
 <p>O arquivo <strong>hello.c</strong> tem o seguinte conteúdo:</p>
 <h3 id="helloc">hello.c</h3>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-int main() {
-  printf(&quot;Hello, World!\n&quot;);
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Nesse exemplo, o objetivo é criar o executável <strong>hello</strong>. Ele depende do objeto <strong>hello.o</strong>, que depende do arquivo fonte <strong>hello.c</strong>. Ao chamar <code>make</code>, o sistema:</p>
 <ol>
 <li>Verifica se <strong>hello</strong> precisa ser recompilado.</li>
@@ -947,7 +947,7 @@ int main() {
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

@@ -1093,21 +1093,21 @@
 </li>
 <li>
 <p><strong>Compilando um Código-Fonte:</strong><br />
-<code>bash
-  gfortran -o programa exemplo.f90</code></p>
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gfortran<span class="w"> </span>-o<span class="w"> </span>programa<span class="w"> </span>exemplo.f90
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Executando o Programa Compilado:</strong><br />
-<code>bash
-  ./programa</code></p>
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./programa
+</span></code></pre></div></p>
 </li>
 </ul>
 <h2 id="estrutura-basica-de-um-programa">Estrutura Básica de um Programa</h2>
 <p>Todo programa em Fortran deve ter um bloco <code>program</code> com o nome do programa. Veja o exemplo clássico "Olá mundo!":</p>
-<pre><code class="language-fortran">program exemplo
-    print *, 'Olá mundo!'
-end program exemplo
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">program </span><span class="n">exemplo</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Olá mundo!&#39;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">end program </span><span class="n">exemplo</span>
+</span></code></pre></div>
 <p>O comando <code>print</code> usa um argumento de formatação (aqui <code>*</code>, que significa formatação padrão) seguido dos dados a serem impressos.</p>
 <h3 id="variaveis">Variáveis</h3>
 <p>Fortran é <strong>fortemente tipado</strong>, ou seja, todas as variáveis devem ser declaradas com seu tipo. Os tipos básicos são:</p>
@@ -1119,34 +1119,34 @@ end program exemplo
 <li><code>logical</code> – valores booleanos (.true. ou .false.)</li>
 </ul>
 <h4 id="exemplo-de-declaracao">Exemplo de Declaração:</h4>
-<pre><code class="language-fortran">program variaveis
-    implicit none
-
-    integer :: i
-    real :: distancia
-    complex :: frequencia
-    character :: inicial
-    logical :: eh_primo
-
-    i = 1
-    distancia = 1.41421356
-    frequencia = (1.0, -0.5)
-    inicial = &quot;f&quot;
-    eh_primo = .false.
-end program variaveis
-</code></pre>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">program </span><span class="n">variaveis</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">distancia</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="kt">complex</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">frequencia</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kt">character</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">inicial</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">eh_primo</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">distancia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.41421356</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">frequencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">inicial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;f&quot;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">eh_primo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">end program </span><span class="n">variaveis</span>
+</span></code></pre></div>
 <p><em>Nota:</em> Use <code>implicit none</code> para evitar tipagem implícita (por exemplo, variáveis iniciadas com I, J, K... são automaticamente inteiros em versões antigas).</p>
 <h4 id="precisao-de-variaveis">Precisão de Variáveis</h4>
 <ul>
 <li><strong>Float32 (real padrão):</strong> Aproximadamente 6–9 dígitos de precisão.  </li>
 <li><strong>Float64:</strong> Para maior precisão, use o módulo <code>iso_fortran_env</code>:
-  ```fortran
-  use, intrinsic :: iso_fortran_env
-  implicit none</li>
+  <div class="language-fortran highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">iso_fortran_env</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">implicit none</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">valor</span>
+</span></code></pre></div>
+  Literais de 64 bits podem ser escritos com um sufixo, por exemplo, <code>1.0_real64</code>.</li>
 </ul>
-<p>real(real64) :: valor
-  <code>``
-  Literais de 64 bits podem ser escritos com um sufixo, por exemplo,</code>1.0_real64`.</p>
 <h3 id="operacoes-basicas">Operações Básicas</h3>
 <p>Fortran possui os seguintes operadores aritméticos (em ordem de precedência):</p>
 <table>
@@ -1179,46 +1179,46 @@ end program variaveis
 </tr>
 </tbody>
 </table>
-<p><em>Exemplo:</em>  </p>
-<pre><code class="language-fortran">program media
-    print *, (3 + 4 + 5) / 2
-end program media
-</code></pre>
-<p><em>Dica:</em> Lembre-se de usar parênteses para alterar a ordem natural de precedência.<br />
+<p><em>Exemplo:</em><br />
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">program </span><span class="n">media</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">end program </span><span class="n">media</span>
+</span></code></pre></div>
+<em>Dica:</em> Lembre-se de usar parênteses para alterar a ordem natural de precedência.<br />
 <em>Observação:</em> Operações entre inteiros geram inteiros; para obter frações, use números reais.</p>
 <h3 id="comentarios">Comentários</h3>
-<p>Comentários iniciam com <code>!</code> e são úteis para documentar o código.</p>
-<pre><code class="language-fortran">program comentarios
-    implicit none
-    ! Esta linha é um comentário
-    real :: alpha  ! Coeficiente do termo linear
-    print *, alpha
-end program comentarios
-</code></pre>
+<p>Comentários iniciam com <code>!</code> e são úteis para documentar o código.
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">program </span><span class="n">comentarios</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="c">! Esta linha é um comentário</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alpha</span><span class="w">  </span><span class="c">! Coeficiente do termo linear</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">end program </span><span class="n">comentarios</span>
+</span></code></pre></div></p>
 <h2 id="funcoes-e-modulos">Funções e Módulos</h2>
 <p>Funções e módulos promovem a modularidade e a reutilização de código.</p>
 <h3 id="funcoes">Funções</h3>
-<p>Funções retornam um valor único. A sintaxe básica é:</p>
-<pre><code class="language-fortran">function nome_funcao(arg1, arg2) result(var_result)
-    implicit none
-    tipo1, intent(in) :: arg1
-    tipo2, intent(in) :: arg2
-    tipo3 :: var_result
-
-    ! Corpo da função
-    return
-end function nome_funcao
-</code></pre>
-<p><em>Exemplo – Calculando a norma do dobro de um vetor em R² (cuidado com efeitos colaterais):</em></p>
-<pre><code class="language-fortran">function norma_dobro(v1, v2) result(norma)
-    real, intent(in) :: v1, v2
-    real :: norma
-
-    norma = sqrt((2*v1)**2 + (2*v2)**2)
-    return
-end function norma_dobro
-</code></pre>
-<p>Se for necessário evitar modificar os argumentos, use variáveis auxiliares.</p>
+<p>Funções retornam um valor único. A sintaxe básica é:
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">function </span><span class="n">nome_funcao</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="w"> </span><span class="n">arg2</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">var_result</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">    </span><span class="n">tipo1</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arg1</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">tipo2</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arg2</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="n">tipo3</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">var_result</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="c">! Corpo da função</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="k">return</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">end function </span><span class="n">nome_funcao</span>
+</span></code></pre></div></p>
+<p><em>Exemplo – Calculando a norma do dobro de um vetor em R² (cuidado com efeitos colaterais):</em>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">function </span><span class="n">norma_dobro</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">norma</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">norma</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">norma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">v1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">v2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="k">return</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">end function </span><span class="n">norma_dobro</span>
+</span></code></pre></div>
+Se for necessário evitar modificar os argumentos, use variáveis auxiliares.</p>
 <h3 id="funcoes-intrinsecas">Funções Intrínsecas</h3>
 <p>Fortran possui diversas funções intrínsecas que são otimizadas, como:
 - <code>ABS</code>
@@ -1229,122 +1229,122 @@ end function norma_dobro
 - <code>CONJG</code></p>
 <p>Utilize-as sempre que possível.</p>
 <h3 id="modulos">Módulos</h3>
-<p>Módulos permitem agrupar funções e variáveis:</p>
-<pre><code class="language-fortran">module normas
-    implicit none
-contains
-    function norma_do_dobro(v1, v2) result(norma)
-        real, intent(in) :: v1, v2
-        real :: coord1, coord2, norma
-        coord1 = 2*v1
-        coord2 = 2*v2
-        norma = sqrt(coord1**2 + coord2**2)
-        return
-    end function norma_do_dobro
-end module normas
-</code></pre>
-<p>Para utilizar o módulo:</p>
-<pre><code class="language-fortran">program calcula_norma
-    use normas
-    implicit none
-    real :: norma_calculada, vec1, vec2
-
-    vec1 = 1.0
-    vec2 = 1.0
-
-    print *, vec1, vec2
-    norma_calculada = norma_do_dobro(vec1, vec2)
-    print *, norma_calculada
-    print *, vec1, vec2
-end program calcula_norma
-</code></pre>
+<p>Módulos permitem agrupar funções e variáveis:
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">module </span><span class="n">normas</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">contains</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">    function </span><span class="n">norma_do_dobro</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">norma</span><span class="p">)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">coord1</span><span class="p">,</span><span class="w"> </span><span class="n">coord2</span><span class="p">,</span><span class="w"> </span><span class="n">norma</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span><span class="n">coord1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">v1</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="n">coord2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">v2</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="n">norma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">coord1</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">coord2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="k">return</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">    end function </span><span class="n">norma_do_dobro</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="k">end module </span><span class="n">normas</span>
+</span></code></pre></div>
+Para utilizar o módulo:
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">program </span><span class="n">calcula_norma</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="k">use </span><span class="n">normas</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">    </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">norma_calculada</span><span class="p">,</span><span class="w"> </span><span class="n">vec1</span><span class="p">,</span><span class="w"> </span><span class="n">vec2</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="n">vec1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="n">vec2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vec1</span><span class="p">,</span><span class="w"> </span><span class="n">vec2</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="n">norma_calculada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">norma_do_dobro</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span><span class="w"> </span><span class="n">vec2</span><span class="p">)</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">norma_calculada</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vec1</span><span class="p">,</span><span class="w"> </span><span class="n">vec2</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="k">end program </span><span class="n">calcula_norma</span>
+</span></code></pre></div></p>
 <h2 id="estruturas-condicionais">Estruturas Condicionais</h2>
-<p>Para executar trechos de código dependendo de condições:</p>
-<pre><code class="language-fortran">if (expressao_logica) then
-    ! Código se verdadeiro
-else
-    ! Código se falso
-end if
-</code></pre>
-<p><em>Exemplo – Função Valor Absoluto:</em></p>
-<pre><code class="language-fortran">function absoluto(x) result(y)
-    real, intent(in) :: x
-    real :: y
-    y = x
-    if (x &lt; 0) then
-        y = -y
-    end if
-    return
-end function absoluto
-</code></pre>
-<p><em>Exemplo – Função Heaviside:</em></p>
-<pre><code class="language-fortran">function heaviside(x) result(y)
-    real, intent(in) :: x
-    real :: y
-    if (x &gt;= 0) then
-        y = 1
-    else
-        y = 0
-    end if
-    return
-end function heaviside
-</code></pre>
+<p>Para executar trechos de código dependendo de condições:
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expressao_logica</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="c">! Código se verdadeiro</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">else</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="c">! Código se falso</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">end if</span>
+</span></code></pre></div></p>
+<p><em>Exemplo – Função Valor Absoluto:</em>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">function </span><span class="n">absoluto</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">y</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="k">end if</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="k">    return</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">end function </span><span class="n">absoluto</span>
+</span></code></pre></div></p>
+<p><em>Exemplo – Função Heaviside:</em>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">function </span><span class="n">heaviside</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="k">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="k">end if</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="k">    return</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="k">end function </span><span class="n">heaviside</span>
+</span></code></pre></div></p>
 <p><em>Dica:</em> Para evitar muitos IF's aninhados, utilize a técnica de inversão lógica (testar condições opostas com <code>return</code>) ou extraia o teste em uma função separada.</p>
 <h2 id="repeticao-do">Repetição - <code>DO</code></h2>
-<p>A repetição é feita com o comando <code>do</code>:</p>
-<pre><code class="language-fortran">do iterador = valor_inicial, valor_final, passo
-    ! Código a repetir
-end do
-</code></pre>
-<p><em>Exemplo – Somatório de 1/(k²) de k = 1 até n:</em></p>
-<pre><code class="language-fortran">program somatorio
-    implicit none
-    real :: valor
-    integer :: k, n
-    valor = 0.0
-    n = 100
-    do k = 1, n
-        valor = valor + 1.0/(k*k)
-    end do
-    print *, valor
-end program somatorio
-</code></pre>
+<p>A repetição é feita com o comando <code>do</code>:
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">do </span><span class="n">iterador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valor_inicial</span><span class="p">,</span><span class="w"> </span><span class="n">valor_final</span><span class="p">,</span><span class="w"> </span><span class="n">passo</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="c">! Código a repetir</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">end do</span>
+</span></code></pre></div></p>
+<p><em>Exemplo – Somatório de 1/(k²) de k = 1 até n:</em>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">program </span><span class="n">somatorio</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">    </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">valor</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">        </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">k</span><span class="p">)</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="k">end do</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="k">end program </span><span class="n">somatorio</span>
+</span></code></pre></div></p>
 <p><em>Observações:</em>
 - O passo padrão é 1 (pode ser omitido).
 - Para passos fracionários, itere com inteiros e ajuste (por exemplo, <code>k/10.0</code>).
 - É possível iterar com passos negativos.</p>
 <h2 id="subrotinas">Subrotinas</h2>
-<p>Subrotinas são usadas quando se deseja modificar os argumentos e/ou retornar múltiplos valores. A sintaxe é:</p>
-<pre><code class="language-fortran">subroutine nome_subrotina(arg1, arg2, arg3)
-    implicit none
-    tipo1, intent(in) :: arg1
-    tipo2, intent(inout) :: arg2
-    tipo3, intent(out) :: arg3
-
-    ! Corpo da subrotina
-    return
-end subroutine nome_subrotina
-</code></pre>
-<p><em>Exemplo:</em></p>
-<pre><code class="language-fortran">program chama_subrotina
-    implicit none
-    integer :: N, QUADRADO, CUBO
-    print *, 'Digite um número:'
-    read *, N
-    call calcula_quadrado_e_cubo(N, QUADRADO, CUBO)
-    print *, 'O quadrado de', N, 'é', QUADRADO
-    print *, 'O cubo de', N, 'é', CUBO
-end program chama_subrotina
-
-subroutine calcula_quadrado_e_cubo(X, QUAD, CUB)
-    implicit none
-    integer, intent(in) :: X
-    integer, intent(out) :: QUAD, CUB
-    QUAD = X * X
-    CUB = X * X * X
-    return
-end subroutine calcula_quadrado_e_cubo
-</code></pre>
+<p>Subrotinas são usadas quando se deseja modificar os argumentos e/ou retornar múltiplos valores. A sintaxe é:
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">subroutine </span><span class="n">nome_subrotina</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="w"> </span><span class="n">arg2</span><span class="p">,</span><span class="w"> </span><span class="n">arg3</span><span class="p">)</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">    </span><span class="n">tipo1</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arg1</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="n">tipo2</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arg2</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="n">tipo3</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arg3</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="c">! Corpo da subrotina</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="k">return</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="k">end subroutine </span><span class="n">nome_subrotina</span>
+</span></code></pre></div></p>
+<p><em>Exemplo:</em>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">program </span><span class="n">chama_subrotina</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">QUADRADO</span><span class="p">,</span><span class="w"> </span><span class="n">CUBO</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Digite um número:&#39;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">read</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="k">call </span><span class="n">calcula_quadrado_e_cubo</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">QUADRADO</span><span class="p">,</span><span class="w"> </span><span class="n">CUBO</span><span class="p">)</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;O quadrado de&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;é&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">QUADRADO</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;O cubo de&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;é&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">CUBO</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="k">end program </span><span class="n">chama_subrotina</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="k">subroutine </span><span class="n">calcula_quadrado_e_cubo</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">QUAD</span><span class="p">,</span><span class="w"> </span><span class="n">CUB</span><span class="p">)</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="k">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">X</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">QUAD</span><span class="p">,</span><span class="w"> </span><span class="n">CUB</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">    </span><span class="n">QUAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">    </span><span class="n">CUB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">    </span><span class="k">return</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="k">end subroutine </span><span class="n">calcula_quadrado_e_cubo</span>
+</span></code></pre></div></p>
 <h2 id="construindo-o-metodo-da-bissecao">Construindo o Método da Bisseção</h2>
 <p>O método da bisseção segue os seguintes passos:
 1. Definir a função cuja raiz se deseja encontrar e o intervalo inicial.
@@ -1354,10 +1354,10 @@ end subroutine calcula_quadrado_e_cubo
 5. Repetir até que um critério de parada seja atingido (por exemplo, número máximo de iterações).</p>
 <p><em>Você deverá estruturar uma função que implemente esses passos conforme o exercício proposto.</em></p>
 <h2 id="formatacao-de-saidas">Formatação de Saídas</h2>
-<p>O comando <code>write</code> permite formatar a saída. Sua sintaxe é:</p>
-<pre><code class="language-fortran">write (*, label) lista_de_variaveis
-label format-code
-</code></pre>
+<p>O comando <code>write</code> permite formatar a saída. Sua sintaxe é:
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="p">)</span><span class="w"> </span><span class="n">lista_de_variaveis</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">label</span><span class="w"> </span><span class="k">format</span><span class="o">-</span><span class="n">code</span>
+</span></code></pre></div></p>
 <h3 id="exemplos-de-codigos-de-formatacao">Exemplos de Códigos de Formatação</h3>
 <ul>
 <li><strong>A:</strong> string</li>
@@ -1368,35 +1368,35 @@ label format-code
 <li><strong>X:</strong> espaço horizontal</li>
 <li><strong>/</strong>: salto de linha</li>
 </ul>
-<p><em>Exemplo:</em></p>
-<pre><code class="language-fortran">program formatacao
-    data m/10/, n/20/, x/2.5/, y/2.5/
-    real :: m, n, x, y
-    write (*,100) m
-100 format (I2)
-    write (*,'(I2)') n  
-    write (*,300) x
-300 format (F4.1)
-    write (*,400) y
-400 format (E8.2)
-    stop
-end program formatacao
-</code></pre>
+<p><em>Exemplo:</em>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">program </span><span class="n">formatacao</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="k">data </span><span class="n">m</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">/</span><span class="mf">2.5</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">/</span><span class="mf">2.5</span><span class="o">/</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="mi">100</span><span class="w"> </span><span class="k">format</span><span class="w"> </span><span class="p">(</span><span class="n">I2</span><span class="p">)</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(I2)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">n</span><span class="w">  </span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="n">x</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="mi">300</span><span class="w"> </span><span class="k">format</span><span class="w"> </span><span class="p">(</span><span class="n">F4</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span><span class="w"> </span><span class="n">y</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="mi">400</span><span class="w"> </span><span class="k">format</span><span class="w"> </span><span class="p">(</span><span class="n">E8</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="k">stop</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="k">end program </span><span class="n">formatacao</span>
+</span></code></pre></div></p>
 <h2 id="repeticao-goto">Repetição - <code>GOTO</code></h2>
 <p>Embora Fortran 90 possua estruturas modernas, em Fortran 77 é comum usar <code>do</code> junto com <code>goto</code> para simular loops <em>while</em>.</p>
-<p><em>Exemplo de loop com GOTO:</em></p>
-<pre><code class="language-fortran">program exemplo_while
-    implicit none
-    integer :: a(10), I
-    data a /1, 2, 3, 4, 5, 6, 7, 8, 9, 10/
-    I = 1
-10  if (a(I) /= 5) then
-       print *, 'Elemento', I, ':', a(I)
-       I = I + 1
-       goto 10
-    end if
-end program exemplo_while
-</code></pre>
+<p><em>Exemplo de loop com GOTO:</em>
+<div class="language-fortran highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">program </span><span class="n">exemplo_while</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="k">implicit none</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">I</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="k">data </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">/</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="mi">10</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="k">       print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Elemento&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">       </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">       </span><span class="k">goto</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="k">end if</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="k">end program </span><span class="n">exemplo_while</span>
+</span></code></pre></div></p>
 <h2 id="imports-e-linkagem">Imports e Linkagem</h2>
 <p>Este tópico aborda como importar módulos e ligar bibliotecas externas para compilar programas mais complexos.</p>
 <h1 id="capitulo-2-matrizes-vetores-e-operacoes-vetoriais">Capítulo 2 - Matrizes, Vetores e Operações Vetoriais</h1>
@@ -1450,7 +1450,7 @@ end program exemplo_while
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

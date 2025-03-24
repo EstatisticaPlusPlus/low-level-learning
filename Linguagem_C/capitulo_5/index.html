@@ -1026,171 +1026,171 @@
 - <code>#include"arquivo"</code>: o arquivo será buscado no diretório onde o código está localizado.</p>
 <p>Geralmente, os arquivos incluídos possuem a extensão <code>.h</code> (de <em>header</em>), que são arquivos cabeçalhos contendo definições de macros e declarações de protótipos de funções padrão do C. Porém, é possível criar arquivos de cabeçalho personalizados e adicionar outros programas em C contendo outros <code>#include</code>, que serão tratados de maneira recursiva pelo pré-processador. Veja o exemplo:</p>
 <h4 id="mainc">main.c</h4>
-<pre><code class="language-c">#include &quot;preproc.c&quot;
-
-int main(){
-  say_hello();
-
-  puts(&quot;Digite um número para obter sua raiz quadrada:&quot;);
-  scanf(&quot;%lf&quot;, &amp;y);
-  raiz = raiz_quadrada(y);
-  printf(&quot;O valor da raiz quadrada desse número é: %lf\n&quot;, raiz);
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;preproc.c&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">say_hello</span><span class="p">();</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">puts</span><span class="p">(</span><span class="s">&quot;Digite um número para obter sua raiz quadrada:&quot;</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="n">raiz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raiz_quadrada</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;O valor da raiz quadrada desse número é: %lf</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">raiz</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <h4 id="preprocc">preproc.c</h4>
-<pre><code class="language-c">#pragma once
-#include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
-
-double y, raiz;
-
-void say_hello(){
-  puts(&quot;Hello!&quot;);
-}
-
-double raiz_quadrada(double x){
-  return sqrt(x);
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#pragma once</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">raiz</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">say_hello</span><span class="p">(){</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="n">puts</span><span class="p">(</span><span class="s">&quot;Hello!&quot;</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="kt">double</span><span class="w"> </span><span class="nf">raiz_quadrada</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">){</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Ao compilar o programa <strong>main.c</strong>, o pré-processador acoplará o código de <strong>preproc.c</strong>. Note que foi necessário utilizar apenas o <code>#include "preproc.c"</code> no arquivo principal, pois esse arquivo já contém as diretivas necessárias para a execução do código. Caso ocorram múltiplos <code>#include</code> acidentais, a diretiva <code>#pragma once</code> garante que o respectivo arquivo seja lido apenas uma vez durante o processo de compilação. Para gerar um arquivo com o código pré-processado, utilize:</p>
-<pre><code class="language-bash">$ gcc main.c -E -o main_preproc.c
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>main.c<span class="w"> </span>-E<span class="w"> </span>-o<span class="w"> </span>main_preproc.c
+</span></code></pre></div>
 <p>No final do arquivo gerado, estará o código dos dois arquivos (<strong>preproc.c</strong> e <strong>main.c</strong>).</p>
 <h3 id="512-definicao-de-macros">5.1.2. Definição de Macros</h3>
 <p>Uma macro é um pedaço de código ao qual se atribui um nome, definida pela diretiva <code>#define</code>. Essa diretiva permite que você atribua um nome a um valor, uma expressão ou até mesmo a um bloco de código, facilitando a reutilização sem precisar repetir o código. Veja o exemplo:</p>
 <h4 id="mainc_1">main.c</h4>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-#define SQUARE(x) ((x) * (x))
-#define NUM 10
-
-int main()
-{
-  printf(&quot;The value of NUM is: %d\n&quot;, NUM);
-  printf(&quot;The value of SQUARE(NUM) is: %d\n&quot;, SQUARE(NUM));
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cp">#define SQUARE(x) ((x) * (x))</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="cp">#define NUM 10</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The value of NUM is: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">NUM</span><span class="p">);</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The value of SQUARE(NUM) is: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SQUARE</span><span class="p">(</span><span class="n">NUM</span><span class="p">));</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>O pré-processador substitui as ocorrências das macros pelo seu conteúdo correspondente. Note que, como as macros não possuem escopo ou tipo explícito, elas realizam substituições simples. No exemplo, a macro <code>NUM</code> é interpretada como um inteiro (10) em tempo de compilação e <code>SQUARE(NUM)</code> executa a multiplicação. Ao compilar e executar, a saída será:</p>
-<pre><code class="language-bash">The value of NUM is: 10
-The value of SQUARE(NUM) is: 100
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>The<span class="w"> </span>value<span class="w"> </span>of<span class="w"> </span>NUM<span class="w"> </span>is:<span class="w"> </span><span class="m">10</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>The<span class="w"> </span>value<span class="w"> </span>of<span class="w"> </span>SQUARE<span class="o">(</span>NUM<span class="o">)</span><span class="w"> </span>is:<span class="w"> </span><span class="m">100</span>
+</span></code></pre></div>
 <h3 id="513-compilacao-condicional">5.1.3. Compilação Condicional</h3>
 <p>A compilação condicional permite que se execute uma parte do programa somente se uma certa macro estiver definida. Para isso, utilizamos as diretivas <code>#ifdef</code> e <code>#endif</code>. Por exemplo:</p>
 <h4 id="mainc_2">main.c</h4>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-int main()
-{
-#ifdef NUM
-  printf(&quot;The value of NUM is: %d\n&quot;, NUM);
-#else
-  #error &quot;A macro NUM não foi definida!&quot;;
-#endif
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">{</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="cp">#ifdef NUM</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The value of NUM is: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">NUM</span><span class="p">);</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="cp">#else</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="cp">#error &quot;A macro NUM não foi definida!&quot;;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="cp">#endif</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Neste caso, se a macro <code>NUM</code> não estiver definida, a mensagem de erro <code>"A macro NUM não foi definida!"</code> será exibida e a compilação será interrompida. Entretanto, podemos definir a macro ao compilar o programa com a opção <code>-D</code>. Por exemplo:</p>
-<pre><code class="language-bash">$ gcc -Wall -DNUM=5 main.c -o main
-$ ./main
-The value of NUM is: 5
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>-DNUM<span class="o">=</span><span class="m">5</span><span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>./main
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>The<span class="w"> </span>value<span class="w"> </span>of<span class="w"> </span>NUM<span class="w"> </span>is:<span class="w"> </span><span class="m">5</span>
+</span></code></pre></div>
 <p>As definições de macros passadas na linha de comando possuem maior precedência, ou seja, são consideradas antes das definições presentes no código fonte. Um código similar pode ser feito usando <code>#ifndef</code> e <code>#undef</code>, como no exemplo a seguir:</p>
 <h4 id="mainc_3">main.c</h4>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#undef NUM
-
-int main(){
-#ifndef NUM
-  #error &quot;A macro NUM não foi definida!&quot;;
-#else
-  printf(&quot;The value of NUM is: %d\n&quot;, NUM);
-#endif
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cp">#undef NUM</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="cp">#ifndef NUM</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="cp">#error &quot;A macro NUM não foi definida!&quot;;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="cp">#else</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The value of NUM is: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">NUM</span><span class="p">);</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="cp">#endif</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Também é possível utilizar a diretiva <code>#elif</code> em conjunto com <code>#ifdef</code> para simplificar o código. Por exemplo, se somente a macro <code>Z</code> estiver definida:</p>
 <h4 id="mainc_4">main.c</h4>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-//#define X 'x'
-//#define Y 'y'
-#define Z 'z'
-int main(){
-#ifdef X
-  printf(&quot;The value of X is: %c\n&quot;, X);
-#elif defined(Y)
-  printf(&quot;The value of Y is: %c\n&quot;, Y);
-#elif defined(Z)
-  printf(&quot;The value of Z is: %c\n&quot;, Z);
-#endif
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">//#define X &#39;x&#39;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">//#define Y &#39;y&#39;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="cp">#define Z &#39;z&#39;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="cp">#ifdef X</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The value of X is: %c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">);</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="cp">#elif defined(Y)</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The value of Y is: %c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Y</span><span class="p">);</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="cp">#elif defined(Z)</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The value of Z is: %c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Z</span><span class="p">);</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="cp">#endif</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="514-fornecendo-instrucoes">5.1.4. Fornecendo Instruções</h3>
 <p>A diretiva <code>#pragma</code> é utilizada para fornecer instruções ao compilador. Essa diretiva não faz parte do padrão C e pode variar de acordo com o compilador e a plataforma. Ela é utilizada, por exemplo, para forçar que uma função seja <em>inline</em>:</p>
 <h4 id="exemplo">Exemplo</h4>
-<pre><code class="language-c">#pragma inline
-int add(int a, int b){
-  return a + b;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#pragma inline</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Nesse caso, a função <code>add</code> será substituída diretamente em sua chamada, evitando uma chamada de rotina. Também é possível controlar quais trechos do código serão otimizados:</p>
 <h4 id="exemplo_1">Exemplo</h4>
-<pre><code class="language-c">#pragma optimize(&quot;&quot;, off) // Desliga a otimização
-int add(int a, int b){
-  return a + b;
-}
-#pragma optimize(&quot;&quot;, on) // Liga a otimização novamente
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#pragma optimize(&quot;&quot;, off) </span><span class="c1">// Desliga a otimização</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="cp">#pragma optimize(&quot;&quot;, on) </span><span class="c1">// Liga a otimização novamente</span>
+</span></code></pre></div>
 <p>Além disso, <code>#pragma</code> pode ser utilizada para determinar o alinhamento de estruturas de dados em memória. No exemplo abaixo, forçamos o alinhamento mínimo para a estrutura <code>s2</code>:</p>
 <h4 id="mainc_5">main.c</h4>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-struct{
-  char c;  // 1 byte
-  int i;   // 4 bytes
-  double d; // 8 bytes
-}s1;
-#pragma pack(push, 1) // Força o alinhamento mínimo
-struct{
-  char c;  // 1 byte
-  int i;   // 4 bytes
-  double d; // 8 bytes
-}s2;
-#pragma pack(pop) // Restaura o alinhamento padrão
-
-int main(){
-  printf(&quot;The size of struct 1 is: %ld\n&quot;, sizeof(s1));
-  printf(&quot;The size of struct 2 is: %ld\n&quot;, sizeof(s2));
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">struct</span><span class="p">{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">  </span><span class="c1">// 1 byte</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">   </span><span class="c1">// 4 bytes</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"> </span><span class="c1">// 8 bytes</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">}</span><span class="n">s1</span><span class="p">;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="cp">#pragma pack(push, 1) </span><span class="c1">// Força o alinhamento mínimo</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="k">struct</span><span class="p">{</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">  </span><span class="c1">// 1 byte</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">   </span><span class="c1">// 4 bytes</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"> </span><span class="c1">// 8 bytes</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="p">}</span><span class="n">s2</span><span class="p">;</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="cp">#pragma pack(pop) </span><span class="c1">// Restaura o alinhamento padrão</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The size of struct 1 is: %ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">s1</span><span class="p">));</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The size of struct 2 is: %ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">s2</span><span class="p">));</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Ao compilar e executar o código:</p>
-<pre><code class="language-bash">$ gcc -Wall main.c -o main
-$ ./main
-The size of struct 1 is: 16
-The size of struct 2 is: 13
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>$<span class="w"> </span>./main
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>The<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span>struct<span class="w"> </span><span class="m">1</span><span class="w"> </span>is:<span class="w"> </span><span class="m">16</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>The<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span>struct<span class="w"> </span><span class="m">2</span><span class="w"> </span>is:<span class="w"> </span><span class="m">13</span>
+</span></code></pre></div>
 <p>É possível ver que a primeira estrutura consome 3 bytes a mais, pois há preenchimento entre as variáveis <code>char</code> e <code>int</code> para garantir o alinhamento adequado (por exemplo, para que o <code>int</code> esteja alinhado a um endereço múltiplo de 4 e o <code>double</code> a um múltiplo de 8).</p>
 <h2 id="52-compilador">5.2. Compilador</h2>
 <p><em>Falar sobre Árvore de Derivação, resumir o processo de compilação e técnicas, comentar sobre otimização (otimização já foi falada no capítulo seguinte, então é só comentar informações relevantes)...</em></p>
 <h2 id="53-montador">5.3. Montador</h2>
 <p>O montador é o componente responsável por traduzir um código de montagem em código de máquina, conforme mencionado na introdução. Além disso, ele lida com símbolos, diretivas de montagem e dados, organizando-os de forma executável. Como o GCC é compatível com diversas arquiteturas, ele suporta diretivas específicas que tratam de alinhamento dos dados, definição de constantes e strings, determinação de seções de código, dados e endereços de memória onde as instruções e/ou os dados serão posicionados, entre outras funções. Durante a montagem, o GCC resolve endereços, <em>offsets</em> (deslocamentos), alinha dados, manipula macros e gera a tabela de símbolos e de realocação. Para ilustrar, considere o seguinte exemplo de código em C:</p>
 <h4 id="mainc_6">main.c</h4>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-int main() {
-  printf(&quot;Olá, mundo!\n&quot;);
-  return 0;
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Olá, mundo!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Ao compilar esse programa com o GCC, o compilador gera um código intermediário que é convertido em código de montagem. Esse arquivo de montagem pode ser gerado explicitamente com:</p>
-<pre><code class="language-bash">gcc -S hello_world.c
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>gcc<span class="w"> </span>-S<span class="w"> </span>hello_world.c
+</span></code></pre></div>
 <p>Isso criará um arquivo chamado <strong>hello_world.s</strong>. Para compilar esse arquivo de montagem e gerar um objeto, utilize:</p>
-<pre><code class="language-bash">gcc -c hello_world.s -o hello_world.o
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>gcc<span class="w"> </span>-c<span class="w"> </span>hello_world.s<span class="w"> </span>-o<span class="w"> </span>hello_world.o
+</span></code></pre></div>
 <p><em>Continuar...</em></p>
 <h2 id="54-ligador">5.4. Ligador</h2>
 <p>O ligador é o componente que atua na fase final da compilação. Ele combina os arquivos-objeto gerados, resolve símbolos definidos em outros arquivos-fonte e incorpora bibliotecas ao código para gerar o arquivo executável final. Enquanto na fase anterior os endereços dos dados e códigos são tratados de forma relativa, nesta etapa esses endereços são ajustados para refletir suas posições reais na memória.</p>
@@ -1244,7 +1244,7 @@ int main() {
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
