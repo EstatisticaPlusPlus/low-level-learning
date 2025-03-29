@@ -1,4 +1,8 @@
 site_name: Estatística++
+
+repo_name: EstatisticaPlusPlus/low-level-learning
+repo_url: https://github.com/EstatisticaPlusPlus/low-level-learning
+
 theme:
   name: material
   logo: assets/estatisticamaismais_logo_branco_transparente.png
