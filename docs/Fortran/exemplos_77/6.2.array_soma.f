@@ -1,18 +1,16 @@
-c234567
-      PROGRAM SOMA_ARRAY
+      PROGRAM ARRAY_SOMA
       IMPLICIT NONE
-      
-      INTEGER :: N = 5
-      INTEGER :: A(N) = (/1, 2, 3, 4, 5/)
-      INTEGER :: SUM
-      INTEGER :: I
-      
+
+      INTEGER A(5)
+      INTEGER I, SUM
+
+      DATA A /1, 2, 3, 4, 5/
       SUM = 0
-      
-      DO I = 1, N
-          SUM = SUM + A(I)
+
+      DO I = 1, 5
+         SUM = SUM + A(I)
       END DO
-      
-      PRINT *, 'Soma dos elementos de A:', SUM
-      
+
+      PRINT *, 'SOMA = ', SUM
+
       END

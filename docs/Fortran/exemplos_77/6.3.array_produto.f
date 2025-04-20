@@ -1,18 +1,16 @@
-c234567
-      PROGRAM MULTIPLICACAO_ARRAY
+      PROGRAM ARRAY_PRODUTO
       IMPLICIT NONE
-      
-      INTEGER :: N = 5
-      INTEGER :: A(N) = (/1, 2, 3, 4, 5/)
-      INTEGER :: PRODUTO
-      INTEGER :: I
-      
+
+      INTEGER A(5)
+      INTEGER I, PRODUTO
+
+      DATA A /1, 2, 3, 4, 5/
       PRODUTO = 1
-      
-      DO I = 1, N
-          PRODUTO = PRODUTO * A(I)
+
+      DO I = 1, 5
+         PRODUTO = PRODUTO * A(I)
       END DO
-      
-      PRINT *, 'Produto dos elementos de A:', PRODUTO
-      
+
+      PRINT *, 'PRODUTO = ', PRODUTO
+
       END

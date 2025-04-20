@@ -4,13 +4,13 @@ c234567
       
       INTEGER N, QUADRADO, CUBO
       
-      PRINT *, 'Digite um número:'
+      PRINT *, 'Digite um numero:'
       READ *, N
       
       CALL CALCULA_QUADRADO_E_CUBO(N, QUADRADO, CUBO)
       
-      PRINT *, 'O quadrado de', N, 'é', QUADRADO
-      PRINT *, 'O cubo de', N, 'é', CUBO
+      PRINT *, 'O quadrado de', N, 'resulta', QUADRADO
+      PRINT *, 'O cubo de', N, 'resulta', CUBO
       
       END
       

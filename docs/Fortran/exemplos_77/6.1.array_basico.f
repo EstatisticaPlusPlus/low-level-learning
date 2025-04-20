@@ -1,18 +1,16 @@
-c234567
-      PROGRAM EXEMPLO_ARRAY
+      PROGRAM ARRAY_BASICO
       IMPLICIT NONE
+      INTEGER N, A(100)
+      INTEGER I
 
-      INTEGER :: N = 5
-      INTEGER :: A(N)
-      INTEGER :: I
-      
+      N = 10
+
       DO I = 1, N
-          A(I) = I * 2   
+         A(I) = I * 2
       END DO
-      
-      PRINT *, 'Elementos do array A:'
+
       DO I = 1, N
-          PRINT *, 'A(', I, ') = ', A(I)
+         PRINT *, 'A(', I, ') = ', A(I)
       END DO
-      
+
       END

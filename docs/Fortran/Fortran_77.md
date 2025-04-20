@@ -759,10 +759,15 @@ c234567
 Para compilar:
 
 ```bash
-$ gfortran -o solve_system solve_system.f -LC:/msys64/mingw64/lib -llapack -lblas
+$ gfortran 10.solucao_linear.f -o 10.solucao_linear -LC:/msys64/mingw64/lib -llapack -lblas
+
+```
+*ou para openblas*
+```bash
+$ gfortran 10.solucao_linear.f -o 10.solucao_linear -LC:/msys64/mingw64/lib -lopenblas
 ```
 
-*Observação:* O diretório especificado após `-LC:` deve conter as bibliotecas necessárias. Lembre-se que o LAPACK depende do BLAS, o qual deve ser listado por último no comando.
+*Observação:* O diretório especificado após `-LC:` deve conter as bibliotecas necessárias. Lembre-se que se você for usar LAPACK, ele depende do BLAS, o qual deve ser listado por último no comando. No meu caso, optei por usar o Open_Blas porque as instalações dessas bibliotecas podem conflitar entre o uso no Microsoft Visual Studio e no MSYS2 caso esteja no Windows, esteja atento à extensão instalada na sua máquina - Microsoft Studio usa .lib enquanto MinGW/gfortran usam .a / .dll.a.
 
 A maior complicação pode estar na depuração de erros relacionados a versões de DLLs e compatibilidade com a arquitetura da CPU. Em edições futuras, abordaremos a construção de pacotes e a compilação de versões específicas da BLAS ou LAPACK para sua máquina.
 
