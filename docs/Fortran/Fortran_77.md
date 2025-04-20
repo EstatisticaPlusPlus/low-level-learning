@@ -2,18 +2,18 @@
 title: "Fortran 77"
 ---
 
-# Capítulo 3 - Fortran 77
+# Fortran 77
 
-Neste capítulo vamos retomar vários tópicos já abordados, adequando-os ao Fortran 77. Sua leitura fica a critério da curiosidade ou necessidade do leitor.
+Aqui vamos abordar várias particularidades da versão 77. Sua leitura fica a critério da curiosidade ou da necessidade do leitor.
 
 Este material foi fortemente inspirado no guia de Stanford para F77, disponível em [Stanford ME200C Tutorial](https://web.stanford.edu/class/me200c/tutorial_77/03_basics.html).
 
 ## Básico
 
-A estrutura primária do código F77 é da forma:
+A estrutura principal do código F77 é da forma:
 
 ```fortran
-      c234567	
+c234567	
       program *nome*
       
       *declarações de variáveis*
@@ -34,15 +34,17 @@ A formatação da versão 77 é rígida, seguindo um padrão ditado pelo número
 
 Importante salientar que não podemos ter uma variável com o mesmo nome que o programa.
 
+
 ```fortran
-      c234567
+c234567
       PROGRAM HELLO
       WRITE(UNIT=*, FMT=*) 'Hello World'
       STOP
       END
 
-      *exemplo do programa básico usual, note que os comandos começam a partir da coluna 7*
+      
 ```
+*exemplo 1: Hello World. Note que os comandos começam a partir da coluna 7*
 
 Note que no código acima o comando `write(UNIT=*, FMT=*)` também poderá ser escrito como `write(*,*)`, o que é uma simplificação usual na atribuição desses argumentos compulsórios.
 
@@ -73,7 +75,8 @@ Para definir constantes, declara-se um parâmetro na sintaxe:
 O parâmetro deve ser definido antes da primeira execução do código.
 
 ```fortran
-      c234567
+
+c234567
       PROGRAM TYPES
       IMPLICIT NONE
       
@@ -88,6 +91,7 @@ O parâmetro deve ser definido antes da primeira execução do código.
       STOP
       END
 ```
+*exemplo 2: tipagem*
 
 ## Expressões e Atribuições
 
@@ -171,7 +175,7 @@ Condições são estruturadas de três maneiras:
 #### Exemplo: Cadastro de Números Telefônicos com DDD
 
 ```fortran
-      c234567
+c234567
       PROGRAM CONDITIONALS
       IMPLICIT NONE
       CHARACTER*11 NUMBER
@@ -200,6 +204,7 @@ Condições são estruturadas de três maneiras:
       STOP
       END
 ```
+*exemplo 3: cadastro de telefone*
 
 *Funcionamento do Programa:*  
 - Solicita ao usuário um número de telefone (string).
@@ -215,7 +220,7 @@ Condições são estruturadas de três maneiras:
 A sintaxe geral é:
 
 ```fortran
-      c23456789
+c234567
       do label var = expr1, expr2, expr3
           statements
       label continue
@@ -226,10 +231,10 @@ A sintaxe geral é:
 - **expr2:** valor limitante
 - **expr3:** incremento
 
-*Exemplo:*
+
 
 ```fortran
-      c234567
+c234567
       PROGRAM SHOW
       IMPLICIT NONE
       
@@ -243,23 +248,32 @@ A sintaxe geral é:
       
       END
 ```
+*exemplo 4.1: loop simples*
 
 ### While Loops (Condição de Progresso)
 
-Embora o método abaixo seja o mais intuitivo, ele não é ANSI Fortran 77. O adequado é:
+O programador atual está acostumado com o formato:
 
 ```fortran
-      c23456789
+c234567
+      while (logical expr) do
+        statements
+      enddo
+```
+
+Mas ele não é ANSI Fortran 77. O adequado é:
+
+```fortran
+c234567
       label if (logical expr) then
           statements
           goto label
       end if
 ```
 
-*Exemplo com While:*
 
 ```fortran
-      c234567
+c234567
       PROGRAM WOW
       IMPLICIT NONE
       
@@ -277,13 +291,14 @@ Embora o método abaixo seja o mais intuitivo, ele não é ANSI Fortran 77. O ad
       
       END
 ```
+*exemplo 4.2: While do*
 
 ### Until Loops (Condição de Parada)
 
 Um exemplo de loop "until" usando `goto`:
 
 ```fortran
-      c23456789
+c234567
 10    CONTINUE
       PRINT *, 'Elemento', I, ':', a(I)
       I = I + 1
@@ -292,6 +307,7 @@ Um exemplo de loop "until" usando `goto`:
       END IF
       END
 ```
+*exemplo 4.3: Until do*
 
 ## Subprogramas
 
@@ -302,7 +318,7 @@ Subprogramas são blocos de código que resolvem tarefas específicas, podendo s
 Funções recebem um ou mais argumentos e retornam um valor. A maioria das funções inatas (como `abs`, `min`, `max`, `sqrt`) são genéricas, mas funções definidas pelo usuário geralmente precisam especificar o tipo de retorno. O valor de retorno é atribuído à variável com o mesmo nome da função e o bloco termina com `RETURN`.
 
 ```fortran
-      c23456789
+c234567
       PROGRAM CHOOSE
       IMPLICIT NONE
       
@@ -326,13 +342,14 @@ Funções recebem um ou mais argumentos e retornam um valor. A maioria das funç
       RETURN
       END
 ```
+*exemplo 5.1: Quadrado*
 
 ### Subrotinas
 
 Subrotinas podem retornar mais de um valor e são invocadas com `CALL`. Elas não possuem tipo.
 
 ```fortran
-      c2345678
+c234567
       PROGRAM CHAMA_SUBROTINA
       IMPLICIT NONE
       
@@ -358,13 +375,14 @@ Subrotinas podem retornar mais de um valor e são invocadas com `CALL`. Elas nã
       RETURN
       END
 ```
+*exemplo 5.2: Quadrado e Cubo*
 
 ## Arrays
 
 Para declarar vetores e matrizes:
 
 ```fortran
-      c23456789
+c234567
       real a(20)
       ! Declara um vetor com 20 componentes reais, indexados de 1 a 20
 
@@ -382,7 +400,7 @@ Fortran 77 permite arrays de até 7 dimensões.
 #### Inicialização em Loop
 
 ```fortran
-      c23456789
+c234567
       PROGRAM EXEMPLO_ARRAY
       IMPLICIT NONE
 
@@ -401,11 +419,12 @@ Fortran 77 permite arrays de até 7 dimensões.
       
       END
 ```
+*exemplo 6.1: Array básico*
 
 #### Soma de Elementos
 
 ```fortran
-      c23456789
+c234567
       PROGRAM SOMA_ARRAY
       IMPLICIT NONE
       
@@ -424,11 +443,12 @@ Fortran 77 permite arrays de até 7 dimensões.
       
       END
 ```
+*exemplo 6.2: Array Soma*
 
 #### Produto de Elementos
 
 ```fortran
-      c23456789
+c234567
       PROGRAM MULTIPLICACAO_ARRAY
       IMPLICIT NONE
       
@@ -447,6 +467,7 @@ Fortran 77 permite arrays de até 7 dimensões.
       
       END
 ```
+*exemplo 6.3: Array Produto*
 
 ## Common Blocks
 
@@ -491,7 +512,7 @@ Regras importantes:
 O `data` statement é usado para inicializar variáveis antes da execução do programa.
 
 ```fortran
-      c23456789
+c234567
       program main
       data m/10/, n/20/, x/2.5/, y/2.5/
       real m, n, x, y
@@ -503,11 +524,12 @@ O `data` statement é usado para inicializar variáveis antes da execução do p
       STOP
       END
 ```
+*exemplo 7.1: inicialização*
 
 Outra forma:
 
 ```fortran
-      c23456789
+c234567
       program main
       data m,n/10,20/, x,y/2*2.5/
       real m, n, x, y
@@ -519,16 +541,17 @@ Outra forma:
       STOP
       END
 ```
-
+*exemplo 7.2: inicialização alt*
 Com matrizes:
 
 ```fortran
-      c23456789
+c234567
       program main
       real A(10,20)
       data A/ 200 * 0.0/
       ...
 ```
+*exemplo 7.3: inicialização matricial*
 
 O exemplo acima inicializa uma matriz 10x20 com todos os 200 valores iguais a zero.
 
@@ -556,10 +579,8 @@ Para fechar o arquivo, usa-se:
 
 Os comandos `read` e `write` são usados com o especificador de unidade obrigatório.
 
-*Exemplo:*
-
 ```fortran
-      c234567
+c234567
       program inpdat
       ! Este programa lê n pontos de um arquivo e os armazena em 3 arrays: x, y, z.
       
@@ -591,13 +612,14 @@ Os comandos `read` e `write` são usados com o especificador de unidade obrigat�
 9999  stop
       end
 ```
+*exemplo 8: Leitura e escrita (IO)*
 
 ## Format
 
 A formatação é definida com o comando `write` seguido de um label que especifica o formato.
 
 ```fortran
-      c23456789
+c234567
       program main
       data m/10/, n/20/, x/2.5/, y/2.5/
       real m, n, x, y
@@ -622,7 +644,7 @@ A saída deste código seria algo como:
 A formatação pode ser alterada seguindo o padrão:
 
 ```fortran
-      c234567      
+c234567      
       write(*,label) lista_de_variaveis
       label format-code	
 ```
@@ -639,7 +661,7 @@ Códigos comuns de formatação:
 Exemplo:
 
 ```fortran
-      c23456789
+c234567
       program main
       data m/10/, n/20/, x/2.5/, y/2.5/
       
@@ -661,7 +683,7 @@ Exemplo:
       STOP
       END
 ```
-
+*exemplo 9: format*
 Saída esperada:
 
 ```
@@ -697,10 +719,9 @@ Como em qualquer outra linguagem, é possível utilizar pacotes já criados (mui
   - [LAPACK User's Guide](http://www.netlib.org/lapack/lug/lapack_lug.html)
 - Ao instalar, coloque os arquivos `.lib` (no Windows) ou `.a` (no Linux) em um diretório apropriado. Certifique-se de ajustar os caminhos de compilação conforme necessário. O BLAS deve ser especificado por último no comando de compilação.
 
-*Exemplo para resolver um sistema linear simples:*
 
 ```fortran
-      c234567
+c234567
       PROGRAM SolveLinearSystem
       IMPLICIT NONE
 
@@ -733,14 +754,20 @@ Como em qualquer outra linguagem, é possível utilizar pacotes já criados (mui
       STOP      
       END
 ```
+*Exemplo 10: Solução de Sistema Linear*
 
 Para compilar:
 
 ```bash
-$ gfortran -o solve_system solve_system.f -LC:/msys64/mingw64/lib -llapack -lblas
+$ gfortran 10.solucao_linear.f -o 10.solucao_linear -LC:/msys64/mingw64/lib -llapack -lblas
+
+```
+*ou para openblas*
+```bash
+$ gfortran 10.solucao_linear.f -o 10.solucao_linear -LC:/msys64/mingw64/lib -lopenblas
 ```
 
-*Observação:* O diretório especificado após `-LC:` deve conter as bibliotecas necessárias. Lembre-se que o LAPACK depende do BLAS, o qual deve ser listado por último no comando.
+*Observação:* O diretório especificado após `-LC:` deve conter as bibliotecas necessárias. Lembre-se que se você for usar LAPACK, ele depende do BLAS, o qual deve ser listado por último no comando. No meu caso, optei por usar o Open_Blas porque as instalações dessas bibliotecas podem conflitar entre o uso no Microsoft Visual Studio e no MSYS2 caso esteja no Windows, esteja atento à extensão instalada na sua máquina - Microsoft Studio usa .lib enquanto MinGW/gfortran usam .a / .dll.a.
 
 A maior complicação pode estar na depuração de erros relacionados a versões de DLLs e compatibilidade com a arquitetura da CPU. Em edições futuras, abordaremos a construção de pacotes e a compilação de versões específicas da BLAS ou LAPACK para sua máquina.
 
