@@ -63,9 +63,9 @@ world!") na tela e termina sua execução.
 
 ```
 
-                                        program exemplo
-                                                print *, 'Olá mundo!'
-                                        end program exemplo
+    program exemplo
+            print *, 'Olá mundo!'
+    end program exemplo
 
 
 ```
@@ -111,8 +111,8 @@ fazemos:
 
 ```
 
-                                                real :: x
-                                                real :: y
+    real :: x
+    real :: y
 
 
 ```
@@ -133,22 +133,22 @@ Exemplos de declaração de variáveis para cada tipo:
 
 ```
 
-                                                program variaveis
-                                                        implicit none
+    program variaveis
+            implicit none
 
-                                                        integer :: i
-                                                        real :: distancia
-                                                        complex :: frequencia
-                                                        character :: inicial
-                                                        logical :: eh_primo
+            integer :: i
+            real :: distancia
+            complex :: frequencia
+            character :: inicial
+            logical :: eh_primo
 
-                                                        i = 1
-                                                        distancia = 1.41421356
-                                                        frequencia = (1.0, -0.5)
-                                                        inicial = "f"
-                                                        eh_primo = .false.
+            i = 1
+            distancia = 1.41421356
+            frequencia = (1.0, -0.5)
+            inicial = "f"
+            eh_primo = .false.
 
-                                                end program variaveis
+    end program variaveis
 
 
 ```
@@ -201,10 +201,10 @@ importamos o módulo e declaramos a variável como
 
 ```
 
-                                        use, intrinsic :: iso_fortran_env
-                                        implicit none
+    use, intrinsic :: iso_fortran_env
+    implicit none
 
-                                        real(real64) :: valor
+    real(real64) :: valor
 
 
 ```
@@ -216,20 +216,20 @@ precisão de representação do número de Euler:
 
 ```
 
-                                        program euler
-                                                use, intrinsic :: iso_fortran_env
-                                                implicit none
+    program euler
+            use, intrinsic :: iso_fortran_env
+            implicit none
 
-                                                real :: v1
-                                                real(real64) :: v2
+            real :: v1
+            real(real64) :: v2
 
-                                                v1 = exp(1.0)
-                                                v2 = exp(1.0_real64)
+            v1 = exp(1.0)
+            v2 = exp(1.0_real64)
 
-                                                print *, v1
-                                                print *, v2
+            print *, v1
+            print *, v2
 
-                                        end program euler
+    end program euler
 
 
 ```
@@ -245,16 +245,16 @@ simples em uma variável de precisão dupla. No mesmo exemplo:
 
 ```
 
-                                        program euler
-                                                use, intrinsic :: iso_fortran_env
-                                                implicit none
+    program euler
+            use, intrinsic :: iso_fortran_env
+            implicit none
 
-                                                real(real64) :: v3
-                                                v3 = exp(1.0)
+            real(real64) :: v3
+            v3 = exp(1.0)
 
-                                                print *, v3
+            print *, v3
 
-                                        end program euler
+    end program euler
 
 
 ```
@@ -287,9 +287,9 @@ calcular uma média simples entre 3 números, ao escrever:
 
 ```
 
-                                program media
-                                        print *, 3 + 4 + 5 / 2
-                                end program media
+    program media
+            print *, 3 + 4 + 5 / 2
+    end program media
 
 
 ```
@@ -302,9 +302,9 @@ que possuem a maior precedência entre os operadores:
 
 ```
 
-                                program media
-                                        print *, (3 + 4 + 5) / 2
-                                end program media
+    program media
+            print *, (3 + 4 + 5) / 2
+    end program media
 
 
 ```
@@ -320,9 +320,9 @@ seja toda zero. Essa regra explica o porquê de
 
 ```
 
-                                program divisao
-                                        print *, 5 / 2
-                                end program divisao
+    program divisao
+            print *, 5 / 2
+    end program divisao
 
 
 ```
@@ -331,9 +331,9 @@ ser avaliado como `2` , e
 
 ```
 
-                                program divisao
-                                        print *, 5.0 / 2
-                                end program divisao
+    program divisao
+            print *, 5.0 / 2
+    end program divisao
 
 
 ```
@@ -353,25 +353,25 @@ pessoas que forem ler o código-fonte.
 
 ```
 
-                                program comentarios
-                                        implicit none
-                                        ! Esta linha será ignorada pelo compilador, escreva o que quiser
+    program comentarios
+            implicit none
+            ! Esta linha será ignorada pelo compilador, escreva o que quiser
 
-                                        real :: alpha  ! Coeficiente do termo linear
-                                        real :: beta   ! Coeficiente do termo não-linear
-                                        real :: x      ! Variável de entrada
-                                        real :: y
+            real :: alpha  ! Coeficiente do termo linear
+            real :: beta   ! Coeficiente do termo não-linear
+            real :: x      ! Variável de entrada
+            real :: y
 
-                                        alpha = 3.0
-                                        beta = 1.0
-                                        x = 1
+            alpha = 3.0
+            beta = 1.0
+            x = 1
 
-                                        ! Calculando a relação y(x)
-                                        y = (alpha * x) + (beta * x * x)
+            ! Calculando a relação y(x)
+            y = (alpha * x) + (beta * x * x)
 
-                                        print *, y
+            print *, y
 
-                                end program comentarios
+    end program comentarios
 
 
 ```
@@ -406,18 +406,18 @@ padrão como o seguinte:
 
 ```
 
-                                        function nome_funcao(arg1, arg2) result(var_result)
-                                                implicit none
+    function nome_funcao(arg1, arg2) result(var_result)
+            implicit none
 
-                                                tipo1, intent(in) :: arg1
-                                                tipo2, intent(in) :: arg2
-                                                tipo3 :: var_result
+            tipo1, intent(in) :: arg1
+            tipo2, intent(in) :: arg2
+            tipo3 :: var_result
 
-                                                ! Corpo da função
+            ! Corpo da função
 
-                                                return
+            return
 
-                                        end funtion nome_funcao
+    end funtion nome_funcao
 
 
 ```
@@ -470,19 +470,19 @@ construir uma primeira função para isso, não seguindo o padrão com
 
 ```
 
-                                        function norma_dobro(v1, v2) result(norma)
-                                                real :: v1
-                                                real :: v2
-                                                real :: norma
+    function norma_dobro(v1, v2) result(norma)
+            real :: v1
+            real :: v2
+            real :: norma
 
-                                                v1 = 2*v1
-                                                v2 = 2*v2
+            v1 = 2*v1
+            v2 = 2*v2
 
-                                                norma = ((v1**2) + (v2**2))**(1.0/2.0)
+            norma = ((v1**2) + (v2**2))**(1.0/2.0)
 
-                                                return
+            return
 
-                                        end function norma_dobro
+    end function norma_dobro
 
 
 ```
@@ -491,34 +491,34 @@ Agora, vamos criar um programa e testar nossa função:
 
 ```
 
-                                        program calcula_norma
-                                                implicit none
-                                                real :: norma_calculada
-                                                real :: vec1 !1ª coordenada do vetor
-                                                real :: vec2 !2ª coordenada do vetor
+    program calcula_norma
+            implicit none
+            real :: norma_calculada
+            real :: vec1 !1ª coordenada do vetor
+            real :: vec2 !2ª coordenada do vetor
 
-                                                vec1 = 1
-                                                vec2 = 1
+            vec1 = 1
+            vec2 = 1
 
-                                                norma_calculada = norma_dobro(vec1, vec2)
-                                                print *, norma_calculada
+            norma_calculada = norma_dobro(vec1, vec2)
+            print *, norma_calculada
 
-                                                contains
-                                                        function norma_dobro(v1, v2) result(norma)
-                                                                real :: v1
-                                                                real :: v2
-                                                                real :: norma
+            contains
+                    function norma_dobro(v1, v2) result(norma)
+                            real :: v1
+                            real :: v2
+                            real :: norma
 
-                                                                v1 = 2*v1
-                                                                v2 = 2*v2
+                            v1 = 2*v1
+                            v2 = 2*v2
 
-                                                                norma = ((v1**2) + (v2**2))**(1.0/2.0)
+                            norma = ((v1**2) + (v2**2))**(1.0/2.0)
 
-                                                                return
+                            return
 
-                                                        end function norma_dobro
+                    end function norma_dobro
 
-                                        end program calcula_norma
+    end program calcula_norma
 
 
 ```
@@ -527,7 +527,7 @@ Ao executarmos o nosso programa, temos como saída:
 
 ```
 
-                                        2.82842708
+    2.82842708
 
 
 ```
@@ -539,40 +539,40 @@ v1, v2 antes e depois da chamada da função:
 
 ```
 
-                                        program calcula_norma
-                                                implicit none
-                                                real :: norma_calculada
-                                                real :: vec1 !1ª coordenada do vetor
-                                                real :: vec2 !2ª coordenada do vetor
+    program calcula_norma
+            implicit none
+            real :: norma_calculada
+            real :: vec1 !1ª coordenada do vetor
+            real :: vec2 !2ª coordenada do vetor
 
-                                                vec1 = 1
-                                                vec2 = 1
+            vec1 = 1
+            vec2 = 1
 
-                                                print *, vec1
-                                                print *, vec2
+            print *, vec1
+            print *, vec2
 
-                                                norma_calculada = norma_dobro(vec1, vec2)
-                                                print *, norma_calculada
+            norma_calculada = norma_dobro(vec1, vec2)
+            print *, norma_calculada
 
-                                                print *, vec1
-                                                print *, vec2
+            print *, vec1
+            print *, vec2
 
-                                                contains
-                                                        function norma_dobro(v1, v2) result(norma)
-                                                                real :: v1
-                                                                real :: v2
-                                                                real :: norma
+            contains
+                    function norma_dobro(v1, v2) result(norma)
+                            real :: v1
+                            real :: v2
+                            real :: norma
 
-                                                                v1 = 2*v1
-                                                                v2 = 2*v2
+                            v1 = 2*v1
+                            v2 = 2*v2
 
-                                                                norma = ((v1**2) + (v2**2))**(1.0/2.0)
+                            norma = ((v1**2) + (v2**2))**(1.0/2.0)
 
-                                                                return
+                            return
 
-                                                        end function norma_dobro
+                    end function norma_dobro
 
-                                        end program calcula_norma
+    end program calcula_norma
 
 
 ```
@@ -581,11 +581,11 @@ E no resultado desse programa:
 
 ```
 
-                                        1.00000000
-                                        1.00000000
-                                        2.82842708
-                                        2.00000000
-                                        2.00000000
+    1.00000000
+    1.00000000
+    2.82842708
+    2.00000000
+    2.00000000
 
 
 ```
@@ -599,40 +599,40 @@ agora o que acontece quando declaramos a função usando
 
 ```
 
-                                        program calcula_norma
-                                                implicit none
-                                                real :: norma_calculada
-                                                real :: vec1 !1ª coordenada do vetor
-                                                real :: vec2 !2ª coordenada do vetor
+    program calcula_norma
+            implicit none
+            real :: norma_calculada
+            real :: vec1 !1ª coordenada do vetor
+            real :: vec2 !2ª coordenada do vetor
 
-                                                vec1 = 1
-                                                vec2 = 1
+            vec1 = 1
+            vec2 = 1
 
-                                                print *, vec1
-                                                print *, vec2
+            print *, vec1
+            print *, vec2
 
-                                                norma_calculada = norma_dobro(vec1, vec2)
-                                                print *, norma_calculada
+            norma_calculada = norma_dobro(vec1, vec2)
+            print *, norma_calculada
 
-                                                print *, vec1
-                                                print *, vec2
+            print *, vec1
+            print *, vec2
 
-                                                contains
-                                                        function norma_dobro(v1, v2) result(norma)
-                                                                real, intent(in) :: v1
-                                                                real, intent(in) :: v2
-                                                                real :: norma
+            contains
+                    function norma_dobro(v1, v2) result(norma)
+                            real, intent(in) :: v1
+                            real, intent(in) :: v2
+                            real :: norma
 
-                                                                v1 = 2*v1
-                                                                v2 = 2*v2
+                            v1 = 2*v1
+                            v2 = 2*v2
 
-                                                                norma = ((v1**2) + (v2**2))**(1.0/2.0)
+                            norma = ((v1**2) + (v2**2))**(1.0/2.0)
 
-                                                                return
+                            return
 
-                                                        end function norma_dobro
+                    end function norma_dobro
 
-                                        end program calcula_norma
+    end program calcula_norma
 
 
 ```
@@ -641,16 +641,16 @@ E ao tentarmos compilar e executar este programa:
 
 ```
 
-                                        ./main.f95:27:3:
+    ./main.f95:27:3:
 
-                                                 27 |    v1 = 2*v1
-                                        Error: Dummy argument ‘v1’ with INTENT(IN) in variable definition
-                                        context (assignment) at (1)
-                                        ./main.f95:28:3:
+             27 |    v1 = 2*v1
+    Error: Dummy argument ‘v1’ with INTENT(IN) in variable definition
+    context (assignment) at (1)
+    ./main.f95:28:3:
 
-                                                 28 |    v2 = 2*v2
-                                        Error: Dummy argument ‘v2’ with INTENT(IN) in variable definition
-                                        context (assignment) at (1)
+             28 |    v2 = 2*v2
+    Error: Dummy argument ‘v2’ with INTENT(IN) in variable definition
+    context (assignment) at (1)
 
 
 ```
@@ -676,25 +676,25 @@ cara:
 
 ```
 
-                                        function norma_dobro(v1, v2) result(norma)
-                                                real, intent(in) :: v1
-                                                real, intent(in) :: v2
+    function norma_dobro(v1, v2) result(norma)
+            real, intent(in) :: v1
+            real, intent(in) :: v2
 
-                                                real :: coord1
-                                                real :: coord2
-                                                real :: norma
+            real :: coord1
+            real :: coord2
+            real :: norma
 
-                                                coord1 = v1
-                                                coord2 = v2
+            coord1 = v1
+            coord2 = v2
 
-                                                coord1 = 2*coord1
-                                                coord2 = 2*coord2
+            coord1 = 2*coord1
+            coord2 = 2*coord2
 
-                                                norma = ((coord1**2) + (coord2**2))**(1.0/2.0)
+            norma = ((coord1**2) + (coord2**2))**(1.0/2.0)
 
-                                                return
+            return
 
-                                        end function norma_dobro
+    end function norma_dobro
 
 
 ```
@@ -703,16 +703,16 @@ Com a segunda proposta:
 
 ```
 
-                                        function norma_dobro(v1, v2) result(norma)
-                                                real, intent(in) :: v1
-                                                real, intent(in) :: v2
-                                                real :: norma
+    function norma_dobro(v1, v2) result(norma)
+            real, intent(in) :: v1
+            real, intent(in) :: v2
+            real :: norma
 
-                                                norma = (((2*v1)**2) + ((2*v2)**2))**(1.0/2.0)
+            norma = (((2*v1)**2) + ((2*v2)**2))**(1.0/2.0)
 
-                                                return
+            return
 
-                                        end function norma_dobro
+    end function norma_dobro
 
 
 ```
@@ -722,11 +722,11 @@ executar o programa será:
 
 ```
 
-                                        1.00000000
-                                        1.00000000
-                                        2.82842708
-                                        1.00000000
-                                        1.00000000
+    1.00000000
+    1.00000000
+    2.82842708
+    1.00000000
+    1.00000000
 
 
 ```
@@ -784,14 +784,14 @@ seguinte:
 
 ```
 
-                        module nome_do_modulo
-                                implicit none
+    module nome_do_modulo
+            implicit none
 
-                        contains
-                                ! Aqui começa o bloco de declaração de
-                                ! funções, variáveis, e o que mais quisermos
+    contains
+            ! Aqui começa o bloco de declaração de
+            ! funções, variáveis, e o que mais quisermos
 
-                        end module nome_do_modulo
+    end module nome_do_modulo
 
 
 ```
@@ -804,51 +804,51 @@ forma:
 
 ```
 
-                        module normas
-                                implicit none
+    module normas
+            implicit none
 
-                        contains
-                                function norma_do_dobro(v1, v2) result(norma)
-                                        real, intent(in) :: v1
-                                        real, intent(in) :: v2
+    contains
+            function norma_do_dobro(v1, v2) result(norma)
+                    real, intent(in) :: v1
+                    real, intent(in) :: v2
 
-                                        real :: coord1
-                                        real :: coord2
-                                        real :: norma
+                    real :: coord1
+                    real :: coord2
+                    real :: norma
 
-                                        coord1 = v1
-                                        coord2 = v2
+                    coord1 = v1
+                    coord2 = v2
 
-                                        coord1 = 2*coord1
-                                        coord2 = 2*coord2
+                    coord1 = 2*coord1
+                    coord2 = 2*coord2
 
-                                        norma = sqrt((coord1**2) + (coord2**2))
+                    norma = sqrt((coord1**2) + (coord2**2))
 
-                                        return
+                    return
 
-                                end function norma_do_dobro
-                        end module funcs
+            end function norma_do_dobro
+    end module funcs
 
-                        program calcula_norma
-                                use normas
-                                implicit none
-                                real :: norma_calculada
-                                real :: vec1 !1ª coordenada do vetor
-                                real :: vec2 !2ª coordenada do vetor
+    program calcula_norma
+            use normas
+            implicit none
+            real :: norma_calculada
+            real :: vec1 !1ª coordenada do vetor
+            real :: vec2 !2ª coordenada do vetor
 
-                                vec1 = 1
-                                vec2 = 1
+            vec1 = 1
+            vec2 = 1
 
-                                print *, vec1
-                                print *, vec2
+            print *, vec1
+            print *, vec2
 
-                                norma_calculada = norma_do_dobro(vec1, vec2)
-                                print *, norma_calculada
+            norma_calculada = norma_do_dobro(vec1, vec2)
+            print *, norma_calculada
 
-                                print *, vec1
-                                print *, vec2
+            print *, vec1
+            print *, vec2
 
-                        end program calcula_norma
+    end program calcula_norma
 
 
 ```
@@ -899,11 +899,11 @@ vamos usá-las com o comando IF-THEN-ELSE. A sintaxe do comando
 
 ```
 
-                                        if (expressao_logica) then
-                                                ! Código a ser executado se a expressão for verdadeira
-                                        else
-                                                ! Código a ser executado se a expressão for falsa
-                                        end if
+    if (expressao_logica) then
+            ! Código a ser executado se a expressão for verdadeira
+    else
+            ! Código a ser executado se a expressão for falsa
+    end if
 
 
 ```
@@ -917,19 +917,19 @@ como:
 
 ```
 
-                                        function absoluto(x) result(y)
-                                                real, intent(in) :: x
-                                                real :: y
+    function absoluto(x) result(y)
+            real, intent(in) :: x
+            real :: y
 
-                                                y = x
+            y = x
 
-                                                if (x < 0) then
-                                                        y = -y
-                                                end if
+            if (x < 0) then
+                    y = -y
+            end if
 
-                                                return
+            return
 
-                                        end function absoluto
+    end function absoluto
 
 
 ```
@@ -938,19 +938,19 @@ como:
 
 ```
 
-                                        function heaviside(x) result(y)
-                                                real, intent(in) :: x
-                                                real :: y
+    function heaviside(x) result(y)
+            real, intent(in) :: x
+            real :: y
 
-                                                if (x >= 0) then
-                                                        y = 1
-                                                else
-                                                        y = 0
-                                                end if
+            if (x >= 0) then
+                    y = 1
+            else
+                    y = 0
+            end if
 
-                                                return
+            return
 
-                                        end function heaviside
+    end function heaviside
 
 
 ```
@@ -964,27 +964,27 @@ entender devido a IF's aninhados:
 
 ```
 
-                                        real, intent(in):: a
-                                        real, intent(in):: b
-                                        real, intent(in):: p
+    real, intent(in):: a
+    real, intent(in):: b
+    real, intent(in):: p
 
-                                        if (p >= a) then
-                                                if (p <= b) then
-                                                        if (p == (a+b)/2 ) then
-                                                        print *, "p está no intervalo e é ponto medio"
-                                                        else
-                                                                if (p > (a+b)/2) then
-                                                                        print *, "p está no intervalo, e está mais próximo de", b
-                                                                else
-                                                        print *, "p está no intervalo, e está mais próximo de", a
-                                                                end if
-                                                        end if
-                                                else
-                                                        print *, "p está fora do intervalo, e depois de", b
-                                                end if
-                                        else
-                                                print *, "p está fora do intervalo, e antes de", a
-                                        end if
+    if (p >= a) then
+            if (p <= b) then
+                    if (p == (a+b)/2 ) then
+                    print *, "p está no intervalo e é ponto medio"
+                    else
+                            if (p > (a+b)/2) then
+                                    print *, "p está no intervalo, e está mais próximo de", b
+                            else
+                    print *, "p está no intervalo, e está mais próximo de", a
+                            end if
+                    end if
+            else
+                    print *, "p está fora do intervalo, e depois de", b
+            end if
+    else
+            print *, "p está fora do intervalo, e antes de", a
+    end if
 
 
 ```
@@ -1002,33 +1002,33 @@ técnica:
 
 ```
 
-                                        real, intent(in):: a
-                                        real, intent(in):: b
-                                        real, intent(in):: p
+    real, intent(in):: a
+    real, intent(in):: b
+    real, intent(in):: p
 
-                                        if (p < a) then
-                                                print *, "p está fora do intervalo, e antes de", a
-                                                return
-                                        end if
+    if (p < a) then
+            print *, "p está fora do intervalo, e antes de", a
+            return
+    end if
 
-                                        if (p > b) then
-                                                print *, "p está fora do intervalo, e depois de", b
-                                                return
-                                        end if
+    if (p > b) then
+            print *, "p está fora do intervalo, e depois de", b
+            return
+    end if
 
-                                        if (p == (a+b)/2 ) then
-                                                print *, "p está no intervalo e é ponto medio"
-                                                return
-                                        end if
+    if (p == (a+b)/2 ) then
+            print *, "p está no intervalo e é ponto medio"
+            return
+    end if
 
-                                        ! Neste ponto, sabemos que p está no intervalo e não é ponto médio
-                                        if (p > (a+b)/2) then
-                                                print *, "p está no intervalo, e está mais próximo de", b
-                                        else
-                                                print *, "p está no intervalo, e está mais próximo de", a
-                                        end if
+    ! Neste ponto, sabemos que p está no intervalo e não é ponto médio
+    if (p > (a+b)/2) then
+            print *, "p está no intervalo, e está mais próximo de", b
+    else
+            print *, "p está no intervalo, e está mais próximo de", a
+    end if
 
-                                        return
+    return
 
 
 ```
@@ -1054,9 +1054,9 @@ A sintaxe do comando é:
 
 ```
 
-                                        do iterador = valor_inicial, valor_final, passo
-                                                ! Código a ser repetido
-                                        end do
+    do iterador = valor_inicial, valor_final, passo
+            ! Código a ser repetido
+    end do
 
 
 ```
@@ -1071,19 +1071,19 @@ matemática? Somatórios. Digamos que queremos fazer um somatório de
 
 ```
 
-                                        implicit none
+    implicit none
 
-                                        real :: valor
-                                        integer :: k
-                                        integer :: n
+    real :: valor
+    integer :: k
+    integer :: n
 
-                                        valor = 0.0
-                                        n = 100
-                                        do k = 1, n, 1
-                                                valor = valor + 1.0/(k*k)
-                                        end do
+    valor = 0.0
+    n = 100
+    do k = 1, n, 1
+            valor = valor + 1.0/(k*k)
+    end do
 
-                                        print *, valor
+    print *, valor
 
 
 ```
@@ -1132,20 +1132,20 @@ com mais precisão (64 bits):
 
 ```
 
-                                        use, intrinsic :: iso_fortran_env
-                                        implicit none
+    use, intrinsic :: iso_fortran_env
+    implicit none
 
-                                        real(real64) :: valor
-                                        integer(int64) :: k
-                                        integer(int64) :: n
+    real(real64) :: valor
+    integer(int64) :: k
+    integer(int64) :: n
 
-                                        valor = 0.0
-                                        n = 10**5_int64
-                                        do k = 1, n
-                                                valor = valor + 1.0_real64/(k*k)
-                                        end do
+    valor = 0.0
+    n = 10**5_int64
+    do k = 1, n
+            valor = valor + 1.0_real64/(k*k)
+    end do
 
-                                        print *, valor
+    print *, valor
 
 
 ```
@@ -1166,9 +1166,9 @@ possível fazer
 
 ```
 
-                                        do k = 0, 1, 0.1
-                                                print *, k
-                                        end do
+    do k = 0, 1, 0.1
+            print *, k
+    end do
 
 
 ```
@@ -1177,9 +1177,9 @@ Mas podemos fazer:
 
 ```
 
-                                        do k = 0, 10, 1
-                                                print *, k/10.0
-                                        end do
+    do k = 0, 10, 1
+            print *, k/10.0
+    end do
 
 
 ```
@@ -1200,20 +1200,20 @@ Sendo assim, nosso somatório ficaria de trás pra frente:
 
 ```
 
-                                        use, intrinsic :: iso_fortran_env
-                                        implicit none
+    use, intrinsic :: iso_fortran_env
+    implicit none
 
-                                        real(real64) :: valor
-                                        integer(int64) :: k
-                                        integer(int64) :: n
+    real(real64) :: valor
+    integer(int64) :: k
+    integer(int64) :: n
 
-                                        valor = 0.0
-                                        n = 10**5_int64
-                                        do k = n, 1, -1
-                                                valor = valor + 1.0_real64/(k*k)
-                                        end do
+    valor = 0.0
+    n = 10**5_int64
+    do k = n, 1, -1
+            valor = valor + 1.0_real64/(k*k)
+    end do
 
-                                        print *, valor
+    print *, valor
 
 
 ```
@@ -1260,17 +1260,17 @@ funções. A sintaxe para declaração de uma subrotina é:
 
 ```
 
-                                subroutine nome_subrotina(arg1, arg2, arg3)
-                                        implicit none
+    subroutine nome_subrotina(arg1, arg2, arg3)
+            implicit none
 
-                                        tipo1, intent(in) :: arg1
-                                        tipo2, intent(inout) :: arg2
-                                        tipo3, intent(out) :: arg3
+            tipo1, intent(in) :: arg1
+            tipo2, intent(inout) :: arg2
+            tipo3, intent(out) :: arg3
 
-                                        ! Corpo da subrotina
+            ! Corpo da subrotina
 
-                                        return
-                                end subroutine
+            return
+    end subroutine
 
 
 ```
@@ -1296,17 +1296,17 @@ fibonacci F(n) e F(n+1), retornamos F(n+1) e F(n+2).
 
 ```
 
-                                        subroutine fib(f1, f2)
-                                                integer, intent(inout):: f1
-                                                integer, intent(inout):: f2
-                                                integer ::      prox
+    subroutine fib(f1, f2)
+            integer, intent(inout):: f1
+            integer, intent(inout):: f2
+            integer ::      prox
 
-                                                prox = f1 + f2
+            prox = f1 + f2
 
-                                                f1 = f2
-                                                f2 = prox
+            f1 = f2
+            f2 = prox
 
-                                        end subroutine fib
+    end subroutine fib
 
 
 ```
@@ -1329,40 +1329,40 @@ gerada:
 
 ```
 
-                                        module funcs
-                                                implicit none
+    module funcs
+            implicit none
 
-                                        contains
-                                                subroutine fib(f1, f2)
-                                                        integer, intent(inout):: f1
-                                                        integer, intent(inout):: f2
-                                                        integer ::      prox
+    contains
+            subroutine fib(f1, f2)
+                    integer, intent(inout):: f1
+                    integer, intent(inout):: f2
+                    integer ::      prox
 
-                                                        prox = f1 + f2
+                    prox = f1 + f2
 
-                                                        f1 = f2
-                                                        f2 = prox
+                    f1 = f2
+                    f2 = prox
 
-                                                end subroutine fib
-                                        end module funcs
+            end subroutine fib
+    end module funcs
 
-                                        program test
-                                                use funcs
-                                                implicit none
+    program test
+            use funcs
+            implicit none
 
-                                                integer :: f1
-                                                integer :: f2
-                                                integer :: i
+            integer :: f1
+            integer :: f2
+            integer :: i
 
-                                                f1 = 1
-                                                f2 = 1
+            f1 = 1
+            f2 = 1
 
-                                                do i = 1, 10
-                                                        print *, f1, f2
+            do i = 1, 10
+                    print *, f1, f2
 
-                                                        call fib(f1, f2)
-                                                end do
-                                        end program test
+                    call fib(f1, f2)
+            end do
+    end program test
 
 
 ```
@@ -1371,16 +1371,16 @@ E temos como saída:
 
 ```
 
-                                 1           1
-                                 1           2
-                                 2           3
-                                 3           5
-                                 5           8
-                                 8          13
-                                13          21
-                                21          34
-                                34          55
-                                55          89
+     1           1
+     1           2
+     2           3
+     3           5
+     5           8
+     8          13
+    13          21
+    21          34
+    34          55
+    55          89
 
 
 ```
@@ -1430,23 +1430,23 @@ passo.
   x³ - x - 2 como função neste módulo.
 
 
-  ```
+```
 
-                                          module funcoes
-                                                  implicit none
+    module funcoes
+          implicit none
 
-                                          contains
-                                                  ! Polinômio: x^3 - x - 2
-                                                  function f(x) result(y)
-                                                          real, intent(in) :: x
-                                                          real :: y
+    contains
+          ! Polinômio: x^3 - x - 2
+          function f(x) result(y)
+                  real, intent(in) :: x
+                  real :: y
 
-                                                          y = x**3 - x - 2
-                                                  end function f
-                                          end module funcoes
+                  y = x**3 - x - 2
+          end function f
+    end module funcoes
 
 
-  ```
+```
 
 - Já o intervalo gostaríamos de ter maior liberdade de escolha,
   pois podemos fazer várias escolhas de onde começar a busca. Vamos,
@@ -1454,23 +1454,23 @@ passo.
   que nomearemos `a` e b.
 
 
-  ```
+```
 
-                                          program main
-                                                  use funcoes
+    program main
+          use funcoes
 
-                                                  use, intrinsic :: iso_fortran_env
-                                                  implicit none
+          use, intrinsic :: iso_fortran_env
+          implicit none
 
-                                                  real(real64) :: resultado
-                                                  real(real64) :: a = 1
-                                                  real(real64) :: b = 2
-
-
-                                          end program main
+          real(real64) :: resultado
+          real(real64) :: a = 1
+          real(real64) :: b = 2
 
 
-  ```
+    end program main
+
+
+```
 
 - Por fim, percebendo que o método recebe um conjunto de valores
   e retorna um único valor (um x tal que f(x) = 0), podemos modelar o
@@ -1479,41 +1479,41 @@ passo.
   escolher, por conveniência, trabalhar com precisão dupla.
 
 
-  ```
+```
 
-                                          module metodos
-                                                  use funcoes
-                                                  implicit none
+    module metodos
+          use funcoes
+          implicit none
 
-                                          contains
-                                                  function bissecao(a, b) result(raiz)
-                                                          ! Limite inferior do intervalo
-                                                          real(real64), intent(in) :: a
+    contains
+          function bissecao(a, b) result(raiz)
+                  ! Limite inferior do intervalo
+                  real(real64), intent(in) :: a
 
-                                                          ! Limite superior do intervalo
-                                                          real(real64), intent(in) :: b
+                  ! Limite superior do intervalo
+                  real(real64), intent(in) :: b
 
-                                                          ! Valor de x tal que f(x) = 0
-                                                          real(real64) :: raiz
+                  ! Valor de x tal que f(x) = 0
+                  real(real64) :: raiz
 
-                                                  end function bissecao
-                                          end module metodos
+          end function bissecao
+    end module metodos
 
-                                          program main
-                                                  use funcoes
-                                                  use metodos
-                                                  use, intrinsic :: iso_fortran_env
-                                                  implicit none
+    program main
+          use funcoes
+          use metodos
+          use, intrinsic :: iso_fortran_env
+          implicit none
 
-                                                  real(real64) :: resultado
-                                                  real(real64) :: a = 1
-                                                  real(real64) :: b = 2
+          real(real64) :: resultado
+          real(real64) :: a = 1
+          real(real64) :: b = 2
 
-                                                  resultado = bissecao(a, b)
-                                          end program main
+          resultado = bissecao(a, b)
+    end program main
 
 
-  ```
+```
 
 
 #### 2\. Calculamos o ponto médio do intervalo
@@ -1524,22 +1524,22 @@ vamos mostrar apenas a função de bissecao que será alterada:
 
 ```
 
-                                        function bissecao(a, b) result(raiz)
-                                                ! Limite inferior do intervalo
-                                                real(real64), intent(in) :: a
+    function bissecao(a, b) result(raiz)
+            ! Limite inferior do intervalo
+            real(real64), intent(in) :: a
 
-                                                ! Limite superior do intervalo
-                                                real(real64), intent(in) :: b
+            ! Limite superior do intervalo
+            real(real64), intent(in) :: b
 
-                                                ! Valor de x tal que f(x) = 0
-                                                real(real64) :: raiz
+            ! Valor de x tal que f(x) = 0
+            real(real64) :: raiz
 
-                                                ! Ponto médio
-                                                real(real64) :: p_medio
+            ! Ponto médio
+            real(real64) :: p_medio
 
-                                                p_medio = (a+b)/2
+            p_medio = (a+b)/2
 
-                                        end function bissecao
+    end function bissecao
 
 
 ```
@@ -1552,27 +1552,27 @@ Estes 2 passos podem ser feitos por um teste condicional
 
 ```
 
-					function bissecao(a, b) result(raiz)
-						! Limite inferior do intervalo
-						real(real64), intent(in) :: a
+    function bissecao(a, b) result(raiz)
+	    ! Limite inferior do intervalo
+	    real(real64), intent(in) :: a
 
-						! Limite superior do intervalo
-						real(real64), intent(in) :: b
+	    ! Limite superior do intervalo
+	    real(real64), intent(in) :: b
 
-						! Valor de x tal que f(x) = 0
-						real(real64) :: raiz
+	    ! Valor de x tal que f(x) = 0
+	    real(real64) :: raiz
 
-						! Ponto médio
-						real(real64) :: p_medio
+	    ! Ponto médio
+	    real(real64) :: p_medio
 
-						p_medio = (a+b)/2
+	    p_medio = (a+b)/2
 
-						if (f(p_medio) == 0) then
-							raiz = p_medio
-							return
-						end if
+	    if (f(p_medio) == 0) then
+		    raiz = p_medio
+		    return
+	    end if
 
-					end function bissecao
+    end function bissecao
 
 
 ```
@@ -1588,28 +1588,28 @@ função principal.
 
 ```
 
-					function bissecao(a, b) result(raiz)
-						! Limite inferior do intervalo
-						real(real64), intent(in) :: a
+    function bissecao(a, b) result(raiz)
+	    ! Limite inferior do intervalo
+	    real(real64), intent(in) :: a
 
-						! Limite superior do intervalo
-						real(real64), intent(in) :: b
+	    ! Limite superior do intervalo
+	    real(real64), intent(in) :: b
 
-						! Valor de x tal que f(x) = 0
-						real(real64) :: raiz
+	    ! Valor de x tal que f(x) = 0
+	    real(real64) :: raiz
 
-						! Ponto médio
-						real(real64) :: p_medio
+	    ! Ponto médio
+	    real(real64) :: p_medio
 
-						p_medio = (a+b)/2
+	    p_medio = (a+b)/2
 
-						if (f(p_medio) == 0) then
-							raiz = p_medio
-							return
-						else
-							call novo_intervalo(a, b)
-						end if
-					end function bissecao
+	    if (f(p_medio) == 0) then
+		    raiz = p_medio
+		    return
+	    else
+		    call novo_intervalo(a, b)
+	    end if
+    end function bissecao
 
 
 ```
@@ -1622,35 +1622,35 @@ Logo, receberemos esta informação como argumento de chamada da função.
 
 ```
 
-					function bissecao(a, b, n_passos) result(raiz)
-						! Limite inferior do intervalo
-						real(real64), intent(in) :: a
+    function bissecao(a, b, n_passos) result(raiz)
+	    ! Limite inferior do intervalo
+	    real(real64), intent(in) :: a
 
-						! Limite superior do intervalo
-						real(real64), intent(in) :: b
+	    ! Limite superior do intervalo
+	    real(real64), intent(in) :: b
 
-						! Nº máximo de passos
-						integer, intent(in) :: n_passos
+	    ! Nº máximo de passos
+	    integer, intent(in) :: n_passos
 
-						! Valor de x tal que f(x) = 0
-						real(real64) :: raiz
+	    ! Valor de x tal que f(x) = 0
+	    real(real64) :: raiz
 
-						! Ponto médio
-						real(real64) :: p_medio
+	    ! Ponto médio
+	    real(real64) :: p_medio
 
-						! Variável do loop
-						integer :: i
+	    ! Variável do loop
+	    integer :: i
 
-						do i = 1, n_passos
-							p_medio = (a+b)/2
-							if (f(p_medio) == 0) then
-								raiz = p_medio
-								return
-							else
-								call novo_intervalo(a, b)
-							end if
-						end do
-					end function bissecao
+	    do i = 1, n_passos
+		    p_medio = (a+b)/2
+		    if (f(p_medio) == 0) then
+			    raiz = p_medio
+			    return
+		    else
+			    call novo_intervalo(a, b)
+		    end if
+	    end do
+    end function bissecao
 
 
 ```
@@ -1663,44 +1663,44 @@ Nossa subrotina irá receber um par (a, b) que representa o intervalo atual da b
 
 ```
 
-					function bissecao(a, b, n_passos) result(raiz)
-						! Limite inferior do intervalo
-						real(real64), intent(in) :: a
+    function bissecao(a, b, n_passos) result(raiz)
+	    ! Limite inferior do intervalo
+	    real(real64), intent(in) :: a
 
-						! Limite superior do intervalo
-						real(real64), intent(in) :: b
+	    ! Limite superior do intervalo
+	    real(real64), intent(in) :: b
 
-						! Variável LOCAL do limite inferior do intervalo
-						real :: inf
+	    ! Variável LOCAL do limite inferior do intervalo
+	    real :: inf
 
-						! Variável LOCAL do limite superior do intervalo
-						real :: sup
+	    ! Variável LOCAL do limite superior do intervalo
+	    real :: sup
 
-						! Nº máximo de passos
-						integer, intent(in) :: n_passos
+	    ! Nº máximo de passos
+	    integer, intent(in) :: n_passos
 
-						! Valor de x tal que f(x) = 0
-						real(real64) :: raiz
+	    ! Valor de x tal que f(x) = 0
+	    real(real64) :: raiz
 
-						! Ponto médio
-						real(real64) :: p_medio
+	    ! Ponto médio
+	    real(real64) :: p_medio
 
-						! Variável do loop
-						integer :: i
+	    ! Variável do loop
+	    integer :: i
 
-						inf = a
-						sup = b
+	    inf = a
+	    sup = b
 
-						do i = 1, n_passos
-							p_medio = (inf+sup)/2
-							if (f(p_medio) == 0) then
-								raiz = p_medio
-								return
-							else
-								call novo_intervalo(inf, sup)
-							end if
-						end do
-					end function bissecao
+	    do i = 1, n_passos
+		    p_medio = (inf+sup)/2
+		    if (f(p_medio) == 0) then
+			    raiz = p_medio
+			    return
+		    else
+			    call novo_intervalo(inf, sup)
+		    end if
+	    end do
+    end function bissecao
 
 
 ```
