@@ -1394,10 +1394,10 @@ e utilizados nas chamadas seguintes.
 Com as técnincas e estruturas apresentadas nos tópicos
 anteriores, agora temos o que precisamos para construírmos nossa
 primeira versão do Método da Bisseção. Esta primeira versão será
-melhorada ou modificada nos tópicos seguintes, por motivos que
+melhorada/modificada nos tópicos seguintes, por motivos que
 abordaremos ao final desta sessão. Vamos começar
 relembrando/definindo a ideia algorítmica do método em alto nível
-de abstração. Em suma, o método segue os seguintes passos:
+de abstração. Em suma, o método da bisseção segue os seguintes passos:
 
 1. Começamos informando a função que queremos encontrar o 0, e o
    intervalo onde iremos começar a busca
@@ -1411,8 +1411,10 @@ de abstração. Em suma, o método segue os seguintes passos:
 
 Vamos contruir este programa utilizando a seguinte abordagem:
 começamos escrevendo as partes centrais do código primeiro, supondo
-que dispomos de todas as estruturas intermediárias necessárias, e
-depois especificaremos/implementaremos estas estruturas.
+que dispomos de todas as estruturas intermediárias e funções necessárias.
+Ou seja, vamos escrever o código usando, por exemplo, uma função "abc(x)" 
+sem termos definido "abc" ainda, e tendo concluído o código principal 
+definimos "abc" (pois se não o código não funcionará).
 
 ### Tópico 7.1: Arquitetando o código
 
@@ -1472,8 +1474,8 @@ passo.
 
 ```
 
-- Por fim, percebendo que o método recebe um conjunto de valores
-  e retorna um único valor (um x tal que f(x) = 0), podemos modelar o
+- Por fim, percebendo que o método recebe como entrada um conjunto de valores
+  e retorna como resultado um único valor (um x tal que f(x) = 0), podemos modelar o
   método como uma função. Por questão de organização, vamos colocar o
   método num módulo próprio e usá-lo no programa principal. Vamos
   escolher, por conveniência, trabalhar com precisão dupla.
@@ -1519,8 +1521,9 @@ passo.
 #### 2\. Calculamos o ponto médio do intervalo
 
 Aqui criamos uma variável a mais em nossa função da bisseção e
-realizamos a média simples. Para evitar reexibir todo o código,
-vamos mostrar apenas a função de bissecao que será alterada:
+realizamos a média simples dos limites do intervalo para calcular o ponto médio. 
+Para evitar reexibir todo o código,
+vamos mostrar apenas a função de bissecao, que será alterada:
 
 ```
 
@@ -1581,7 +1584,7 @@ Estes 2 passos podem ser feitos por um teste condicional
 
 Diferente dos passos anteriores, "fazer a análise de sinal da função e determinar um novo intervalo" não é
 uma tarefa de poucas instruções. Porém, como o próprio algoritmo nos mostra, também não queremos colocar
-diretamente o trecho de código todo diretamente na função pois isso não deixa claro o que este grande
+todo o trecho de código diretamente na função pois isso não deixa claro o que este grande
 conjunto de instruções faz. Para manter uma boa legibilidade e modularidade de código, vamos colocar esta etapa
 em uma **subrotina**. Faremos a especificação e ajustes referentes à subrotina após terminamos a construção da
 função principal.
@@ -1711,6 +1714,106 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
 2. Calculamos ```f``` aplicada no ponto médio e ```f``` aplicada no limite inferior do intervalo (```inf```)
 3. Se ```f``` aplicada em ```c``` tiver o mesmo sinal de ```f``` aplicada em ```inf```, o novo intervalo é (```c, sup```)
 4. Caso contrário, então sabemos que ```f``` aplicada em ```c``` tem o mesmo sinal que ```f``` aplicada em ```sup```, e o novo intervalo é (```inf, c```)
+
+##### 5.1 Calcular o ponto médio do intervalo
+
+```
+
+    subroutine novo_intervalo(inf, sup)
+		real, intent(inout) :: inf
+		real, intent(inout) :: sup
+		real :: c
+	
+		c = (inf+sup)/2
+	end subroutine novo_intervalo
+
+```
+
+##### 5.2 Calcular f(inf) e f(c)
+
+```
+    subroutine novo_intervalo(inf, sup)
+		real, intent(inout) :: inf
+		real, intent(inout) :: sup
+		real :: c
+		real :: sinal_f_inf
+		real :: sinal_f_c
+		real :: novo_inf
+		real :: novo_sup
+	
+		c = (inf+sup)/2
+
+        f_em_inf = f(inf)
+        f_em_c = f(c)
+	end subroutine novo_intervalo
+
+```
+
+##### 5.3 Testar sinal e determinar um novo intervalo
+
+```
+
+    subroutine novo_intervalo(inf, sup)
+	    real, intent(inout) :: inf
+	    real, intent(inout) :: sup
+	    real :: c
+	    real :: sinal_f_inf
+	    real :: sinal_f_c
+	    real :: novo_inf
+	    real :: novo_sup
+
+	    c = (inf+sup)/2
+
+        f_em_inf = f(inf)
+        f_em_c = f(c)
+
+	    sinal_f_inf = sign(1.0, f_em_inf)
+	    sinal_f_c = sign(1.0, f_em_c)
+
+	    if (sinal_f_inf == sinal_f_c) then
+		    novo_inf = c
+		    novo_sup = sup
+	    end if
+
+	    inf = novo_inf
+	    sup = novo_sup
+    end subroutine novo_intervalo
+
+```
+
+##### 5.4 Determinar outro novo intervalo caso o primeiro teste tenha falhado
+
+```
+    subroutine novo_intervalo(inf, sup)
+        real, intent(inout) :: inf
+        real, intent(inout) :: sup
+        real :: c
+        real :: sinal_f_inf
+        real :: sinal_f_c
+        real :: novo_inf
+        real :: novo_sup
+
+        c = (inf+sup)/2
+
+        f_em_inf = f(inf)
+        f_em_c = f(c)
+
+        sinal_f_inf = sign(1.0, f_em_inf)
+        sinal_f_c = sign(1.0, f_em_c)
+
+        if (sinal_f_inf == sinal_f_c) then
+	        novo_inf = c
+	        novo_sup = sup	
+        else
+	        novo_inf = inf
+	        novo_sup = c
+        end if
+
+        inf = novo_inf
+        sup = novo_sup
+    end subroutine novo_intervalo
+
+```
 
 
 
