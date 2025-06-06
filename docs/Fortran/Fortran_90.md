@@ -1674,10 +1674,10 @@ Nossa subrotina irá receber um par (a, b) que representa o intervalo atual da b
 	    real(real64), intent(in) :: b
 
 	    ! Variável LOCAL do limite inferior do intervalo
-	    real :: inf
+	    real(real64) :: inf
 
 	    ! Variável LOCAL do limite superior do intervalo
-	    real :: sup
+	    real(real64) :: sup
 
 	    ! Nº máximo de passos
 	    integer, intent(in) :: n_passos
@@ -1720,9 +1720,9 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
 ```
 
     subroutine novo_intervalo(inf, sup)
-		real, intent(inout) :: inf
-		real, intent(inout) :: sup
-		real :: c
+		real(real64), intent(inout) :: inf
+		real(real64), intent(inout) :: sup
+		real(real64) :: c
 	
 		c = (inf+sup)/2
 	end subroutine novo_intervalo
@@ -1733,13 +1733,13 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
 
 ```
     subroutine novo_intervalo(inf, sup)
-		real, intent(inout) :: inf
-		real, intent(inout) :: sup
-		real :: c
-		real :: sinal_f_inf
-		real :: sinal_f_c
-		real :: novo_inf
-		real :: novo_sup
+		real(real64), intent(inout) :: inf
+		real(real64), intent(inout) :: sup
+		real(real64) :: c
+		real(real64) :: sinal_f_inf
+		real(real64) :: sinal_f_c
+		real(real64) :: novo_inf
+		real(real64) :: novo_sup
 	
 		c = (inf+sup)/2
 
@@ -1754,21 +1754,21 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
 ```
 
     subroutine novo_intervalo(inf, sup)
-	    real, intent(inout) :: inf
-	    real, intent(inout) :: sup
-	    real :: c
-	    real :: sinal_f_inf
-	    real :: sinal_f_c
-	    real :: novo_inf
-	    real :: novo_sup
+	    real(real64), intent(inout) :: inf
+	    real(real64), intent(inout) :: sup
+	    real(real64) :: c
+	    real(real64) :: sinal_f_inf
+	    real(real64) :: sinal_f_c
+	    real(real64) :: novo_inf
+	    real(real64) :: novo_sup
 
 	    c = (inf+sup)/2
 
         f_em_inf = f(inf)
         f_em_c = f(c)
 
-	    sinal_f_inf = sign(1.0, f_em_inf)
-	    sinal_f_c = sign(1.0, f_em_c)
+	    sinal_f_inf = sign(1.0_real64, f_em_inf)
+	    sinal_f_c = sign(1.0_real64, f_em_c)
 
 	    if (sinal_f_inf == sinal_f_c) then
 		    novo_inf = c
@@ -1781,25 +1781,25 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
 
 ```
 
-##### 5.4 Determinar outro novo intervalo caso o primeiro teste tenha falhado
+##### 5.4 Determinar outro novo intervalo caso o primeiro teste tenha falhado 
 
 ```
     subroutine novo_intervalo(inf, sup)
-        real, intent(inout) :: inf
-        real, intent(inout) :: sup
-        real :: c
-        real :: sinal_f_inf
-        real :: sinal_f_c
-        real :: novo_inf
-        real :: novo_sup
+        real(real64), intent(inout) :: inf
+        real(real64), intent(inout) :: sup
+        real(real64) :: c
+        real(real64) :: sinal_f_inf
+        real(real64) :: sinal_f_c
+        real(real64) :: novo_inf
+        real(real64) :: novo_sup
 
         c = (inf+sup)/2
 
         f_em_inf = f(inf)
         f_em_c = f(c)
 
-        sinal_f_inf = sign(1.0, f_em_inf)
-        sinal_f_c = sign(1.0, f_em_c)
+        sinal_f_inf = sign(1.0_real64, f_em_inf)
+        sinal_f_c = sign(1.0_real64, f_em_c)
 
         if (sinal_f_inf == sinal_f_c) then
 	        novo_inf = c
@@ -1815,7 +1815,117 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
 
 ```
 
+#### Código Final
 
+Juntando os trechos finais de código desenvolvidos acima temos a nossa primeira versão do programa:
+
+
+```
+
+    module funcoes
+        use, intrinsic :: iso_fortran_env
+	    implicit none
+
+    contains	
+	    ! Polinômio: x^3 - x - 2
+	    function f(x) result(y)
+		    real(real64), intent(in) :: x
+		    real(real64) :: y
+
+		    y = x**3 - x - 2
+	    end function f
+    end module funcoes
+
+    module metodos
+	    use funcoes
+	    implicit none
+
+    contains
+	    subroutine novo_intervalo(inf, sup)
+		    real(real64), intent(inout) :: inf
+		    real(real64), intent(inout) :: sup
+		    real(real64) :: c
+		    real(real64) :: sinal_f_inf
+		    real(real64) :: sinal_f_c
+		    real(real64) :: novo_inf
+		    real(real64) :: novo_sup
+	    
+		    c = (inf+sup)/2
+		    sinal_f_inf = sign(1.0_real64, f(inf))
+		    sinal_f_c = sign(1.0_real64, f(c))
+	    
+		    if (sinal_f_inf == sinal_f_c) then
+			    novo_inf = c
+			    novo_sup = sup
+	    
+		    else
+			    novo_inf = inf
+			    novo_sup = c
+		    end if
+
+		    inf = novo_inf
+		    sup = novo_sup
+	    end subroutine novo_intervalo
+	    
+	    function bissecao(a, b, n_passos) result(raiz)	
+		    ! Limite inferior do intervalo
+		    real(real64), intent(in) :: a 							
+
+		    ! Limite superior do intervalo
+		    real(real64), intent(in) :: b 
+
+		    ! Nº máximo de passos 
+		    integer, intent(in) :: n_passos 
+
+		    ! Valor de x tal que f(x) = 0
+		    real(real64) :: raiz 
+
+		    ! Ponto médio
+		    real(real64) :: p_medio
+
+		    ! Variável LOCAL do limite inferior do intervalo
+		    real(real64) :: inf
+
+		    ! Variável LOCAL do limite superior do intervalo
+		    real(real64) :: sup
+
+		    ! Variável do loop
+		    integer :: i
+
+		    inf = a
+		    sup = b
+
+		    do i = 1, n_passos
+			    p_medio = (inf+sup)/2
+			    if (f(p_medio) == 0) then
+				    raiz = p_medio
+				    return
+
+			    else
+				    call novo_intervalo(inf, sup)
+			    end if
+		    end do
+
+		    raiz = p_medio
+	    end function bissecao
+    end module metodos
+
+    program main
+	    use funcoes
+	    use metodos
+	    use, intrinsic :: iso_fortran_env
+	    implicit none
+	    
+	    real(real64) :: resultado
+	    real(real64) :: a = 1
+	    real(real64) :: b = 2
+	    integer :: n_passos = 22
+	    
+        resultado = bissecao(a, b, n_passos)
+        print *, resultado
+    end program main
+
+```
 
 ## Tópico 8: Formatação de Saídas: WRITE
 
