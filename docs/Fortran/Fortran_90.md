@@ -1826,7 +1826,7 @@ $$f(x) = \frac{cos(x) x^5}{e^x}$$
 
 Observando o gráfico da função, sabemos que esta função possui raízes próximas do valor 10:
 
-![[./f90_content/function_graph.png]]
+![graph of f](./f90_content/function_graph.png)
 
 Vamos buscar um valor mais preciso para a raiz logo depois do 10 e antes do 15. Para isso, basta mudarmos nossa função `f` no módulo de funções:
 
