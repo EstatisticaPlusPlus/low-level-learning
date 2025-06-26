@@ -1875,6 +1875,7 @@ Logo, a diferença maior está neste segundo argumento de formatação, chamados
 | posicionamento horizontal      | `nX`                             |              |
 | posicionamento de tabulação    | `Tc`                             | `TLc`, `TRc` |
 | posicionamento vertical        | `/`                              |              |
+
 Com isso, podemos formatar a atual saída do nosso programa da seguinte forma: 
 - Mostrar a string "Raiz encontrada: ", seguida de 12 espaços, seguidos do valor calculado para a raiz (`resultado`) com 15 casas depois da vírgula.
 - Logo em seguida mostrar a string "Função avaliada nessa raiz: ", seguida de 1 espaço, seguido do valor `f(resultado)` com 15 casas depois da vírgula.
