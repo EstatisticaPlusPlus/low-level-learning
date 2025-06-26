@@ -183,7 +183,7 @@ podemos utilizar um módulo disponibilizado pelos compiladores mais
 recentes de Fortran (2003/2008 em diante): o
 `iso_fortran_env`. Neste módulo, temos a definição de
 várias constantes, sendo algumas delas as de definição de precisão
-\- conhecidas como " `kind` parameters".
+\- conhecidas como "`kind` parameters".
 
 Para declararmos uma variável real com 64 bits de precisão,
 importamos o módulo e declaramos a variável como
@@ -221,7 +221,7 @@ precisão de representação do número de Euler:
 E temos `v1 = 2.71828175` e `v2 =
 2.7182818284590451`. No primeiro caso, temos erro no 7º
 dígito, e no segundo apenas no 16º dígito. Note que foi preciso
-chamar a função `exp(x)` (que retorna e^x) passando como
+chamar a função `exp(x)` (que retorna $e^x$) passando como
 argumento um valor de 64 bits, para que ele calculasse uma resposta
 com 64 bits de precisão. Lembre-se disso e tome cuidado para não
 acabar armazenando, por engano, um resultado gerado por precisão
@@ -1695,7 +1695,7 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
     end subroutine novo_intervalo
 ```
 
-#### Código Final
+### Tópico 7.2: Código Final
 
 Juntando os trechos finais de código desenvolvidos acima temos a nossa primeira versão do programa:
 
@@ -1798,7 +1798,7 @@ Juntando os trechos finais de código desenvolvidos acima temos a nossa primeira
 	    real(real64) :: resultado
 	    real(real64) :: a = 1
 	    real(real64) :: b = 2
-	    integer :: n_passos = 22
+	    integer :: n_passos = 20
 	    
         resultado = bissecao(a, b, n_passos)
         print *, resultado
@@ -1810,10 +1810,10 @@ Juntando os trechos finais de código desenvolvidos acima temos a nossa primeira
 Rodando nosso programa para o polinômio de teste $x^3 - x - 2$, começando pelo intervalo $[1, 2]$ e iterando por 22 passos (valores acima na `main`) obtemos como saída:
 
 ```
-1.5213797092437744
+1.5213804244995117
 ```
 
-E avaliando `f(resultado)` a saída é `1.4498129807805071E-008`, que está próximo de 0 e portanto indica que a saída do programa está próxima da raiz do polinômio. Se aumentarmos o número de iterações fazendo `n_passos = 50`, o programa retorna:
+E avaliando `f(resultado)` a saída é `4.2658294048258938E-006`, que está próximo de 0 e portanto indica que a saída do programa está próxima da raiz do polinômio. Se aumentarmos o número de iterações fazendo `n_passos = 50`, o programa retorna:
 
 ```
 1.5213797068045674
@@ -1822,33 +1822,114 @@ E avaliando `f(resultado)` a saída é `1.4498129807805071E-008`, que está pró
 E avaliando para esta saída `f(resultado)` obtemos `-1.3322676295501878E-015`, um resultado ainda melhor e que faz jus ao resultado teórico convergente: quanto mais passos, melhor a aproximação.
 
 Vamos testar para uma outra função mais desafiadora? Troquemos o polinômio pela função
-$$f(x) = \frac{cos(x) x^5}{e^x}$$
+$$f(x) = \frac{cos(x) x^5}{e^x} + 1$$
 
 Observando o gráfico da função, sabemos que esta função possui raízes próximas do valor 10:
 
 ![graph of f](./f90_content/function_graph.png)
 
-Vamos buscar um valor mais preciso para a raiz logo depois do 10 e antes do 15. Para isso, basta mudarmos nossa função `f` no módulo de funções:
+Vamos buscar um valor mais preciso para a raiz logo depois do 10 e antes do 12. Para isso, basta mudarmos nossa função `f` no módulo de funções:
 
 ```
 	function f(x) result(y)
 		real(real64), intent(in) :: x
 		real(real64) :: y
 
-		y = (cos(x) * x**5) / exp(x)
+		y = ((cos(x) * x**5) / exp(x)) + 1
 	end function f
 ```
 
-E podemos utilizar como intervalo de chute inicial $[10, 13]$ , ou seja, fazemos `a = 10` e `b = 13` no programa `main`. Com 50 passos temos que a raiz é:
+E podemos utilizar como intervalo de chute inicial $[10, 12]$ , ou seja, fazemos `a = 10` e `b = 12` no programa `main`. Com 50 passos temos que a raiz é:
 
 ```
-10.995574287564274     
+10.677725261441926     
 ```
-E nossa nova `f` avaliada neste ponto é `-5.9453528610959437E-015`; temos uma ótima aproximação. 
+E nossa nova `f` avaliada neste ponto é `-1.7763568394002505E-015`; temos uma ótima aproximação. 
 
 Fazer com que nosso algoritmo aceite uma função `f` externa qualquer não é trivial, logo estamos satisfeitos, por hora, com este procedimento de trocar a declaração de `f` explicitamente no código. Caso fique curioso sobre como é feita esta implementação mais genérica, ela envolve uso de uma estrutura ainda não apresentada: `interface`.
 ## Tópico 8: Formatação de Saídas: WRITE
 
+Até o momento utilizamos apenas a função `print` para exibirmos resultados em nossos códigos. Porém, caso queiramos mostrar saídas um pouco melhor elaboradas e formatadas, o uso da função `print` não é o mais adequado. Isso porque esta função foi criada para exibir resultados utilizando uma formatação específica, pensada na compatibilidade com antigas impressoras e dispositivos de saída utilizados nos anos 60 e 70. 
+
+Para utilizar uma formatação de saída personalizada, foi criada a função `write`, uma alternativa mais flexível que a `print`.  A função `print` recebe como primeiro argumento onde será escrita a saída (quando passamos `*` indicamos que deve ser utilizada a saída padrão do sistema) e logo em seguida passamos todos os argumentos a serem impressos, separados por vírgulas. Já na função `write`, passamos __entre parênteses__ onde será escrita a saída e qual será a formatação a ser utilizada, e então a lista de argumentos a serem impressos, separados por vírgulas. 
+
+Logo, a diferença maior está neste segundo argumento de formatação, chamados de "descritores de edição". Como eles funcionam? Bom, existe uma lista de formatadores aceitos que podem variar a depender do compilador sendo utilizado. Vamos utilizar [a tabela da Fortran Wiki](https://fortranwiki.org/fortran/show/Edit+descriptors) como referência: 
+
+`w` : o número exato de caracteres a serem utilizados
+
+`m` : o número mínimo de caracteres a serem utilizados
+
+`d` : o número de dígitos à direita do ponto decimal
+
+`e` : o número de dígitos no expoente
+
+| Tipo do dado                   | Descritores de <br>       Edição | Outra opção  |
+| ------------------------------ | -------------------------------- | ------------ |
+| `integer`                      | `Iw`                             | `Iw.m`       |
+| `real` (notação decimal)       | `Fw.d`                           |              |
+| `real` (notação exponencial)   | `Ew.d`                           | `Ew.dEe`     |
+| `real` (notação científica )   | `ESw.d`                          | `ESw.dEe`    |
+| `real` (notação de engenharia) | `ENw.d`                          | `ENw.dEe`    |
+| `logical`                      | `Lw`                             |              |
+| `character`                    | `A`                              | `Aw`         |
+| posicionamento horizontal      | `nX`                             |              |
+| posicionamento de tabulação    | `Tc`                             | `TLc`, `TRc` |
+| posicionamento vertical        | `/`                              |              |
+Com isso, podemos formatar a atual saída do nosso programa da seguinte forma: 
+- Mostrar a string "Raiz encontrada: ", seguida de 12 espaços, seguidos do valor calculado para a raiz (`resultado`) com 15 casas depois da vírgula.
+- Logo em seguida mostrar a string "Função avaliada nessa raiz: ", seguida de 1 espaço, seguido do valor `f(resultado)` com 15 casas depois da vírgula.
+
+Usando os descritores da tabela acima, alteraremos então o final do nosso programa principal do tópico anterior para:
+
+```
+	program main
+	    use funcoes
+	    use metodos
+	    use, intrinsic :: iso_fortran_env
+	    implicit none
+	    
+	    real(real64) :: resultado
+	    real(real64) :: a = 1
+	    real(real64) :: b = 2
+	    integer :: n_passos = 22
+	    
+        resultado = bissecao(a, b, n_passos)
+        write (*,'(A, 12X, F20.15)') 'Raiz encontrada: ', resultado
+		write (*,'(A,  1X, F20.15)') 'Função avaliada nessa raiz: ', f(resultado)
+    end program main
+```
+
+E a saída com $f(x) = x^3 - x - 2$ e 20 passos:
+
+```
+Raiz encontrada:              1.521380424499512
+Função avaliada nessa raiz:   0.000004265829405
+```
+
+Aumentando para 50 passos:
+
+```
+Raiz encontrada:              1.521379706804567
+Função avaliada nessa raiz:  -0.000000000000001
+```
+
+Trocando o descritor do segundo `write` de `F20.15` para `E22.15`:
+
+```
+Raiz encontrada:              1.521379706804567
+Função avaliada nessa raiz:  -0.133226762955019E-14
+```
+
+E podemos utilizar a formatação de saída que nos for mais conveniente. Atenção: note que o número que segue o `E` e o `F` dos descritores precisa levar em conta __todos__ os caracteres exibidos no argumento de saída (incluindo sinais, pontos, o próprio "E", etc). 
+
+A saída "-0.133226762955019E-14" tem exatamente 22 caracteres. Caso colocássemos um número menor que 22 no descritor, a saída sairia mal formatada. Veja o que ocorre quando colocamos `E20.15` :
+
+```
+Raiz encontrada:              1.521379706804567
+Função avaliada nessa raiz:  ********************
+```
+
+Na dúvida, um tamanho maior que o necessário é melhor que um menor.
 ## Tópico 9: Repetição: DO - WHILE
 
 ## Tópico 10: Imports e Linkagem
