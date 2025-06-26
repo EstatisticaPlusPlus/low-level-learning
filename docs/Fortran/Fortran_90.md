@@ -1,3 +1,5 @@
+
+# Fortran 90
 # Capítulo 1 - Introdução
 
 Texto introdutório: Neste capítulo visamos apresentar a
@@ -62,12 +64,9 @@ programação: Um programa que mostra "Olá mundo!" (ou "Hello
 world!") na tela e termina sua execução.
 
 ```
-
-    program exemplo
-            print *, 'Olá mundo!'
+	program exemplo
+	    print *, 'Olá mundo!'
     end program exemplo
-
-
 ```
 
 Compilando e executando este programa, o programa imprime na
@@ -79,9 +78,7 @@ O comando `print` utiliza um primeiro argumento, que
 é a formatação, e em seguidas as informações a serem mostradas.
 Como não queremos nenhuma formatação específica para nossos dados,
 usamos `*` como primeiro argumento, e em seguida a
-string `"Olá mundo!"`
-
-.
+string `"Olá mundo!"`.
 
 ### Tópico 2.1: Variáveis
 
@@ -110,11 +107,8 @@ declarar 2 variáveis reais `x` e `y`,
 fazemos:
 
 ```
-
     real :: x
     real :: y
-
-
 ```
 
 Nomes de variável precisam começar por uma letra, e podem ter
@@ -132,25 +126,21 @@ possível.
 Exemplos de declaração de variáveis para cada tipo:
 
 ```
-
     program variaveis
-            implicit none
+		implicit none
 
-            integer :: i
-            real :: distancia
-            complex :: frequencia
-            character :: inicial
-            logical :: eh_primo
+		integer :: i
+		real :: distancia
+		complex :: frequencia
+		character :: inicial
+		logical :: eh_primo
 
-            i = 1
-            distancia = 1.41421356
-            frequencia = (1.0, -0.5)
-            inicial = "f"
-            eh_primo = .false.
-
+		i = 1
+		distancia = 1.41421356
+		frequencia = (1.0, -0.5)
+		inicial = "f"
+		eh_primo = .false.
     end program variaveis
-
-
 ```
 
 Por padrão, utilizamos letras minúsculas ao programar, mas a
@@ -200,13 +190,10 @@ importamos o módulo e declaramos a variável como
 `real(real64)` :
 
 ```
-
     use, intrinsic :: iso_fortran_env
     implicit none
 
     real(real64) :: valor
-
-
 ```
 
 Essa informação é expressamente relevante para computações de
@@ -215,7 +202,6 @@ Float64, colocamos "\_real64" no final do valor. Veja a diferença na
 precisão de representação do número de Euler:
 
 ```
-
     program euler
             use, intrinsic :: iso_fortran_env
             implicit none
@@ -230,8 +216,6 @@ precisão de representação do número de Euler:
             print *, v2
 
     end program euler
-
-
 ```
 
 E temos `v1 = 2.71828175` e `v2 =
@@ -244,7 +228,6 @@ acabar armazenando, por engano, um resultado gerado por precisão
 simples em uma variável de precisão dupla. No mesmo exemplo:
 
 ```
-
     program euler
             use, intrinsic :: iso_fortran_env
             implicit none
@@ -255,8 +238,6 @@ simples em uma variável de precisão dupla. No mesmo exemplo:
             print *, v3
 
     end program euler
-
-
 ```
 
 Onde `v3 = 2.7182817459106445` parece ser um valor
@@ -271,13 +252,13 @@ Assim como muitas outras linguagens, Fortran vem com alguns
 operadores aritméticos básicos, tabelados abaixo em ordem de
 precedência:
 
-| Operador  |    Operação   | 
-| --------  | ------------  |
-|    **     | Exponenciação |
-|    *      | Multiplicação |
-|    /      | Divisão       |
-|    +      | Adição        |
-|    -      | Subtração     |
+| Operador | Operação      |     |
+| -------- | ------------- | --- |
+| **       | Exponenciação |     |
+| *        | Multiplicação |     |
+| /        | Divisão       |     |
+| +        | Adição        |     |
+| -        | Subtração     |     |
 
 **Muito cuidado** com a precedência dos operadores ao colocar
 expressões matemáticas grandes no seu código! Principalmente se
@@ -286,12 +267,9 @@ expressão diferente da pretendida. Por exemplo, se quisermos
 calcular uma média simples entre 3 números, ao escrever:
 
 ```
-
     program media
-            print *, 3 + 4 + 5 / 2
+		print *, 3 + 4 + 5 / 2
     end program media
-
-
 ```
 
 Temos como resultado `9`, e não `6`, pois
@@ -301,12 +279,9 @@ precedência de operações, envolvemos a expressão com parênteses -
 que possuem a maior precedência entre os operadores:
 
 ```
-
     program media
-            print *, (3 + 4 + 5) / 2
+		print *, (3 + 4 + 5) / 2
     end program media
-
-
 ```
 
 E agora temos o comportamento esperado. Outro detalhe curioso no
@@ -319,23 +294,17 @@ representados **com ponto decimal**, ainda que sua parte decimal
 seja toda zero. Essa regra explica o porquê de
 
 ```
-
     program divisao
-            print *, 5 / 2
+		print *, 5 / 2
     end program divisao
-
-
 ```
 
 ser avaliado como `2` , e
 
 ```
-
     program divisao
-            print *, 5.0 / 2
+	    print *, 5.0 / 2
     end program divisao
-
-
 ```
 
 ser avaliado como `2.50000000` . Portanto, **cuidado**
@@ -352,28 +321,25 @@ documentar o que está sendo feito no programa e para guiar as
 pessoas que forem ler o código-fonte.
 
 ```
-
     program comentarios
-            implicit none
-            ! Esta linha será ignorada pelo compilador, escreva o que quiser
+		implicit none
+		! Esta linha será ignorada pelo compilador, escreva o que quiser
 
-            real :: alpha  ! Coeficiente do termo linear
-            real :: beta   ! Coeficiente do termo não-linear
-            real :: x      ! Variável de entrada
-            real :: y
+		real :: alpha  ! Coeficiente do termo linear
+		real :: beta   ! Coeficiente do termo não-linear
+		real :: x      ! Variável de entrada
+		real :: y
 
-            alpha = 3.0
-            beta = 1.0
-            x = 1
+		alpha = 3.0
+		beta = 1.0
+		x = 1
 
-            ! Calculando a relação y(x)
-            y = (alpha * x) + (beta * x * x)
+		! Calculando a relação y(x)
+		y = (alpha * x) + (beta * x * x)
 
-            print *, y
+		print *, y
 
     end program comentarios
-
-
 ```
 
 Não faça comentários em excesso, pois comentários demais podem
@@ -405,21 +371,18 @@ A sintaxe para declaração de uma função em Fortran segue um
 padrão como o seguinte:
 
 ```
-
     function nome_funcao(arg1, arg2) result(var_result)
-            implicit none
+		implicit none
 
-            tipo1, intent(in) :: arg1
-            tipo2, intent(in) :: arg2
-            tipo3 :: var_result
+		tipo1, intent(in) :: arg1
+		tipo2, intent(in) :: arg2
+		tipo3 :: var_result
 
-            ! Corpo da função
+		! Corpo da função
 
-            return
+		return
 
     end funtion nome_funcao
-
-
 ```
 
 Vamos destrinchar cada parte. A declaração é feita em bloco,
@@ -454,7 +417,7 @@ que esta variável será apenas lida, mas não poderá ter seu valor
 sobrescrito pela função. Essa instrução está certificando mais um
 padrão de funções em Fortran: funções não devem alterar os
 argumentos de entrada. Esse padrão previne comportamentos
-inesperados ( _side effects_) e facilita interpretação de
+inesperados (_side effects_) e facilita interpretação de
 resultados.
 
 Para vermos um exemplo que ilustra a importância da declaração
@@ -469,67 +432,58 @@ construir uma primeira função para isso, não seguindo o padrão com
 `intent`:
 
 ```
-
     function norma_dobro(v1, v2) result(norma)
-            real :: v1
-            real :: v2
-            real :: norma
+		real :: v1
+		real :: v2
+		real :: norma
 
-            v1 = 2*v1
-            v2 = 2*v2
+		v1 = 2*v1
+		v2 = 2*v2
 
-            norma = ((v1**2) + (v2**2))**(1.0/2.0)
+		norma = ((v1**2) + (v2**2))**(1.0/2.0)
 
-            return
+		return
 
     end function norma_dobro
-
-
 ```
 
 Agora, vamos criar um programa e testar nossa função:
 
 ```
-
     program calcula_norma
-            implicit none
-            real :: norma_calculada
-            real :: vec1 !1ª coordenada do vetor
-            real :: vec2 !2ª coordenada do vetor
+		implicit none
+		real :: norma_calculada
+		real :: vec1 !1ª coordenada do vetor
+		real :: vec2 !2ª coordenada do vetor
 
-            vec1 = 1
-            vec2 = 1
+		vec1 = 1
+		vec2 = 1
 
-            norma_calculada = norma_dobro(vec1, vec2)
-            print *, norma_calculada
+		norma_calculada = norma_dobro(vec1, vec2)
+		print *, norma_calculada
 
-            contains
-                    function norma_dobro(v1, v2) result(norma)
-                            real :: v1
-                            real :: v2
-                            real :: norma
+		contains
+			function norma_dobro(v1, v2) result(norma)
+				real :: v1
+				real :: v2
+				real :: norma
 
-                            v1 = 2*v1
-                            v2 = 2*v2
+				v1 = 2*v1
+				v2 = 2*v2
 
-                            norma = ((v1**2) + (v2**2))**(1.0/2.0)
+				norma = ((v1**2) + (v2**2))**(1.0/2.0)
 
-                            return
+				return
 
-                    end function norma_dobro
+			end function norma_dobro
 
     end program calcula_norma
-
-
 ```
 
 Ao executarmos o nosso programa, temos como saída:
 
 ```
-
     2.82842708
-
-
 ```
 
 Que é a norma do vetor (2, 2). A princípio, parece que está tudo
@@ -540,37 +494,37 @@ v1, v2 antes e depois da chamada da função:
 ```
 
     program calcula_norma
-            implicit none
-            real :: norma_calculada
-            real :: vec1 !1ª coordenada do vetor
-            real :: vec2 !2ª coordenada do vetor
+		implicit none
+		real :: norma_calculada
+		real :: vec1 !1ª coordenada do vetor
+		real :: vec2 !2ª coordenada do vetor
 
-            vec1 = 1
-            vec2 = 1
+		vec1 = 1
+		vec2 = 1
 
-            print *, vec1
-            print *, vec2
+		print *, vec1
+		print *, vec2
 
-            norma_calculada = norma_dobro(vec1, vec2)
-            print *, norma_calculada
+		norma_calculada = norma_dobro(vec1, vec2)
+		print *, norma_calculada
 
-            print *, vec1
-            print *, vec2
+		print *, vec1
+		print *, vec2
 
-            contains
-                    function norma_dobro(v1, v2) result(norma)
-                            real :: v1
-                            real :: v2
-                            real :: norma
+		contains
+			function norma_dobro(v1, v2) result(norma)
+				real :: v1
+				real :: v2
+				real :: norma
 
-                            v1 = 2*v1
-                            v2 = 2*v2
+				v1 = 2*v1
+				v2 = 2*v2
 
-                            norma = ((v1**2) + (v2**2))**(1.0/2.0)
+				norma = ((v1**2) + (v2**2))**(1.0/2.0)
 
-                            return
+				return
 
-                    end function norma_dobro
+			end function norma_dobro
 
     end program calcula_norma
 
@@ -580,14 +534,11 @@ v1, v2 antes e depois da chamada da função:
 E no resultado desse programa:
 
 ```
-
     1.00000000
     1.00000000
     2.82842708
     2.00000000
     2.00000000
-
-
 ```
 
 Podemos perceber que nossa função de cálculo de norma mudou os
@@ -598,49 +549,45 @@ agora o que acontece quando declaramos a função usando
 `intent`:
 
 ```
-
     program calcula_norma
-            implicit none
-            real :: norma_calculada
-            real :: vec1 !1ª coordenada do vetor
-            real :: vec2 !2ª coordenada do vetor
+		implicit none
+		real :: norma_calculada
+		real :: vec1 !1ª coordenada do vetor
+		real :: vec2 !2ª coordenada do vetor
 
-            vec1 = 1
-            vec2 = 1
+		vec1 = 1
+		vec2 = 1
 
-            print *, vec1
-            print *, vec2
+		print *, vec1
+		print *, vec2
 
-            norma_calculada = norma_dobro(vec1, vec2)
-            print *, norma_calculada
+		norma_calculada = norma_dobro(vec1, vec2)
+		print *, norma_calculada
 
-            print *, vec1
-            print *, vec2
+		print *, vec1
+		print *, vec2
 
-            contains
-                    function norma_dobro(v1, v2) result(norma)
-                            real, intent(in) :: v1
-                            real, intent(in) :: v2
-                            real :: norma
+		contains
+			function norma_dobro(v1, v2) result(norma)
+				real, intent(in) :: v1
+				real, intent(in) :: v2
+				real :: norma
 
-                            v1 = 2*v1
-                            v2 = 2*v2
+				v1 = 2*v1
+				v2 = 2*v2
 
-                            norma = ((v1**2) + (v2**2))**(1.0/2.0)
+				norma = ((v1**2) + (v2**2))**(1.0/2.0)
 
-                            return
+				return
 
-                    end function norma_dobro
+			end function norma_dobro
 
     end program calcula_norma
-
-
 ```
 
 E ao tentarmos compilar e executar este programa:
 
 ```
-
     ./main.f95:27:3:
 
              27 |    v1 = 2*v1
@@ -651,8 +598,6 @@ E ao tentarmos compilar e executar este programa:
              28 |    v2 = 2*v2
     Error: Dummy argument ‘v2’ with INTENT(IN) in variable definition
     context (assignment) at (1)
-
-
 ```
 
 Nosso compilador não finalizou a compilação pois detectou uma
@@ -675,46 +620,40 @@ Na primeira proposta, nossa função ficaria com a seguinte
 cara:
 
 ```
-
     function norma_dobro(v1, v2) result(norma)
-            real, intent(in) :: v1
-            real, intent(in) :: v2
+		real, intent(in) :: v1
+		real, intent(in) :: v2
 
-            real :: coord1
-            real :: coord2
-            real :: norma
+		real :: coord1
+		real :: coord2
+		real :: norma
 
-            coord1 = v1
-            coord2 = v2
+		coord1 = v1
+		coord2 = v2
 
-            coord1 = 2*coord1
-            coord2 = 2*coord2
+		coord1 = 2*coord1
+		coord2 = 2*coord2
 
-            norma = ((coord1**2) + (coord2**2))**(1.0/2.0)
+		norma = ((coord1**2) + (coord2**2))**(1.0/2.0)
 
-            return
+		return
 
     end function norma_dobro
-
-
 ```
 
 Com a segunda proposta:
 
 ```
-
     function norma_dobro(v1, v2) result(norma)
-            real, intent(in) :: v1
-            real, intent(in) :: v2
-            real :: norma
+		real, intent(in) :: v1
+		real, intent(in) :: v2
+		real :: norma
 
-            norma = (((2*v1)**2) + ((2*v2)**2))**(1.0/2.0)
+		norma = (((2*v1)**2) + ((2*v2)**2))**(1.0/2.0)
 
-            return
+		return
 
     end function norma_dobro
-
-
 ```
 
 E, com qualquer uma dessas versões, nosso resultado final ao
@@ -756,8 +695,10 @@ funções ofertadas são:
 
 - Valor Absoluto - `ABS`
 - Máximo - `MAX`
-- Logaritimo Natural - `LOG`
+- Logaritmo Natural - `LOG`
+- Exponencial - `EXP`
 - Raiz Quadrada - `SQRT`
+- Cosseno - `COS`
 - Arco tangente - `ATAN`
 - Conjugado Complexo - `CONJG`, etc
 
@@ -783,17 +724,14 @@ A sintaxe da declaração de um módulo segue um padrão como o
 seguinte:
 
 ```
-
     module nome_do_modulo
-            implicit none
+		implicit none
 
     contains
-            ! Aqui começa o bloco de declaração de
-            ! funções, variáveis, e o que mais quisermos
+		! Aqui começa o bloco de declaração de
+		! funções, variáveis, e o que mais quisermos
 
     end module nome_do_modulo
-
-
 ```
 
 E, para usarmos um módulo em um programa, incluímos uma linha
@@ -803,54 +741,51 @@ módulo de normas, e teremos um programa reestruturado da seguinte
 forma:
 
 ```
-
     module normas
-            implicit none
+		implicit none
 
     contains
-            function norma_do_dobro(v1, v2) result(norma)
-                    real, intent(in) :: v1
-                    real, intent(in) :: v2
+		function norma_do_dobro(v1, v2) result(norma)
+				real, intent(in) :: v1
+				real, intent(in) :: v2
 
-                    real :: coord1
-                    real :: coord2
-                    real :: norma
+				real :: coord1
+				real :: coord2
+				real :: norma
 
-                    coord1 = v1
-                    coord2 = v2
+				coord1 = v1
+				coord2 = v2
 
-                    coord1 = 2*coord1
-                    coord2 = 2*coord2
+				coord1 = 2*coord1
+				coord2 = 2*coord2
 
-                    norma = sqrt((coord1**2) + (coord2**2))
+				norma = sqrt((coord1**2) + (coord2**2))
 
-                    return
+				return
 
-            end function norma_do_dobro
+		end function norma_do_dobro
     end module funcs
 
     program calcula_norma
-            use normas
-            implicit none
-            real :: norma_calculada
-            real :: vec1 !1ª coordenada do vetor
-            real :: vec2 !2ª coordenada do vetor
+		use normas
+		implicit none
+		real :: norma_calculada
+		real :: vec1 !1ª coordenada do vetor
+		real :: vec2 !2ª coordenada do vetor
 
-            vec1 = 1
-            vec2 = 1
+		vec1 = 1
+		vec2 = 1
 
-            print *, vec1
-            print *, vec2
+		print *, vec1
+		print *, vec2
 
-            norma_calculada = norma_do_dobro(vec1, vec2)
-            print *, norma_calculada
+		norma_calculada = norma_do_dobro(vec1, vec2)
+		print *, norma_calculada
 
-            print *, vec1
-            print *, vec2
+		print *, vec1
+		print *, vec2
 
     end program calcula_norma
-
-
 ```
 
 Desta forma, agrupamos funções parecidas, ou de mesmo contexto,
@@ -879,15 +814,25 @@ valores verdade `.true.` e `.false.`.
 Para formarmos expressões lógicas, podemos utilizar os
 operadores:
 
-OperadorOperação==Verifica se os 2 operandos são iguais/=Verifica se os 2 operandos são diferentes>Verifica se o operando à esquerda é maior que o da direita<Verifica se o operando à esquerda é menor que o da direita>=Verifica se o operando à esquerda é maior ou igual ao da
-direita<=Verifica se o operando à esquerda é menor ou igual ao da
-direita
+| Operador | Operação                                                            |
+| -------- | ------------------------------------------------------------------- |
+| ==       | Verifica se os 2 operandos são iguais                               |
+| /=       | Verifica se os 2 operandos são diferentes                           |
+| >        | Verifica se o operando à esquerda é maior que o da direita          |
+| <        | Verifica se o operando à esquerda é menor que o da direita          |
+| >=       | Verifica se o operando à esquerda é maior ou igual ao da            |
+| <=       | Verifica se o operando à esquerda é menor ou igual ao da<br>direita |
 
 Estes operadores irão retornar valores `.true.` ou
 `.false.`, e podemos operar estes valores com os
 operadores booleanos:
 
-OperadorOperação.and.Realiza um "E" lógico.or.Realiza um "OU" lógico.not.Realiza um "NÃO" lógico
+| Operador | Operação                |
+| -------- | ----------------------- |
+| .and.    | Realiza um "E" lógico   |
+| .or.     | Realiza um "OU" lógico  |
+| .not.    | Realiza um "NÃO" lógico |
+
 Com isso, podemos fazer alguns testes como: Se um certo valor é
 maior que 0, se 2 valores são iguais, etc.
 
@@ -898,14 +843,11 @@ vamos usá-las com o comando IF-THEN-ELSE. A sintaxe do comando
 é:
 
 ```
-
     if (expressao_logica) then
-            ! Código a ser executado se a expressão for verdadeira
+		! Código a ser executado se a expressão for verdadeira
     else
-            ! Código a ser executado se a expressão for falsa
+		! Código a ser executado se a expressão for falsa
     end if
-
-
 ```
 
 O trecho `else` pode ser omitido, caso não haja
@@ -916,43 +858,37 @@ como:
 **Função Valor Absoluto**
 
 ```
-
     function absoluto(x) result(y)
-            real, intent(in) :: x
-            real :: y
+		real, intent(in) :: x
+		real :: y
 
-            y = x
+		y = x
 
-            if (x < 0) then
-                    y = -y
-            end if
+		if (x < 0) then
+				y = -y
+		end if
 
-            return
+		return
 
     end function absoluto
-
-
 ```
 
 **Função de Heaviside**
 
 ```
-
     function heaviside(x) result(y)
-            real, intent(in) :: x
-            real :: y
+		real, intent(in) :: x
+		real :: y
 
-            if (x >= 0) then
-                    y = 1
-            else
-                    y = 0
-            end if
+		if (x >= 0) then
+				y = 1
+		else
+				y = 0
+		end if
 
-            return
+		return
 
     end function heaviside
-
-
 ```
 
 E assim por diante. Dica de programação: evite colocar muitos
@@ -963,30 +899,27 @@ parênteses, na dúvida). Aqui um exemplo de um bloco difícil de
 entender devido a IF's aninhados:
 
 ```
-
     real, intent(in):: a
     real, intent(in):: b
     real, intent(in):: p
 
     if (p >= a) then
-            if (p <= b) then
-                    if (p == (a+b)/2 ) then
-                    print *, "p está no intervalo e é ponto medio"
-                    else
-                            if (p > (a+b)/2) then
-                                    print *, "p está no intervalo, e está mais próximo de", b
-                            else
-                    print *, "p está no intervalo, e está mais próximo de", a
-                            end if
-                    end if
-            else
-                    print *, "p está fora do intervalo, e depois de", b
-            end if
-    else
-            print *, "p está fora do intervalo, e antes de", a
+		if (p <= b) then
+			if (p == (a+b)/2 ) then
+				print *, "p está no intervalo e é ponto medio"
+			else
+				if (p > (a+b)/2) then
+					print *, "p está no intervalo, e está mais próximo de", b
+				else
+					print *, "p está no intervalo, e está mais próximo de", a
+				end if
+			end if
+		else
+			print *, "p está fora do intervalo, e depois de", b
+		end if
+	else
+		print *, "p está fora do intervalo, e antes de", a
     end if
-
-
 ```
 
 Perceba que você precisa manter os estados lógicos na sua cabeça
@@ -1001,36 +934,33 @@ de IF. Veja como fica o código acima utilizando a primeira
 técnica:
 
 ```
-
     real, intent(in):: a
     real, intent(in):: b
     real, intent(in):: p
 
     if (p < a) then
-            print *, "p está fora do intervalo, e antes de", a
-            return
+		print *, "p está fora do intervalo, e antes de", a
+		return
     end if
 
     if (p > b) then
-            print *, "p está fora do intervalo, e depois de", b
-            return
+		print *, "p está fora do intervalo, e depois de", b
+		return
     end if
 
     if (p == (a+b)/2 ) then
-            print *, "p está no intervalo e é ponto medio"
-            return
+		print *, "p está no intervalo e é ponto medio"
+		return
     end if
 
     ! Neste ponto, sabemos que p está no intervalo e não é ponto médio
     if (p > (a+b)/2) then
-            print *, "p está no intervalo, e está mais próximo de", b
+		print *, "p está no intervalo, e está mais próximo de", b
     else
-            print *, "p está no intervalo, e está mais próximo de", a
+		print *, "p está no intervalo, e está mais próximo de", a
     end if
 
     return
-
-
 ```
 
 Bem melhor de acompanhar, não é? Usando a segunda técnica
@@ -1053,12 +983,9 @@ tarefa. E, para isso, podemos utilizar o comando DO.
 A sintaxe do comando é:
 
 ```
-
     do iterador = valor_inicial, valor_final, passo
-            ! Código a ser repetido
+		! Código a ser repetido
     end do
-
-
 ```
 
 Onde: `iterador` é a variável de iteração da
@@ -1067,10 +994,9 @@ iterador assumirá, `valor_final` é o último valor que a
 variável pode assumir e `passo` é o incremento que será
 feito a cada rodada de repetição. O exemplo mais comum na
 matemática? Somatórios. Digamos que queremos fazer um somatório de
-1 até n da expressão 1/k², como faríamos? Desta forma:
+1 até n da expressão $1/k^2$, como faríamos? Desta forma:
 
 ```
-
     implicit none
 
     real :: valor
@@ -1080,12 +1006,10 @@ matemática? Somatórios. Digamos que queremos fazer um somatório de
     valor = 0.0
     n = 100
     do k = 1, n, 1
-            valor = valor + 1.0/(k*k)
+		valor = valor + 1.0/(k*k)
     end do
 
     print *, valor
-
-
 ```
 
 E com 3 linhas fizemos 100 operações (o valor de `n`
@@ -1115,19 +1039,19 @@ expresso neste trecho converge para π²/6, que é aproximadamente
 igual a 1,6449340668482264. Vamos testar diferentes valores de
 `n` no código, para ver a convergência:
 
-- Para n = 10\*\*2 temos valor = 1.63498402
-- Para n = 10\*\*3 temos valor = 1.64393485
-- Para n = 10\*\*4 temos valor = 1.64472532
-- Para n = 10\*\*5 temos valor = Infinity
+- Para n = $10^2$ temos valor = 1.63498402
+- Para n = $10^3$ temos valor = 1.64393485
+- Para n = $10^4$ temos valor = 1.64472532
+- Para n = $10^5$ temos valor = Infinity
 
-A soma divergiu! Ora, mas nosso código estava coerente até 10⁴ e
+A soma divergiu! Ora, mas nosso código estava coerente até $10^4$ e
 a teoria diz que a soma converge. Qual foi o problema? as variáveis
 `k` e `valor` são dos tipos
 `integer` e `real` que, por padrão (em
 FORTRAN 90), são de 32 bits! Quando `k` assume valores
-próximos de 10⁵, temos do denominador 10⁵ \* 10⁵ = 10¹⁰ ≈ 2³³, que é
-um número maior do que os 2³² representáveis em uma variável do
-tipo float32 (vide Tópico 2.1). Se representarmos nossas variáveis
+próximos de $10^5$, temos do denominador $10^5 \times 10^5 = 10^{10} ≈ 2^{33}$, que é
+um número maior do que os $2^{32}$ representáveis em uma variável do
+tipo Float32 (vide Tópico 2.1). Se representarmos nossas variáveis
 com mais precisão (64 bits):
 
 ```
@@ -1152,10 +1076,10 @@ com mais precisão (64 bits):
 
 E agora sim temos saídas que continuam convergindo:
 
-- Para n = 10\*\*5 temos valor = 1.6449240668982423
-- Para n = 10\*\*6 temos valor = 1.6449330668487701
-- Para n = 10\*\*7 temos valor = 1.6449339668472596
-- Para n = 10\*\*8 temos valor = 1.6449340578345750
+- Para n = $10^5$ temos valor = 1.6449240668982423
+- Para n = $10^6$ temos valor = 1.6449330668487701
+- Para n = $10^7$ temos valor = 1.6449339668472596
+- Para n = $10^8$ temos valor = 1.6449340578345750
 
 Detalhe: não é permitido andar com passos fracionários, como
 0.5, apenas passos inteiros. Caso deseja iterar desta forma, é
@@ -1187,14 +1111,14 @@ Mas podemos fazer:
 Uma outra dica útil e que reflete nas possibilidades de uso do
 comando `do` é que você pode andar com passos negativos,
 como -1, desde que também sejam inteiros. No caso da nossa soma que
-1/k², pode ser útil que somemos dos menores números para os
+$1/k^2$, pode ser útil que somemos dos menores números para os
 maiores, com o objetivo de somar as contribuições das menores
 parcelas da soma primeiro, e as maiores depois. Esta técnica pode
 aumentar a precisão dos cálculos devido o não-desperdício de
 precisão.
 
 Desta forma, o mais adequado, para o nosso exemplo seria
-somarmos começando de `n` e terminando em 1, já que 1/n²
+somarmos começando de `n` e terminando em 1, já que $1/n^2$
 é o menor número da soma, e cada um anterior é ligeiramente maior.
 Sendo assim, nosso somatório ficaria de trás pra frente:
 
@@ -1223,23 +1147,23 @@ de 10⁸ e 10⁹ em ambas as abordagens:
 
 Primeira abordagem:
 
-- Para n = 10\*\*8 temos valor = 1.6449340578345750, erro absoluto
+- Para n = $10^8$ temos valor = 1.6449340578345750, erro absoluto
   da aproximação = 9.0136513808403151E-009
-- Para n = 10\*\*9 temos valor = 1.6449340578345750, erro absoluto
+- Para n = $10^9$ temos valor = 1.6449340578345750, erro absoluto
   da aproximação = 9.0136513808403151E-009
 
 Segunda abordagem:
 
-- Para n = 10\*\*8 temos valor = 1.6449340568482265, erro absoluto
+- Para n = $10^8$ temos valor = 1.6449340568482265, erro absoluto
   da aproximação = 9.9999999392252903E-009
-- Para n = 10\*\*9 temos valor = 1.6449340658482263, erro absoluta
+- Para n = $10^9$ temos valor = 1.6449340658482263, erro absoluta
   do aproximação = 1.0000000827403710E-009
 
 E observamos que não continuamos convergindo utilizando a
 primeira abordagem, enquanto na segunda sim.
 
 **OBS:** Existem formas muito mais eficientes de se aproximar
-π²/6, o exemplo acima é meramente didático.
+$\pi^2/6$, o exemplo acima é meramente didático.
 
 ## Tópico 6: Subrotinas
 
@@ -1259,20 +1183,17 @@ Subrotinas possuem comportamento e estrutura muito parecidos com
 funções. A sintaxe para declaração de uma subrotina é:
 
 ```
-
     subroutine nome_subrotina(arg1, arg2, arg3)
-            implicit none
+		implicit none
 
-            tipo1, intent(in) :: arg1
-            tipo2, intent(inout) :: arg2
-            tipo3, intent(out) :: arg3
+		tipo1, intent(in) :: arg1
+		tipo2, intent(inout) :: arg2
+		tipo3, intent(out) :: arg3
 
-            ! Corpo da subrotina
+		! Corpo da subrotina
 
-            return
+		return
     end subroutine
-
-
 ```
 
 Que é muito semelhante a declaração de uma função, mas com
@@ -1292,23 +1213,20 @@ Tal qual nas funções, podemos ter quantos argumentos quisermos.
 No exemplo, temos 3 argumentos na rotina. Para exemplificar os
 conceitos acima, vamos estruturar uma subrotina que resolva o
 seguinte problema: dado dois números consecutivos da sequência de
-fibonacci F(n) e F(n+1), retornamos F(n+1) e F(n+2).
+fibonacci  $F(n)$ e $F(n+1)$, retornamos $F(n+1)$ e $F(n+2)$.
 
 ```
-
     subroutine fib(f1, f2)
-            integer, intent(inout):: f1
-            integer, intent(inout):: f2
-            integer ::      prox
-
-            prox = f1 + f2
-
-            f1 = f2
-            f2 = prox
+		integer, intent(inout):: f1
+		integer, intent(inout):: f2
+		integer :: prox
+	
+		prox = f1 + f2
+	
+		f1 = f2
+		f2 = prox
 
     end subroutine fib
-
-
 ```
 
 Destrinchando o código:
@@ -1317,9 +1235,9 @@ Destrinchando o código:
    utilizados tanto para leitura quanto para escrita, além de
    definirmos todas as outras variáveis intermediárias que
    utilizaremos na subrotina.
-2. Calculamos F(n+2) utilizando F(n+1) e F(n), e guardamos o
+2. Calculamos $F(n+2)$ utilizando $F(n+1)$ e $F(n)$, e guardamos o
    resultado numa variável intermediária
-3. Atualizamos os valores de f1 e f2, e terminamos a
+3. Atualizamos os valores de `f1` e `f2`, e terminamos a
    subrotina
 
 Perceba que, diferente das funções, não há `return` e
@@ -1328,49 +1246,45 @@ chamando a subrotina múltiplas vezes e exibindo a sequência
 gerada:
 
 ```
-
     module funcs
-            implicit none
+		implicit none
 
     contains
-            subroutine fib(f1, f2)
-                    integer, intent(inout):: f1
-                    integer, intent(inout):: f2
-                    integer ::      prox
+		subroutine fib(f1, f2)
+			integer, intent(inout):: f1
+			integer, intent(inout):: f2
+			integer ::      prox
 
-                    prox = f1 + f2
+			prox = f1 + f2
 
-                    f1 = f2
-                    f2 = prox
+			f1 = f2
+			f2 = prox
 
-            end subroutine fib
+		end subroutine fib
     end module funcs
 
     program test
-            use funcs
-            implicit none
+		use funcs
+		implicit none
 
-            integer :: f1
-            integer :: f2
-            integer :: i
+		integer :: f1
+		integer :: f2
+		integer :: i
 
-            f1 = 1
-            f2 = 1
+		f1 = 1
+		f2 = 1
 
-            do i = 1, 10
-                    print *, f1, f2
+		do i = 1, 10
+			print *, f1, f2
 
-                    call fib(f1, f2)
-            end do
+			call fib(f1, f2)
+		end do
     end program test
-
-
 ```
 
 E temos como saída:
 
 ```
-
      1           1
      1           2
      2           3
@@ -1381,8 +1295,6 @@ E temos como saída:
     21          34
     34          55
     55          89
-
-
 ```
 
 E notamos que a cada chamada da subrotina as variáveis
@@ -1412,9 +1324,9 @@ de abstração. Em suma, o método da bisseção segue os seguintes passos:
 Vamos contruir este programa utilizando a seguinte abordagem:
 começamos escrevendo as partes centrais do código primeiro, supondo
 que dispomos de todas as estruturas intermediárias e funções necessárias.
-Ou seja, vamos escrever o código usando, por exemplo, uma função "abc(x)" 
-sem termos definido "abc" ainda, e tendo concluído o código principal 
-definimos "abc" (pois se não o código não funcionará).
+Ou seja, vamos escrever o código usando, por exemplo, uma função "`abc(x)`" 
+sem termos definido "`abc`" ainda, e tendo concluído o código principal 
+definimos "`abc`" (pois se não o código não funcionará).
 
 ### Tópico 7.1: Arquitetando o código
 
@@ -1428,93 +1340,82 @@ passo.
   para uma função, mas sim para um grande conjunto de funções. Vamos,
   portanto, fazer um módulo a parte do programa principal, que seja
   importado pelo programa e disponibilize essas funções quando
-  necessárias. Para fins de teste, vamos declarar um polinômio f(x) =
-  x³ - x - 2 como função neste módulo.
-
+  necessárias. Para fins de teste, vamos declarar um polinômio  $f(x) =  x^3 - x - 2$ como função neste módulo.
 
 ```
+	module funcoes
+		implicit none
 
-    module funcoes
-          implicit none
-
-    contains
-          ! Polinômio: x^3 - x - 2
-          function f(x) result(y)
-                  real, intent(in) :: x
-                  real :: y
-
-                  y = x**3 - x - 2
-          end function f
+	contains
+		! Polinômio: x^3 - x - 2
+		function f(x) result(y)
+			real, intent(in) :: x
+			real :: y
+			
+			y = x**3 - x - 2
+		end function f
     end module funcoes
-
-
 ```
 
 - Já o intervalo gostaríamos de ter maior liberdade de escolha,
   pois podemos fazer várias escolhas de onde começar a busca. Vamos,
   então, definir no programa as variáveis a serem utilizadas,
-  que nomearemos `a` e b.
+  que nomearemos `a` e `b`.
 
 
 ```
-
     program main
-          use funcoes
-
-          use, intrinsic :: iso_fortran_env
-          implicit none
-
-          real(real64) :: resultado
-          real(real64) :: a = 1
-          real(real64) :: b = 2
+		use funcoes
+		
+		use, intrinsic :: iso_fortran_env
+		implicit none
+		
+		real(real64) :: resultado
+		real(real64) :: a = 1
+		real(real64) :: b = 2
 
 
     end program main
-
-
 ```
 
 - Por fim, percebendo que o método recebe como entrada um conjunto de valores
-  e retorna como resultado um único valor (um x tal que f(x) = 0), podemos modelar o
+  e retorna como resultado um único valor (um $x$ tal que $f(x) = 0$), podemos modelar o
   método como uma função. Por questão de organização, vamos colocar o
   método num módulo próprio e usá-lo no programa principal. Vamos
   escolher, por conveniência, trabalhar com precisão dupla.
 
 
 ```
-
     module metodos
-          use funcoes
-          implicit none
+		use funcoes
+		implicit none
 
     contains
-          function bissecao(a, b) result(raiz)
-                  ! Limite inferior do intervalo
-                  real(real64), intent(in) :: a
-
-                  ! Limite superior do intervalo
-                  real(real64), intent(in) :: b
-
-                  ! Valor de x tal que f(x) = 0
-                  real(real64) :: raiz
-
-          end function bissecao
+		function bissecao(a, b) result(raiz)
+			  ! Limite inferior do intervalo
+			  real(real64), intent(in) :: a
+		
+			  ! Limite superior do intervalo
+			  real(real64), intent(in) :: b
+		
+			  ! Valor de x tal que f(x) = 0
+			  real(real64) :: raiz
+		
+		end function bissecao
     end module metodos
 
     program main
-          use funcoes
-          use metodos
-          use, intrinsic :: iso_fortran_env
-          implicit none
-
-          real(real64) :: resultado
-          real(real64) :: a = 1
-          real(real64) :: b = 2
-
-          resultado = bissecao(a, b)
+		use funcoes
+		use metodos
+		use, intrinsic :: iso_fortran_env
+		implicit none
+		
+		real(real64) :: resultado
+		real(real64) :: a = 1
+		real(real64) :: b = 2
+		
+		resultado = bissecao(a, b)
     end program main
-
-
 ```
 
 
@@ -1526,25 +1427,22 @@ Para evitar reexibir todo o código,
 vamos mostrar apenas a função de bissecao, que será alterada:
 
 ```
-
     function bissecao(a, b) result(raiz)
-            ! Limite inferior do intervalo
-            real(real64), intent(in) :: a
-
-            ! Limite superior do intervalo
-            real(real64), intent(in) :: b
-
-            ! Valor de x tal que f(x) = 0
-            real(real64) :: raiz
-
-            ! Ponto médio
-            real(real64) :: p_medio
-
-            p_medio = (a+b)/2
+		! Limite inferior do intervalo
+		real(real64), intent(in) :: a
+		
+		! Limite superior do intervalo
+		real(real64), intent(in) :: b
+		
+		! Valor de x tal que f(x) = 0
+		real(real64) :: raiz
+		
+		! Ponto médio
+		real(real64) :: p_medio
+		
+		p_medio = (a+b)/2
 
     end function bissecao
-
-
 ```
 
 #### 3\. Verificamos se a função neste ponto é 0.
@@ -1554,30 +1452,27 @@ vamos mostrar apenas a função de bissecao, que será alterada:
 Estes 2 passos podem ser feitos por um teste condicional
 
 ```
-
     function bissecao(a, b) result(raiz)
-	    ! Limite inferior do intervalo
-	    real(real64), intent(in) :: a
-
-	    ! Limite superior do intervalo
-	    real(real64), intent(in) :: b
-
-	    ! Valor de x tal que f(x) = 0
-	    real(real64) :: raiz
-
-	    ! Ponto médio
-	    real(real64) :: p_medio
-
-	    p_medio = (a+b)/2
-
-	    if (f(p_medio) == 0) then
-		    raiz = p_medio
-		    return
-	    end if
+		! Limite inferior do intervalo
+		real(real64), intent(in) :: a
+		
+		! Limite superior do intervalo
+		real(real64), intent(in) :: b
+		
+		! Valor de x tal que f(x) = 0
+		real(real64) :: raiz
+		
+		! Ponto médio
+		real(real64) :: p_medio
+		
+		p_medio = (a+b)/2
+		
+		if (f(p_medio) == 0) then
+			raiz = p_medio
+			return
+		end if
 
     end function bissecao
-
-
 ```
 
 #### 5\. Se não, analisamos o sinal da função neste ponto e determinamos um novo intervalo
@@ -1590,31 +1485,28 @@ em uma **subrotina**. Faremos a especificação e ajustes referentes à subrotin
 função principal.
 
 ```
-
     function bissecao(a, b) result(raiz)
-	    ! Limite inferior do intervalo
-	    real(real64), intent(in) :: a
-
-	    ! Limite superior do intervalo
-	    real(real64), intent(in) :: b
-
-	    ! Valor de x tal que f(x) = 0
-	    real(real64) :: raiz
-
-	    ! Ponto médio
-	    real(real64) :: p_medio
-
-	    p_medio = (a+b)/2
-
-	    if (f(p_medio) == 0) then
-		    raiz = p_medio
-		    return
-	    else
-		    call novo_intervalo(a, b)
-	    end if
+		! Limite inferior do intervalo
+		real(real64), intent(in) :: a
+	
+		! Limite superior do intervalo
+		real(real64), intent(in) :: b
+	
+		! Valor de x tal que f(x) = 0
+		real(real64) :: raiz
+	
+		! Ponto médio
+		real(real64) :: p_medio
+	
+		p_medio = (a+b)/2
+	
+		if (f(p_medio) == 0) then
+			raiz = p_medio
+			return
+		else
+			call novo_intervalo(a, b)
+		end if
     end function bissecao
-
-
 ```
 
 #### 6\. Repetimos, a partir do passo 2, até um critério de parada (como um número máximo de passos), para evitarmos um loop infinito.
@@ -1624,7 +1516,6 @@ iteração. Quanto ao critério de parada, é de bom tom que seja um parâmetro 
 Logo, receberemos esta informação como argumento de chamada da função.
 
 ```
-
     function bissecao(a, b, n_passos) result(raiz)
 	    ! Limite inferior do intervalo
 	    real(real64), intent(in) :: a
@@ -1654,18 +1545,15 @@ Logo, receberemos esta informação como argumento de chamada da função.
 		    end if
 	    end do
     end function bissecao
-
-
 ```
 
 E nossa implementação está quase pronta, a menos da especificação da subrotina `novo_intervalo`.
 
 #### Especificação do item 5
 
-Nossa subrotina irá receber um par (a, b) que representa o intervalo atual da busca e retornará um novo par (a\*, b\*). Portanto, note que a maneira como estamos chamando a subrotina em nossa função de bisseção não é boa, pois `a, b` são parâmetros da função `bissecao`. E como vimos na seção 3, não devemos alterar parâmetros passados para uma função. Vamos começar, portanto, mudando nossa função de bisseção para trabalhar com variáveis cópias dos parâmetros originais
+Nossa subrotina irá receber um par $(a, b)$ que representa o intervalo atual da busca e retornará um novo par $(a^\star, b^\star)$. Portanto, note que a maneira como estamos chamando a subrotina em nossa função de bisseção não é boa, pois `a, b` são parâmetros da função `bissecao`. E como vimos na Seção 3, não devemos alterar parâmetros passados para uma função. Vamos começar, portanto, mudando nossa função de bisseção para trabalhar com variáveis cópias dos parâmetros originais
 
 ```
-
     function bissecao(a, b, n_passos) result(raiz)
 	    ! Limite inferior do intervalo
 	    real(real64), intent(in) :: a
@@ -1704,8 +1592,6 @@ Nossa subrotina irá receber um par (a, b) que representa o intervalo atual da b
 		    end if
 	    end do
     end function bissecao
-
-
 ```
 
 Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua lógica interna.
@@ -1718,7 +1604,6 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
 ##### 5.1 Calcular o ponto médio do intervalo
 
 ```
-
     subroutine novo_intervalo(inf, sup)
 		real(real64), intent(inout) :: inf
 		real(real64), intent(inout) :: sup
@@ -1726,10 +1611,9 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
 	
 		c = (inf+sup)/2
 	end subroutine novo_intervalo
-
 ```
 
-##### 5.2 Calcular f(inf) e f(c)
+##### 5.2 Calcular `f(inf)` e `f(c)`
 
 ```
     subroutine novo_intervalo(inf, sup)
@@ -1746,13 +1630,11 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
         f_em_inf = f(inf)
         f_em_c = f(c)
 	end subroutine novo_intervalo
-
 ```
 
 ##### 5.3 Testar sinal e determinar um novo intervalo
 
 ```
-
     subroutine novo_intervalo(inf, sup)
 	    real(real64), intent(inout) :: inf
 	    real(real64), intent(inout) :: sup
@@ -1778,7 +1660,6 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
 	    inf = novo_inf
 	    sup = novo_sup
     end subroutine novo_intervalo
-
 ```
 
 ##### 5.4 Determinar outro novo intervalo caso o primeiro teste tenha falhado 
@@ -1812,7 +1693,6 @@ Agora que estamos chamando a subrotina propriamente, vamos definir melhor sua l�
         inf = novo_inf
         sup = novo_sup
     end subroutine novo_intervalo
-
 ```
 
 #### Código Final
@@ -1821,7 +1701,6 @@ Juntando os trechos finais de código desenvolvidos acima temos a nossa primeira
 
 
 ```
-
     module funcoes
         use, intrinsic :: iso_fortran_env
 	    implicit none
@@ -1924,9 +1803,50 @@ Juntando os trechos finais de código desenvolvidos acima temos a nossa primeira
         resultado = bissecao(a, b, n_passos)
         print *, resultado
     end program main
-
 ```
 
+#### Testes
+
+Rodando nosso programa para o polinômio de teste $x^3 - x - 2$, começando pelo intervalo $[1, 2]$ e iterando por 22 passos (valores acima na `main`) obtemos como saída:
+
+```
+1.5213797092437744
+```
+
+E avaliando `f(resultado)` a saída é `1.4498129807805071E-008`, que está próximo de 0 e portanto indica que a saída do programa está próxima da raiz do polinômio. Se aumentarmos o número de iterações fazendo `n_passos = 50`, o programa retorna:
+
+```
+1.5213797068045674
+```
+
+E avaliando para esta saída `f(resultado)` obtemos `-1.3322676295501878E-015`, um resultado ainda melhor e que faz jus ao resultado teórico convergente: quanto mais passos, melhor a aproximação.
+
+Vamos testar para uma outra função mais desafiadora? Troquemos o polinômio pela função
+$$f(x) = \frac{cos(x) x^5}{e^x}$$
+
+Observando o gráfico da função, sabemos que esta função possui raízes próximas do valor 10:
+
+![[./f90_content/function_graph.png]]
+
+Vamos buscar um valor mais preciso para a raiz logo depois do 10 e antes do 15. Para isso, basta mudarmos nossa função `f` no módulo de funções:
+
+```
+	function f(x) result(y)
+		real(real64), intent(in) :: x
+		real(real64) :: y
+
+		y = (cos(x) * x**5) / exp(x)
+	end function f
+```
+
+E podemos utilizar como intervalo de chute inicial $[10, 13]$ , ou seja, fazemos `a = 10` e `b = 13` no programa `main`. Com 50 passos temos que a raiz é:
+
+```
+10.995574287564274     
+```
+E nossa nova `f` avaliada neste ponto é `-5.9453528610959437E-015`; temos uma ótima aproximação. 
+
+Fazer com que nosso algoritmo aceite uma função `f` externa qualquer não é trivial, logo estamos satisfeitos, por hora, com este procedimento de trocar a declaração de `f` explicitamente no código. Caso fique curioso sobre como é feita esta implementação mais genérica, ela envolve uso de uma estrutura ainda não apresentada: `interface`.
 ## Tópico 8: Formatação de Saídas: WRITE
 
 ## Tópico 9: Repetição: DO - WHILE
