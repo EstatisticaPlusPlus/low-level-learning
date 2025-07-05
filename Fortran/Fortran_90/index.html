@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/estatisticamaismais_logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -1266,7 +1266,7 @@ precisão de representação do número de Euler:</p>
 <p>E temos <code>v1 = 2.71828175</code> e <code>v2 =
 2.7182818284590451</code>. No primeiro caso, temos erro no 7º
 dígito, e no segundo apenas no 16º dígito. Note que foi preciso
-chamar a função <code>exp(x)</code> (que retorna $e^x$) passando como
+chamar a função <code>exp(x)</code> (que retorna <span class="arithmatex"><span class="MathJax_Preview">e^x</span><script type="math/tex">e^x</script></span>) passando como
 argumento um valor de 64 bits, para que ele calculasse uma resposta
 com 64 bits de precisão. Lembre-se disso e tome cuidado para não
 acabar armazenando, por engano, um resultado gerado por precisão
@@ -1973,7 +1973,7 @@ técnica:</p>
 </span></code></pre></div>
 <p>Bem melhor de acompanhar, não é? Usando a segunda técnica
 poderíamos, por exemplo, extrair o bloco que testa se
-<code>p</code> está dentro do intervalo <script type="math/tex; mode=display">a, b</script> em uma função, e
+<code>p</code> está dentro do intervalo [a, b] em uma função, e
 verificar as outras propriedades no nosso IF após chamar esta
 função. Caso queira, faça este segundo caso como exercício. Em
 alguns outros cenários, esta segunda técnica pode fazer mais
@@ -1996,7 +1996,7 @@ iterador assumirá, <code>valor_final</code> é o último valor que a
 variável pode assumir e <code>passo</code> é o incremento que será
 feito a cada rodada de repetição. O exemplo mais comum na
 matemática? Somatórios. Digamos que queremos fazer um somatório de
-1 até n da expressão $1/k^2$, como faríamos? Desta forma:</p>
+1 até n da expressão <span class="arithmatex"><span class="MathJax_Preview">1/k^2</span><script type="math/tex">1/k^2</script></span>, como faríamos? Desta forma:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>    implicit none
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    real :: valor
@@ -2038,18 +2038,18 @@ expresso neste trecho converge para π²/6, que é aproximadamente
 igual a 1,6449340668482264. Vamos testar diferentes valores de
 <code>n</code> no código, para ver a convergência:</p>
 <ul>
-<li>Para n = $10^2$ temos valor = 1.63498402</li>
-<li>Para n = $10^3$ temos valor = 1.64393485</li>
-<li>Para n = $10^4$ temos valor = 1.64472532</li>
-<li>Para n = $10^5$ temos valor = Infinity</li>
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^2</span><script type="math/tex">10^2</script></span> temos valor = 1.63498402</li>
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^3</span><script type="math/tex">10^3</script></span> temos valor = 1.64393485</li>
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^4</span><script type="math/tex">10^4</script></span> temos valor = 1.64472532</li>
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^5</span><script type="math/tex">10^5</script></span> temos valor = Infinity</li>
 </ul>
-<p>A soma divergiu! Ora, mas nosso código estava coerente até $10^4$ e
+<p>A soma divergiu! Ora, mas nosso código estava coerente até <span class="arithmatex"><span class="MathJax_Preview">10^4</span><script type="math/tex">10^4</script></span> e
 a teoria diz que a soma converge. Qual foi o problema? as variáveis
 <code>k</code> e <code>valor</code> são dos tipos
 <code>integer</code> e <code>real</code> que, por padrão (em
 FORTRAN 90), são de 32 bits! Quando <code>k</code> assume valores
-próximos de $10^5$, temos do denominador $10^5 \times 10^5 = 10^{10} ≈ 2^{33}$, que é
-um número maior do que os $2^{32}$ representáveis em uma variável do
+próximos de <span class="arithmatex"><span class="MathJax_Preview">10^5</span><script type="math/tex">10^5</script></span>, temos do denominador <span class="arithmatex"><span class="MathJax_Preview">10^5 \times 10^5 = 10^{10} ≈ 2^{33}</span><script type="math/tex">10^5 \times 10^5 = 10^{10} ≈ 2^{33}</script></span>, que é
+um número maior do que os <span class="arithmatex"><span class="MathJax_Preview">2^{32}</span><script type="math/tex">2^{32}</script></span> representáveis em uma variável do
 tipo Float32 (vide Tópico 2.1). Se representarmos nossas variáveis
 com mais precisão (64 bits):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>    use, intrinsic :: iso_fortran_env
@@ -2069,10 +2069,10 @@ com mais precisão (64 bits):</p>
 </span></code></pre></div>
 <p>E agora sim temos saídas que continuam convergindo:</p>
 <ul>
-<li>Para n = $10^5$ temos valor = 1.6449240668982423</li>
-<li>Para n = $10^6$ temos valor = 1.6449330668487701</li>
-<li>Para n = $10^7$ temos valor = 1.6449339668472596</li>
-<li>Para n = $10^8$ temos valor = 1.6449340578345750</li>
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^5</span><script type="math/tex">10^5</script></span> temos valor = 1.6449240668982423</li>
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^6</span><script type="math/tex">10^6</script></span> temos valor = 1.6449330668487701</li>
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^7</span><script type="math/tex">10^7</script></span> temos valor = 1.6449339668472596</li>
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^8</span><script type="math/tex">10^8</script></span> temos valor = 1.6449340578345750</li>
 </ul>
 <p>Detalhe: não é permitido andar com passos fracionários, como
 0.5, apenas passos inteiros. Caso deseja iterar desta forma, é
@@ -2092,13 +2092,13 @@ possível fazer</p>
 <p>Uma outra dica útil e que reflete nas possibilidades de uso do
 comando <code>do</code> é que você pode andar com passos negativos,
 como -1, desde que também sejam inteiros. No caso da nossa soma que
-$1/k^2$, pode ser útil que somemos dos menores números para os
+<span class="arithmatex"><span class="MathJax_Preview">1/k^2</span><script type="math/tex">1/k^2</script></span>, pode ser útil que somemos dos menores números para os
 maiores, com o objetivo de somar as contribuições das menores
 parcelas da soma primeiro, e as maiores depois. Esta técnica pode
 aumentar a precisão dos cálculos devido o não-desperdício de
 precisão.</p>
 <p>Desta forma, o mais adequado, para o nosso exemplo seria
-somarmos começando de <code>n</code> e terminando em 1, já que $1/n^2$
+somarmos começando de <code>n</code> e terminando em 1, já que <span class="arithmatex"><span class="MathJax_Preview">1/n^2</span><script type="math/tex">1/n^2</script></span>
 é o menor número da soma, e cada um anterior é ligeiramente maior.
 Sendo assim, nosso somatório ficaria de trás pra frente:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>    use, intrinsic :: iso_fortran_env
@@ -2120,22 +2120,22 @@ Sendo assim, nosso somatório ficaria de trás pra frente:</p>
 de 10⁸ e 10⁹ em ambas as abordagens:</p>
 <p>Primeira abordagem:</p>
 <ul>
-<li>Para n = $10^8$ temos valor = 1.6449340578345750, erro absoluto
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^8</span><script type="math/tex">10^8</script></span> temos valor = 1.6449340578345750, erro absoluto
   da aproximação = 9.0136513808403151E-009</li>
-<li>Para n = $10^9$ temos valor = 1.6449340578345750, erro absoluto
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^9</span><script type="math/tex">10^9</script></span> temos valor = 1.6449340578345750, erro absoluto
   da aproximação = 9.0136513808403151E-009</li>
 </ul>
 <p>Segunda abordagem:</p>
 <ul>
-<li>Para n = $10^8$ temos valor = 1.6449340568482265, erro absoluto
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^8</span><script type="math/tex">10^8</script></span> temos valor = 1.6449340568482265, erro absoluto
   da aproximação = 9.9999999392252903E-009</li>
-<li>Para n = $10^9$ temos valor = 1.6449340658482263, erro absoluta
+<li>Para n = <span class="arithmatex"><span class="MathJax_Preview">10^9</span><script type="math/tex">10^9</script></span> temos valor = 1.6449340658482263, erro absoluta
   do aproximação = 1.0000000827403710E-009</li>
 </ul>
 <p>E observamos que não continuamos convergindo utilizando a
 primeira abordagem, enquanto na segunda sim.</p>
 <p><strong>OBS:</strong> Existem formas muito mais eficientes de se aproximar
-$\pi^2/6$, o exemplo acima é meramente didático.</p>
+<span class="arithmatex"><span class="MathJax_Preview">\pi^2/6</span><script type="math/tex">\pi^2/6</script></span>, o exemplo acima é meramente didático.</p>
 <h2 id="topico-6-subrotinas">Tópico 6: Subrotinas</h2>
 <p>Neste tópico abordaremos o último assunto antes de partirmos
 para nossa construção e implementação do Método da Bisseção. No
@@ -2179,7 +2179,7 @@ algumas diferenças:</p>
 No exemplo, temos 3 argumentos na rotina. Para exemplificar os
 conceitos acima, vamos estruturar uma subrotina que resolva o
 seguinte problema: dado dois números consecutivos da sequência de
-fibonacci  $F(n)$ e $F(n+1)$, retornamos $F(n+1)$ e $F(n+2)$.</p>
+fibonacci  <span class="arithmatex"><span class="MathJax_Preview">F(n)</span><script type="math/tex">F(n)</script></span> e <span class="arithmatex"><span class="MathJax_Preview">F(n+1)</span><script type="math/tex">F(n+1)</script></span>, retornamos <span class="arithmatex"><span class="MathJax_Preview">F(n+1)</span><script type="math/tex">F(n+1)</script></span> e <span class="arithmatex"><span class="MathJax_Preview">F(n+2)</span><script type="math/tex">F(n+2)</script></span>.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>    subroutine fib(f1, f2)
 </span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>        integer, intent(inout):: f1
 </span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>        integer, intent(inout):: f2
@@ -2198,7 +2198,7 @@ fibonacci  $F(n)$ e $F(n+1)$, retornamos $F(n+1)$ e $F(n+2)$.</p>
    utilizados tanto para leitura quanto para escrita, além de
    definirmos todas as outras variáveis intermediárias que
    utilizaremos na subrotina.</li>
-<li>Calculamos $F(n+2)$ utilizando $F(n+1)$ e $F(n)$, e guardamos o
+<li>Calculamos <span class="arithmatex"><span class="MathJax_Preview">F(n+2)</span><script type="math/tex">F(n+2)</script></span> utilizando <span class="arithmatex"><span class="MathJax_Preview">F(n+1)</span><script type="math/tex">F(n+1)</script></span> e <span class="arithmatex"><span class="MathJax_Preview">F(n)</span><script type="math/tex">F(n)</script></span>, e guardamos o
    resultado numa variável intermediária</li>
 <li>Atualizamos os valores de <code>f1</code> e <code>f2</code>, e terminamos a
    subrotina</li>
@@ -2292,7 +2292,7 @@ passo.</p>
   para uma função, mas sim para um grande conjunto de funções. Vamos,
   portanto, fazer um módulo a parte do programa principal, que seja
   importado pelo programa e disponibilize essas funções quando
-  necessárias. Para fins de teste, vamos declarar um polinômio  $f(x) =  x^3 - x - 2$ como função neste módulo.</li>
+  necessárias. Para fins de teste, vamos declarar um polinômio  <span class="arithmatex"><span class="MathJax_Preview">f(x) =  x^3 - x - 2</span><script type="math/tex">f(x) =  x^3 - x - 2</script></span> como função neste módulo.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>    module funcoes
 </span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>        implicit none
@@ -2328,7 +2328,7 @@ passo.</p>
 </span></code></pre></div>
 <ul>
 <li>Por fim, percebendo que o método recebe como entrada um conjunto de valores
-  e retorna como resultado um único valor (um $x$ tal que $f(x) = 0$), podemos modelar o
+  e retorna como resultado um único valor (um <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> tal que <span class="arithmatex"><span class="MathJax_Preview">f(x) = 0</span><script type="math/tex">f(x) = 0</script></span>), podemos modelar o
   método como uma função. Por questão de organização, vamos colocar o
   método num módulo próprio e usá-lo no programa principal. Vamos
   escolher, por conveniência, trabalhar com precisão dupla.</li>
@@ -2477,7 +2477,7 @@ Logo, receberemos esta informação como argumento de chamada da função.</p>
 </span></code></pre></div>
 <p>E nossa implementação está quase pronta, a menos da especificação da subrotina <code>novo_intervalo</code>.</p>
 <h4 id="especificacao-do-item-5">Especificação do item 5</h4>
-<p>Nossa subrotina irá receber um par $(a, b)$ que representa o intervalo atual da busca e retornará um novo par $(a^\star, b^\star)$. Portanto, note que a maneira como estamos chamando a subrotina em nossa função de bisseção não é boa, pois <code>a, b</code> são parâmetros da função <code>bissecao</code>. E como vimos na Seção 3, não devemos alterar parâmetros passados para uma função. Vamos começar, portanto, mudando nossa função de bisseção para trabalhar com variáveis cópias dos parâmetros originais</p>
+<p>Nossa subrotina irá receber um par <span class="arithmatex"><span class="MathJax_Preview">(a, b)</span><script type="math/tex">(a, b)</script></span> que representa o intervalo atual da busca e retornará um novo par <span class="arithmatex"><span class="MathJax_Preview">(a^\star, b^\star)</span><script type="math/tex">(a^\star, b^\star)</script></span>. Portanto, note que a maneira como estamos chamando a subrotina em nossa função de bisseção não é boa, pois <code>a, b</code> são parâmetros da função <code>bissecao</code>. E como vimos na Seção 3, não devemos alterar parâmetros passados para uma função. Vamos começar, portanto, mudando nossa função de bisseção para trabalhar com variáveis cópias dos parâmetros originais</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>    function bissecao(a, b, n_passos) result(raiz)
 </span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>        ! Limite inferior do intervalo
 </span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>        real(real64), intent(in) :: a
@@ -2712,7 +2712,7 @@ Logo, receberemos esta informação como argumento de chamada da função.</p>
 </span><span id="__span-51-102"><a id="__codelineno-51-102" name="__codelineno-51-102" href="#__codelineno-51-102"></a>    end program main
 </span></code></pre></div>
 <h4 id="testes">Testes</h4>
-<p>Rodando nosso programa para o polinômio de teste $x^3 - x - 2$, começando pelo intervalo $[1, 2]$ e iterando por 22 passos (valores acima na <code>main</code>) obtemos como saída:</p>
+<p>Rodando nosso programa para o polinômio de teste <span class="arithmatex"><span class="MathJax_Preview">x^3 - x - 2</span><script type="math/tex">x^3 - x - 2</script></span>, começando pelo intervalo <span class="arithmatex"><span class="MathJax_Preview">[1, 2]</span><script type="math/tex">[1, 2]</script></span> e iterando por 22 passos (valores acima na <code>main</code>) obtemos como saída:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>1.5213804244995117
 </span></code></pre></div>
 <p>E avaliando <code>f(resultado)</code> a saída é <code>4.2658294048258938E-006</code>, que está próximo de 0 e portanto indica que a saída do programa está próxima da raiz do polinômio. Se aumentarmos o número de iterações fazendo <code>n_passos = 50</code>, o programa retorna:</p>
@@ -2720,8 +2720,7 @@ Logo, receberemos esta informação como argumento de chamada da função.</p>
 </span></code></pre></div>
 <p>E avaliando para esta saída <code>f(resultado)</code> obtemos <code>-1.3322676295501878E-015</code>, um resultado ainda melhor e que faz jus ao resultado teórico convergente: quanto mais passos, melhor a aproximação.</p>
 <p>Vamos testar para uma outra função mais desafiadora? Troquemos o polinômio pela função
-<script type="math/tex; mode=display">f(x) = \frac{cos(x) x^5}{e^x} + 1</script>
-</p>
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">f(x) = \frac{cos(x) x^5}{e^x} + 1</span><script type="math/tex">f(x) = \frac{cos(x) x^5}{e^x} + 1</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">f(x) = \frac{cos(x) x^5}{e^x} + 1</span><script type="math/tex">f(x) = \frac{cos(x) x^5}{e^x} + 1</script></span></script></span></p>
 <p>Observando o gráfico da função, sabemos que esta função possui raízes próximas do valor 10:</p>
 <p><img alt="graph of f" src="../f90_content/function_graph.png" /></p>
 <p>Vamos buscar um valor mais preciso para a raiz logo depois do 10 e antes do 12. Para isso, basta mudarmos nossa função <code>f</code> no módulo de funções:</p>
@@ -2732,7 +2731,7 @@ Logo, receberemos esta informação como argumento de chamada da função.</p>
 </span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>        y = ((cos(x) * x**5) / exp(x)) + 1
 </span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a>    end function f
 </span></code></pre></div>
-<p>E podemos utilizar como intervalo de chute inicial $[10, 12]$ , ou seja, fazemos <code>a = 10</code> e <code>b = 12</code> no programa <code>main</code>. Com 50 passos temos que a raiz é:</p>
+<p>E podemos utilizar como intervalo de chute inicial <span class="arithmatex"><span class="MathJax_Preview">[10, 12]</span><script type="math/tex">[10, 12]</script></span> , ou seja, fazemos <code>a = 10</code> e <code>b = 12</code> no programa <code>main</code>. Com 50 passos temos que a raiz é:</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>10.677725261441926     
 </span></code></pre></div>
 E nossa nova <code>f</code> avaliada neste ponto é <code>-1.7763568394002505E-015</code>; temos uma ótima aproximação. </p>
@@ -2826,7 +2825,7 @@ E nossa nova <code>f</code> avaliada neste ponto é <code>-1.7763568394002505E-0
 </span><span id="__span-56-14"><a id="__codelineno-56-14" name="__codelineno-56-14" href="#__codelineno-56-14"></a>        write (*,&#39;(A,  1X, F20.15)&#39;) &#39;Função avaliada nessa raiz: &#39;, f(resultado)
 </span><span id="__span-56-15"><a id="__codelineno-56-15" name="__codelineno-56-15" href="#__codelineno-56-15"></a>    end program main
 </span></code></pre></div>
-<p>E a saída com $f(x) = x^3 - x - 2$ e 20 passos:</p>
+<p>E a saída com <span class="arithmatex"><span class="MathJax_Preview">f(x) = x^3 - x - 2</span><script type="math/tex">f(x) = x^3 - x - 2</script></span> e 20 passos:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>Raiz encontrada:              1.521380424499512
 </span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>Função avaliada nessa raiz:   0.000004265829405
 </span></code></pre></div>
@@ -2898,9 +2897,9 @@ E nossa nova <code>f</code> avaliada neste ponto é <code>-1.7763568394002505E-0
       <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
