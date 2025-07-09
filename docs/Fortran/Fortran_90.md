@@ -1,5 +1,7 @@
+---
+title: "Fortran 90"
+---
 
-# Fortran 90
 # Capítulo 1 - Introdução
 
 Texto introdutório: Neste capítulo visamos apresentar a
@@ -221,7 +223,7 @@ precisão de representação do número de Euler:
 E temos `v1 = 2.71828175` e `v2 =
 2.7182818284590451`. No primeiro caso, temos erro no 7º
 dígito, e no segundo apenas no 16º dígito. Note que foi preciso
-chamar a função `exp(x)` (que retorna $e^x$) passando como
+chamar a função `exp(x)` (que retorna \(e^x\)) passando como
 argumento um valor de 64 bits, para que ele calculasse uma resposta
 com 64 bits de precisão. Lembre-se disso e tome cuidado para não
 acabar armazenando, por engano, um resultado gerado por precisão
@@ -356,7 +358,7 @@ referenciada por exemplo.
 
 Este é um dos tópicos mais complexos, mas também um dos mais
 relevantes. Leia com calma e, se preciso, pare, rode e mude o
-código. Leia mais de uma vez. {Fazer a introdução do Tópico 3}
+código. Leia mais de uma vez. <!-- Fazer a introdução do Tópico 3 -->
 
 ### Tópico 3.1: Funções
 
@@ -425,9 +427,9 @@ de intenção das variáveis, vamos abordar apenas mais um conceito e
 estudar um caso. Para conseguirmos incorporar uma função em um
 programa, podemos utilizar, ao final do programa, uma instrução
 `contains` seguida da declaração da função. Sabendo
-disso, vejamos um exemplo: Suponha que temos um vetor v = (v1, v2)
-em R², e queremos calcular a norma do dobro desse vetor. Ou seja,
-se temos o vetor (1, 1), queremos a norma de (2, 2). Vamos
+disso, vejamos um exemplo: Suponha que temos um vetor \(v = (v_1, v_2)
+\in \mathbb{R}^2\), e queremos calcular a norma do dobro desse vetor. Ou seja,
+se temos o vetor \((1, 1)\), queremos a norma de \((2, 2)\). Vamos
 construir uma primeira função para isso, não seguindo o padrão com
 `intent`:
 
@@ -486,10 +488,10 @@ Ao executarmos o nosso programa, temos como saída:
     2.82842708
 ```
 
-Que é a norma do vetor (2, 2). A princípio, parece que está tudo
+Que é a norma do vetor \((2, 2)\). A princípio, parece que está tudo
 bem, mas nossa função gerou um efeito colateral e não percebemos
 isso. Podemos verificar o que aconteceu printando as coordenadas
-v1, v2 antes e depois da chamada da função:
+\(v_1 \text{e}\ v_2\) antes e depois da chamada da função:
 
 ```
 
@@ -601,7 +603,7 @@ E ao tentarmos compilar e executar este programa:
 ```
 
 Nosso compilador não finalizou a compilação pois detectou uma
-inconsistência: Declaramos que v1 e v2 são apenas argumentos de
+inconsistência: Declaramos que \(v_1 \text{e}\ v_2\) são apenas argumentos de
 entrada, mas em seguida tentamos modificar o valor dessas
 variáveis. Aí está a importância do uso do `intent`:
 caso nós, programadores, acidentalmente façamos uma atribuição
@@ -965,7 +967,7 @@ técnica:
 
 Bem melhor de acompanhar, não é? Usando a segunda técnica
 poderíamos, por exemplo, extrair o bloco que testa se
-`p` está dentro do intervalo \[a, b\] em uma função, e
+`p` está dentro do intervalo \((a, b)\) em uma função, e
 verificar as outras propriedades no nosso IF após chamar esta
 função. Caso queira, faça este segundo caso como exercício. Em
 alguns outros cenários, esta segunda técnica pode fazer mais
@@ -994,7 +996,7 @@ iterador assumirá, `valor_final` é o último valor que a
 variável pode assumir e `passo` é o incremento que será
 feito a cada rodada de repetição. O exemplo mais comum na
 matemática? Somatórios. Digamos que queremos fazer um somatório de
-1 até n da expressão $1/k^2$, como faríamos? Desta forma:
+1 até n da expressão \(1/k^2\), como faríamos? Desta forma:
 
 ```
     implicit none
@@ -1035,22 +1037,22 @@ trecho de código:
 
 Para este último ponto, podemos utilizar o próprio trecho de
 código acima para nos deparamos com problemas do tipo. O somatório
-expresso neste trecho converge para π²/6, que é aproximadamente
+expresso neste trecho converge para \(\pi^2/6\), que é aproximadamente
 igual a 1,6449340668482264. Vamos testar diferentes valores de
 `n` no código, para ver a convergência:
 
-- Para n = $10^2$ temos valor = 1.63498402
-- Para n = $10^3$ temos valor = 1.64393485
-- Para n = $10^4$ temos valor = 1.64472532
-- Para n = $10^5$ temos valor = Infinity
+- Para n = \(10^2\) temos valor = 1.63498402
+- Para n = \(10^3\) temos valor = 1.64393485
+- Para n = \(10^4\) temos valor = 1.64472532
+- Para n = \(10^5\) temos valor = Infinity
 
-A soma divergiu! Ora, mas nosso código estava coerente até $10^4$ e
+A soma divergiu! Ora, mas nosso código estava coerente até \(10^4\) e
 a teoria diz que a soma converge. Qual foi o problema? as variáveis
 `k` e `valor` são dos tipos
 `integer` e `real` que, por padrão (em
 FORTRAN 90), são de 32 bits! Quando `k` assume valores
-próximos de $10^5$, temos do denominador $10^5 \times 10^5 = 10^{10} ≈ 2^{33}$, que é
-um número maior do que os $2^{32}$ representáveis em uma variável do
+próximos de \(10^5\), temos do denominador \(10^5 \times 10^5 = 10^{10} \approx 2^{33}\), que é
+um número maior do que os \(2^{32}\) representáveis em uma variável do
 tipo Float32 (vide Tópico 2.1). Se representarmos nossas variáveis
 com mais precisão (64 bits):
 
@@ -1076,10 +1078,10 @@ com mais precisão (64 bits):
 
 E agora sim temos saídas que continuam convergindo:
 
-- Para n = $10^5$ temos valor = 1.6449240668982423
-- Para n = $10^6$ temos valor = 1.6449330668487701
-- Para n = $10^7$ temos valor = 1.6449339668472596
-- Para n = $10^8$ temos valor = 1.6449340578345750
+- Para n = \(10^5\) temos valor = 1.6449240668982423
+- Para n = \(10^6\) temos valor = 1.6449330668487701
+- Para n = \(10^7\) temos valor = 1.6449339668472596
+- Para n = \(10^8\) temos valor = 1.6449340578345750
 
 Detalhe: não é permitido andar com passos fracionários, como
 0.5, apenas passos inteiros. Caso deseja iterar desta forma, é
@@ -1111,14 +1113,14 @@ Mas podemos fazer:
 Uma outra dica útil e que reflete nas possibilidades de uso do
 comando `do` é que você pode andar com passos negativos,
 como -1, desde que também sejam inteiros. No caso da nossa soma que
-$1/k^2$, pode ser útil que somemos dos menores números para os
+\(1/k^2\), pode ser útil que somemos dos menores números para os
 maiores, com o objetivo de somar as contribuições das menores
 parcelas da soma primeiro, e as maiores depois. Esta técnica pode
 aumentar a precisão dos cálculos devido o não-desperdício de
 precisão.
 
 Desta forma, o mais adequado, para o nosso exemplo seria
-somarmos começando de `n` e terminando em 1, já que $1/n^2$
+somarmos começando de `n` e terminando em 1, já que \(1/n^2\)
 é o menor número da soma, e cada um anterior é ligeiramente maior.
 Sendo assim, nosso somatório ficaria de trás pra frente:
 
@@ -1143,27 +1145,27 @@ Sendo assim, nosso somatório ficaria de trás pra frente:
 ```
 
 E conseguimos ver o impacto na precisão ao comparamos os casos
-de 10⁸ e 10⁹ em ambas as abordagens:
+de \(10^8\) e \(10^9\) em ambas as abordagens:
 
 Primeira abordagem:
 
-- Para n = $10^8$ temos valor = 1.6449340578345750, erro absoluto
+- Para n = \(10^8\) temos valor = 1.6449340578345750, erro absoluto
   da aproximação = 9.0136513808403151E-009
-- Para n = $10^9$ temos valor = 1.6449340578345750, erro absoluto
+- Para n = \(10^9\) temos valor = 1.6449340578345750, erro absoluto
   da aproximação = 9.0136513808403151E-009
 
 Segunda abordagem:
 
-- Para n = $10^8$ temos valor = 1.6449340568482265, erro absoluto
+- Para n = \(10^8\) temos valor = 1.6449340568482265, erro absoluto
   da aproximação = 9.9999999392252903E-009
-- Para n = $10^9$ temos valor = 1.6449340658482263, erro absoluta
+- Para n = \(10^9\) temos valor = 1.6449340658482263, erro absoluta
   do aproximação = 1.0000000827403710E-009
 
 E observamos que não continuamos convergindo utilizando a
 primeira abordagem, enquanto na segunda sim.
 
 **OBS:** Existem formas muito mais eficientes de se aproximar
-$\pi^2/6$, o exemplo acima é meramente didático.
+\(\pi^2/6\), o exemplo acima é meramente didático.
 
 ## Tópico 6: Subrotinas
 
@@ -1213,7 +1215,7 @@ Tal qual nas funções, podemos ter quantos argumentos quisermos.
 No exemplo, temos 3 argumentos na rotina. Para exemplificar os
 conceitos acima, vamos estruturar uma subrotina que resolva o
 seguinte problema: dado dois números consecutivos da sequência de
-fibonacci  $F(n)$ e $F(n+1)$, retornamos $F(n+1)$ e $F(n+2)$.
+fibonacci  \(F(n)\) e \(F(n+1)\), retornamos \(F(n+1)\) e \(F(n+2)\).
 
 ```
     subroutine fib(f1, f2)
@@ -1235,7 +1237,7 @@ Destrinchando o código:
    utilizados tanto para leitura quanto para escrita, além de
    definirmos todas as outras variáveis intermediárias que
    utilizaremos na subrotina.
-2. Calculamos $F(n+2)$ utilizando $F(n+1)$ e $F(n)$, e guardamos o
+2. Calculamos \(F(n+2)\) utilizando \(F(n+1)\) e \(F(n)\), e guardamos o
    resultado numa variável intermediária
 3. Atualizamos os valores de `f1` e `f2`, e terminamos a
    subrotina
@@ -1340,7 +1342,7 @@ passo.
   para uma função, mas sim para um grande conjunto de funções. Vamos,
   portanto, fazer um módulo a parte do programa principal, que seja
   importado pelo programa e disponibilize essas funções quando
-  necessárias. Para fins de teste, vamos declarar um polinômio  $f(x) =  x^3 - x - 2$ como função neste módulo.
+  necessárias. Para fins de teste, vamos declarar um polinômio  \(f(x) =  x^3 - x - 2\) como função neste módulo.
 
 ```
 	module funcoes
@@ -1379,7 +1381,7 @@ passo.
 ```
 
 - Por fim, percebendo que o método recebe como entrada um conjunto de valores
-  e retorna como resultado um único valor (um $x$ tal que $f(x) = 0$), podemos modelar o
+  e retorna como resultado um único valor (um \(x\) tal que \(f(x) = 0\)), podemos modelar o
   método como uma função. Por questão de organização, vamos colocar o
   método num módulo próprio e usá-lo no programa principal. Vamos
   escolher, por conveniência, trabalhar com precisão dupla.
@@ -1551,7 +1553,7 @@ E nossa implementação está quase pronta, a menos da especificação da subrot
 
 #### Especificação do item 5
 
-Nossa subrotina irá receber um par $(a, b)$ que representa o intervalo atual da busca e retornará um novo par $(a^\star, b^\star)$. Portanto, note que a maneira como estamos chamando a subrotina em nossa função de bisseção não é boa, pois `a, b` são parâmetros da função `bissecao`. E como vimos na Seção 3, não devemos alterar parâmetros passados para uma função. Vamos começar, portanto, mudando nossa função de bisseção para trabalhar com variáveis cópias dos parâmetros originais
+Nossa subrotina irá receber um par \((a, b)\) que representa o intervalo atual da busca e retornará um novo par \((a^\star, b^\star)\). Portanto, note que a maneira como estamos chamando a subrotina em nossa função de bisseção não é boa, pois `a, b` são parâmetros da função `bissecao`. E como vimos na Seção 3, não devemos alterar parâmetros passados para uma função. Vamos começar, portanto, mudando nossa função de bisseção para trabalhar com variáveis cópias dos parâmetros originais
 
 ```
     function bissecao(a, b, n_passos) result(raiz)
@@ -1807,7 +1809,7 @@ Juntando os trechos finais de código desenvolvidos acima temos a nossa primeira
 
 #### Testes
 
-Rodando nosso programa para o polinômio de teste $x^3 - x - 2$, começando pelo intervalo $[1, 2]$ e iterando por 22 passos (valores acima na `main`) obtemos como saída:
+Rodando nosso programa para o polinômio de teste \(x^3 - x - 2\), começando pelo intervalo \([1, 2]\) e iterando por 22 passos (valores acima na `main`) obtemos como saída:
 
 ```
 1.5213804244995117
@@ -1822,7 +1824,7 @@ E avaliando `f(resultado)` a saída é `4.2658294048258938E-006`, que está pró
 E avaliando para esta saída `f(resultado)` obtemos `-1.3322676295501878E-015`, um resultado ainda melhor e que faz jus ao resultado teórico convergente: quanto mais passos, melhor a aproximação.
 
 Vamos testar para uma outra função mais desafiadora? Troquemos o polinômio pela função
-$$f(x) = \frac{cos(x) x^5}{e^x} + 1$$
+\[f(x) = \frac{cos(x) x^5}{e^x} + 1\]
 
 Observando o gráfico da função, sabemos que esta função possui raízes próximas do valor 10:
 
@@ -1839,7 +1841,7 @@ Vamos buscar um valor mais preciso para a raiz logo depois do 10 e antes do 12. 
 	end function f
 ```
 
-E podemos utilizar como intervalo de chute inicial $[10, 12]$ , ou seja, fazemos `a = 10` e `b = 12` no programa `main`. Com 50 passos temos que a raiz é:
+E podemos utilizar como intervalo de chute inicial \([10, 12]\) , ou seja, fazemos `a = 10` e `b = 12` no programa `main`. Com 50 passos temos que a raiz é:
 
 ```
 10.677725261441926     
@@ -1900,7 +1902,7 @@ Usando os descritores da tabela acima, alteraremos então o final do nosso progr
     end program main
 ```
 
-E a saída com $f(x) = x^3 - x - 2$ e 20 passos:
+E a saída com \(f(x) = x^3 - x - 2\) e 20 passos:
 
 ```
 Raiz encontrada:              1.521380424499512
@@ -1931,9 +1933,8 @@ Função avaliada nessa raiz:  ********************
 ```
 
 Na dúvida, um tamanho maior que o necessário é melhor que um menor.
+
 ## Tópico 9: Repetição: DO - WHILE
 
 ## Tópico 10: Imports e Linkagem
-
-# Capítulo 2 - Matrizes, Vetores e Operações Vetoriais
 
