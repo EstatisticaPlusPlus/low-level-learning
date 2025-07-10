@@ -142,9 +142,57 @@ para sairmos de um código fonte a um binário executável:
 
 ### Como instalar um compilador (gfortran)
 
+[instruções de instalação em inglês](https://fortran-lang.org/learn/os_setup/install_gfortran/)
+
 ### Como compilar um código-fonte utilizando o compilador
 
+Instalado o compilador, e com o arquivo executável em mãos, podemos compilar
+o arquivo com:
+
+```
+gfortran <nome do arquivo> -o <nome de saída do arquivo>
+```
+
+Se salvássemos o programa acima, que calcula a área de um cilindro, como
+"cilindro.f90", poderíamos fazer:
+
+```
+gfortran cilindro.90 -o cilindro
+```
+
+E teríamos um arquivo binário chamado `cilindro` para executar no Linux. 
+A depender do sistema, este arquivo talvez precise receber uma extensão 
+específica, como `.exe` para executáveis em Windows.
+
+#### Flags de Compilação
+
+
+
 ### Executando o arquivo executável gerado pela compilação
+
+Para executar um binário, fazemos
+
+```
+./<nome do binario>
+```
+
+Do nosso exemplo anterior:
+
+```
+./cilindro
+```
+
+E temos uma possível execução:
+
+```
+ Entre com o raio e a altura, 'q' para sair.
+1
+2
+ raio=  1.00     altura=  2.00     area= 18.85
+ Entre com o raio e a altura, 'q' para sair.
+q
+STOP finalizando o programa
+```
 
 ## Tópico 2: Estrutura básica de um programa, print simples, variáveis e operações básicas.
 
