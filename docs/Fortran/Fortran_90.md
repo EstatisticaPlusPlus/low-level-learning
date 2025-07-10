@@ -4,11 +4,11 @@ title: "Fortran 90"
 
 # Capítulo 1 - Introdução
 
-Texto introdutório: Neste capítulo visamos apresentar a
+Neste capítulo visamos apresentar a
 linguagem Fortran (na versão Fortran 90) do zero, supondo pouca
 familiaridade com programação, mas algum conhecimento de métodos
 numéricos (não são obrigatórios, mas serão de grande ajuda para a
-compreensão de algumas motivações e métodos). Ao longo deste
+compreensão de algumas motivações e exemplos). Ao longo deste
 capítulo vamos introduzir os conhecimentos necessários para
 construirmos um dos métodos numéricos mais simples e clássicos: o
 Método da Bisseção. E, para além de introduzirmos o ferramental,
@@ -16,10 +16,73 @@ vamos construir um código para este método ao longo das seções, de
 forma que ao final do capítulo teremos uma implementação funcional
 do método em Fortran.
 
-## Tópico 0: Características da linguagem
+## Características da linguagem
 
-Diferenças para o Fortran 77 (fixed-form vs free-form),
-vantagens e desvantagens para algumas aplicações
+Do inglês, FORmula TRANslation system, a linguagem FORTRAN foi um avanço nas décadas
+de 60 e 70 na programação de computadores. Antes dela, o paradigma principal
+de codificação dos programas de computador era escrevê-loss diretamente em 
+linguagem de montagem (Assembly), instruções que eram compreendidas de forma
+praticamente direta pelos computadores. Porém para nós humanos (que não somos
+computadores) é muito difícil e pouco transparente escrever fluxos e algoritmos
+tão próximos do metal. Visando incorporar abstrações que facilitariam a vida dos
+programadores, Foi criado o FORTRAN. 
+
+Nessa metade final do século XX, o surgimento do computador veio como ferramenta
+de cálculo para auxiliar na execução de métodos sofisticados e muito extensos que
+eram utilizados nos contextos da época, principalmente de guerra, engenharia, etc.
+Isso influenciou fortemente a maneira que a linguagem FORTRAN foi construída: pensada
+para fazer computação científica, e acelerar o progresso nestas áreas; e tem impactos
+que reverberam até as versões mais modernas da linguagem, devido a este processo
+histórico.
+
+Algumas das filosofias principais da linguagem são:
+
+- Ser estrita e eficiente para o que ela foi pensada
+
+O que explica a grande quantidade de bibliotecas extremamente otimizadas para álgebra
+linear, implementação nativa de estruturas importantes da matemática a nível de 
+engenharia como números complexos, arrays multi-dimensionais e especificação de precisão
+numérica, e ausência de estruturas comuns em linguagens de propósito geral (como recursividade
+e ponteiros, até a década de 90)
+
+- Ser estável e retrocompatível
+
+Muito tempo e esforço já foi colocado para construir programas robustos e de alta complexidade
+quando FORTRAN foi amplamente adotado pela comunidade científica: simulações, implementações de 
+algoritmos para resolução de inúmeros problemas não-lineares, etc. Para que nenhum destes projetos
+se perdessem durante as atualizações da linguagem, FORTRAN é extremamente retrocompatível, de forma
+que todos os principais compiladores desenvolvidos até hoje são capazes de compilar programas 
+escritos na década de 70 sem alterá-los em 1 linha de código (o que não ocorre, por exemplo, com Python
+2 vs Python 3). 
+
+E para também certificar que os programas desenvolvidos sejam duráveis e pouco sucetíveis a erros
+numéricos (já que isso pode ser fatal numa engenharia naval, aeroespacial e afins), o compilador
+é muito rigoroso quanto ao uso das estruturas da linguagem, e não dá muito espaço para implementações
+exóticas e imprevisíveis (diferente da linguagem C, por exemplo). O design da sintaxe da linguagem
+segue esta mesma lógica.
+
+### Comparativo: FORTRAN 77 (fixed-form) vs FORTRAN 90 (free-form)
+
+Até sua versão 77, FORTRAN rodava principalmente nos grandes centros de computação mantidos pelas
+universidades e pelo governo dos Estados Unidos. Estas máquinas comumente utilizavam cartões perfurados
+como forma de lerem e carregarem os programas desenvolvidos para a memória, como este da foto abaixo
+
+![Por Arnold Reinhold - I took this picture of an artifact in my possession. The card was created in the late 1960s or early 1970s and has no copyright notice., CC BY-SA 2.5, https://commons.wikimedia.org/w/index.php?curid=775153](./f90_content/cartao.jpeg)
+
+Devido a isso, a sintaxe do FORTRAN 77 é conhecida como sendo de forma fixa, pois existe uma quantidade
+limite de caracteres por linha, além de um desígnio especial para cada faixa de caracteres na coluna. 
+Você pode consultar mais detalhes em [nossa página de FORTRAN77](Fortran_77.md).
+
+Como você deve imaginar, isto não é nada prático nos moldes atuais (e já na época era problemático).
+Para endereçar este e alguns outros problemas, na versão FORTRAN 90 adotou-se uma sintaxe diferente,
+a de forma livre. Nesta, removeu-se a limitação de colunas, aumentou-se a quantidade de caracteres
+permitido nos nomes das variáveis e das funções, comentários podem ser feitos em qualquer trecho do
+código utilizando `!`, dentre muitas outras convenções de programação que foram criadas com o aumento
+em popularidade das linguagens C e Pascal, além da reformulação das estruturas físicas dos computadores
+(telas, teclados, disquetes, sistemas operacionais, etc).
+
+Nesta página, iremos trabalhar com o padrão FORTRAN 90. Vamos começar preparando o ambiente de 
+execução dos nossos programas em Fortran.
 
 ## Tópico 1: Compilação, arquivo fonte e arquivo executável
 
@@ -30,9 +93,36 @@ termos:
 - Código-fonte: O código fonte é o arquivo escrito na linguagem de
   programação (no nosso cado, em Fortran). Ele contém as instruções
   do programa, porém o computador não sabe executar estes aquivos.
-  Utilizaremos a extensão ".f90" nos nossos arquivos.
+  Utilizaremos a extensão ".f90" nos nossos arquivos. OBS: programas
+  escritos em FORTRAN 77 normalmente utilizam a extensão ".f". Segue
+  um exemplo de código-fonte:
 
-  Imagem de código fonte
+```
+program cilindro
+! Calcula a área de um cilindro.
+!
+! Declara as variáveis e constantes.
+implicit none ! Requer que todas as variáveis sejam declaradas
+integer :: ierr
+real :: raio,altura,area
+real , parameter :: pi = 3.14159
+do
+   ! Pergunta ao usuário o raio e a altura e lê os valores.
+   write (*,*) "Entre com o raio e a altura, 'q' para sair."
+   read (*,*,iostat=ierr) raio,altura
+   !
+   ! Se o raio e a altura não puderam ser lidos da entrada, termina o programa.
+   if (ierr /= 0) stop "finalizando o programa"
+   !
+   ! Calcula a área. O sinal ** significa "eleva a uma potência".
+   area = 2*pi*(raio**2 + raio*altura)
+   !
+   ! Escreve as variáveis de entrada (raio, altura) e a saida (área) na tela.
+   write (*,"(1x,'raio=',f6.2,5x,'altura=',f6.2,5x,'area=',f6.2)") raio,altura,area
+end do
+end program cilindro
+```
+
 - Compilador: O compilador é o programa responsável por traduzir
   as instruções do nosso código-fonte para instruções que o
   computador sabe executar. Este programa recebe como entrada o
@@ -42,15 +132,19 @@ termos:
 - Arquivo executável: O arquivo executável é o arquivo que,
   efetivamente, irá rodar no computador, executando nosso programa.
   Este arquivo não é legível para nós, humanos, e por isso usamos as
-  abstrações de uma linguagem de programação.
+  abstrações de uma linguagem de programação. Veja o que ocorre ao
+  tentarmos abrir um arquivo binário com um leitor de texto:
 
-  Imagem de um executável aberto em um editor de texto
+  ![binário do código "cilindro.f90" acima](./f90_content/binario.png)
 
-Como instalar um compilador (gfortran)
+Entendidos estes conceitos básicos, vamos fazer os 3 passos principais 
+para sairmos de um código fonte a um binário executável:
 
-Como compilar um código-fonte utilizando o compilador
+### Como instalar um compilador (gfortran)
 
-Executando o arquivo executável gerado pela compilação
+### Como compilar um código-fonte utilizando o compilador
+
+### Executando o arquivo executável gerado pela compilação
 
 ## Tópico 2: Estrutura básica de um programa, print simples, variáveis e operações básicas.
 
