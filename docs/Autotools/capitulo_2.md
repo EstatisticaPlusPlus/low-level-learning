@@ -1,8 +1,8 @@
 ---
-title: "2. Comandos básicos"
+title: "2. Arquivo Básico"
 ---
 
-# 2. Comandos Básicos
+# 2. Exemplo Mínimo
 
 Para começar, crie um arquivo com o nome `configure.ac` e escreva:
 
@@ -28,57 +28,13 @@ Caso não haja erros, a não haverá nenhuma saída e um executável `configure`
 será criado.
 
 Agora, executando esse arquivo a saída será:
+
 ```sh
 $ ./configure
 configure: creating ./config.status
 ```
+
 e também serão criados outros arquivos que não são relevantes no momento
-
-## 2.1. Checagem de Compiladores Comuns
-
-No mesmo arquivo, adicione:
-
-```autoconf
-AC_INPUT
-
-AC_PROG_CC
-AC_PROG_CXX
-
-AC_OUTPUT
-```
-
-- `AC_PROG_CC`: Macro para fazer as verifiações padrão do compilador gcc
-- `AC_PROG_CXX`: Macro para fazer as verifiações padrão do compilador g++
-
-Caso o seu sistema possua um compilador de c e c++, a saida deste programa será:
-
-```sh
-$ autoconf
-$ ./configure
-checking for gcc... gcc
-checking whether the C compiler works... yes
-checking for C compiler default output file name... a.out
-checking for suffix of executables...
-checking whether we are cross compiling... no
-checking for suffix of object files... o
-checking whether the compiler supports GNU C... yes
-checking whether gcc accepts -g... yes
-checking for gcc option to enable C11 features... none needed
-checking for g++... g++
-checking whether the compiler supports GNU C++... yes
-checking whether g++ accepts -g... yes
-checking for g++ option to enable C++11 features... none needed
-configure: creating ./config.status
-```
-
-A saida pode ser levemente diferente dependendo das versões disponíveis do c e
-c++ no seu sistema e do sistema operacional presente.
-
-Os comandos na forma `AC_PROG_XX` são usados para verifiações de compiladores,
-nesse caso o gcc
-
-Outros compiladores são suportados, como o de fortran, objetive-c e go,
-consulte o manual do autoconf para encontrar os comandos desses compiladores.
 
 ## 2.2 Checagem de Bibliotecas, Tipos e Funções
 
@@ -94,11 +50,6 @@ AC_PROG_CC
 
 AC_TYPE_SIZE_T
 AC_TYPE_UINT32_T
-
-AC_CHECK_HEADERS([stdlib.h stdio.h string.h unistd.h])
-
-AC_CHECK_LIB([pthread], [pthread_create])
-AC_CHECK_LIB([m], [sqrt])
 
 AC_CHECK_FUNCS([malloc memset strchr])
 
@@ -153,7 +104,7 @@ checking for strchr... yes
 configure: creating ./config.status
 ```
 
-Em um sistema operacional diferente, e em versões diferentes do c, a saída será
+Em um sistema operacional diferente, e em versões diferentes do C, a saída será
 levemente diferente, porém, sem mensagens de errors sendo apresentadas, está
 tudo correto.
 
