@@ -1,16 +1,16 @@
 # Operadores
----
+
 Introdução ao uso de operadores e operadores aritméticos.
 
 ## Operações
----
-Uma vez que sabe-se guardar informações para o programa, tornam-se relevantes as operações que podem ser realizadas sobre elas.
+
+Uma vez que se sabe guardar informações para o programa, tornam-se relevantes as operações que podem ser realizadas sobre elas.
 
 Um símbolo que representa uma operação em um código recebe o nome de **operador**.
 
 ## Operadores Aritméticos
----
-Operadores aritméticos realizam operações aritméticas entre tipos numéricos. São eles
+
+Operadores aritméticos realizam operações entre tipos numéricos:
 
 | Operador | Descrição      | Exemplo        |
 | -------- | -------------- | -------------- |
@@ -22,86 +22,93 @@ Operadores aritméticos realizam operações aritméticas entre tipos numéricos
 | `++`     | Incremento     | `a++` ou `++a` |
 | `--`     | Decremento     | `a--` ou `--a` |
 
-Seguem alguns exemplos de uso
+### Exemplos
 
 ```cpp
-cout << 5+4 << '\n'; //imprime 9 no terminal
-```
----
+cout << 5 + 4 << '\n'; // imprime 9 no terminal
+````
+
 ```cpp
-int x = 5%2, y = 10;
-cout << x+4*y << '\n'; //imprime 41 no terminal
+int x = 5 % 2, y = 10;
+cout << x + 4 * y << '\n'; // imprime 41 no terminal
 ```
----
+
 ```cpp
-cout << 9/2 << '\n'; //imprime 4 no terminal
-cout << 9.0/2 << '\n'; //imprime 4.5 no terminal
+cout << 9 / 2 << '\n';   // imprime 4 no terminal
+cout << 9.0 / 2 << '\n'; // imprime 4.5 no terminal
 ```
----
+
 ```cpp
 int x = 5, y = 5;
-cout << x++ << ' ' << ++y << '\n'; //imprime 5 e 6 no terminal
-cout << x << ' ' << y << '\n'; //imprime 6 e 6 no terminal
+cout << x++ << ' ' << ++y << '\n'; // imprime 5 e 6 no terminal
+cout << x   << ' ' << y   << '\n'; // imprime 6 e 6 no terminal
 ```
----
 
-A divisão entre inteiros sempre dará um resultado inteiro, desconsiderando o resto da divisão.
+A divisão entre inteiros sempre dá um resultado inteiro, desconsiderando o resto.
+O operador módulo retorna o resto da divisão.
+Os operadores de incremento e decremento modificam o valor da variável em 1 e podem vir antes ou depois da variável:
 
-O operador módulo retorna o resto da divisão de um número pelo outro.
-
-Os operadores de incremento e decremento modificam o valor da variável em 1 e podem vir antes ou depois da variável a ser modificada. A diferença está no momento em que o incremento é realizado. Caso o operador venha depois da variável, é como se ele fosse aplicado apenas após a linha toda ser executada.
+* Pós-fixado (`a++`): primeiro usa o valor, depois incrementa.
+* Pré-fixado (`++a`): primeiro incrementa, depois usa o valor.
 
 ## Operações em Tipos Diferentes
 
-Sempre que uma operação for realizada entre dois tipos primitivos diferentes, o compilador tentará converter o tipo mais "simples" para o tipo mais "complexo" para realizar a operação
+Quando a operação envolve dois tipos primitivos diferentes, o compilador converte o tipo "mais simples" para o tipo "mais complexo":
+
 ```cpp
-4.5/3 // converte 3 para 3.0 e divide
-'A' + 4 // converte 'A' para 65 e soma
+4.5 / 3     // converte 3 para 3.0 e divide
+'A' + 4     // converte 'A' (65) e soma
 ```
 
-Os tipos, do mais simples para o mais complexo, são: ```bool``` ->```char``` -> ```int``` -> ```double```.
+Ordem de complexidade: `bool` → `char` → `int` → `double`.
+
 ## Operadores de Atribuição
----
-O operador de atribuição **```=```** serve para alterar o valor de uma variável após sua criação.
+
+O operador de atribuição `=` altera o valor de uma variável:
+
 ```cpp
 int x = 10;
 x = 18;
 x = 9;
-cout << x << '\n'; //imprime 9 no terminal
+cout << x << '\n'; // imprime 9 no terminal
 ```
-Pode-se compor o operador de atribuição com os operadores aritméticos. Os códigos abaixo funcionam de maneira idêntica.
+
+Também é possível combinar com operadores aritméticos:
+
 ```cpp
 int x = 5;
-x += 1; // x vira 6
-x -= 2; // x vira 4
-x *= 2; // x vira 8
-x /= 2; // x vira 4
-x %= 2; // x vira 0
+x += 1;  // x vira 6
+x -= 2;  // x vira 4
+x *= 2;  // x vira 8
+x /= 2;  // x vira 4
+x %= 2;  // x vira 0
 ```
----
+
+Equivalente a:
+
 ```cpp
 int x = 5;
-x = x + 1; // x vira 6
-x = x - 2; // x vira 4
-x = x * 2; // x vira 8
-x = x / 2; // x vira 4
-x = x % 2; // x vira 0
+x = x + 1;
+x = x - 2;
+x = x * 2;
+x = x / 2;
+x = x % 2;
 ```
 
 ## Precedência e Associatividade
----
-Se múltiplos operadores fazem parte de uma mesma expressão, a ordem em que as operações são feitas pode alterar seu resultado.
 
-A **precedência** é o nível de prioridade da operação em uma linguagem de programação. Operadores de maior precedência são executados primeiro em uma expressão.
+Quando múltiplos operadores aparecem em uma expressão, a ordem de avaliação pode alterar o resultado:
 
-A **associatividade** é a ordem em que operadores de mesma precedência são executados, podendo ser da esquerda para direita ou da direita para esquerda.
+* **Precedência**: nível de prioridade dos operadores (por exemplo, `*`, `/`, `%` antes de `+`, `-`).
+* **Associatividade**: ordem de avaliação entre operadores de mesma precedência (esquerda → direita ou direita → esquerda).
 
-No caso dos operadores aritméticos, a ordem de precedência das operações é a mesma da matemática: multiplicações, divisões e operações de resto -> somas e subtrações.
+Para ver a tabela completa de precedência, consulte a referência do C++:
+[https://en.cppreference.com/w/cpp/language/operator\_precedence](https://en.cppreference.com/w/cpp/language/operator_precedence)
 
-Uma tabela completa da precedência de operadores pode ser encontrada [aqui](https://en.cppreference.com/w/cpp/language/operator_precedence).
+### Exemplo de parênteses
 
-É possível alterar a ordem de execução das operações ao envolvê-las em **`()`**:
 ```cpp
-cout << 2*5+11/4 << '\n'; // 12
-cout << 2*((5+11)/4) << '\n'; // 8
+cout << 2 * 5 + 11 / 4       << '\n'; // 12
+cout << 2 * ((5 + 11) / 4)   << '\n'; // 8
 ```
+
