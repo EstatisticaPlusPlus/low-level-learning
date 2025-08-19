@@ -2078,5 +2078,80 @@ Na dúvida, um tamanho maior que o necessário é melhor que um menor.
 
 ## Tópico 9: Repetição: DO - WHILE
 
+Para motivar a apresentação da próxima estrutura, notemos uma particularidade do uso do método e a forma como está implementado. Ao
+procurar uma solução numérica, geralmente estabelece-se um critério de parada de acordo com uma tolerância sobre o erro da solução.
+Porém, da maneira como implementamos o loop principal, nosso algoritmo roda um número fixo de iterações, fornecido como entrada
+pelo usuário. Isso faz com que tenha que se chutar um valor de passos a serem executados que gere um erro menor que o esperado e,
+caso isso não ocorra, recomeçar o algoritmo do início com um novo chute (agora melhor informado). Esta não é uma boa abordagem, e por
+isso mudaremos nosso loop para definir o erro numérico enquanto critério de prosseguimento/parada, utilizando a estrutura `DO WHILE`.
+
+```
+do while (teste_condicional)
+    ! Código a ser repetido
+end do
+```
+
+O teste condicional deve ser uma expressão lógica (ou uma vaiável lógica, enfim, um valor lógico) que será checado a cada iteração.
+Se o teste for verdadeiro (i.e. `.true.`), a iteração acontecerá. Quando for falso, o loop termina e a próxima instrução após o `END DO`
+é executada. 
+
+No nosso problema, o método da bisseção, sabemos que a solução exata é 0. E, portanto, conseguimos calcular o quão distante está a solução numérica calculada em relação ao valor exato. Para isso, implementaremos as seguintes mudanças na função `bissecao`:
+
+ - Trocar o `n_passos` por `erro_tol` (lembrando de fazer o mesmo no programa principal)
+ - Trocar o loop fixo por um loop dinâmico em cima do `erro_tol`
+
+```
+function bissecao(a, b, erro_tol) result(raiz)	
+		! Limite inferior do intervalo
+		real(real64), intent(in) :: a 							
+
+		! Limite superior do intervalo
+		real(real64), intent(in) :: b 
+
+		! Erro máximo tolerado  
+		real(real64), intent(in) :: erro_tol 
+
+		! Valor de x tal que f(x) = 0
+		real(real64) :: raiz 
+
+		! Ponto médio
+		real(real64) :: p_medio
+
+		! Variável LOCAL do limite inferior do intervalo
+		real(real64) :: inf
+
+		! Variável LOCAL do limite superior do intervalo
+		real(real64) :: sup
+
+		! Variável do loop
+		integer :: i
+
+		inf = a
+		sup = b
+
+        p_medio = (inf+sup)/2
+		do while (abs(f(p_medio)) > erro_tol)			
+            call novo_intervalo(inf, sup)
+            p_medio = (inf+sup)/2
+
+		end do
+		raiz = p_medio
+
+	end function bissecao
+```
+
+Fazendo `erro_tol = 1e-12_real64` no programa principal e rodando o código, temos como saída:
+
+```
+Raiz encontrada:                       1.521379706804510
+Função avaliada nessa raiz:           -0.000000000000344
+```
+
+E agora não é mais necessário o processo de tentativa e erro. É possível juntar as 2 abordagens e definir um limite máximo de iterações
+caso não se atinja a tolerância especificada (para evitar possíveis loops infinitos). Pode-se também envolver esta função numa sobrotina
+para retornar informações extras como número de passos realizados. 
+
+Para alguns outros problemas, onde a solução exata não é conhecida, poderíamos olhar para a diferença entre iterações subsequentes, por exemplo, para estimar convergência e colocar esta diferença como critério de parada do `DO WHILE`. As possibilidades são muitas, a variar do problema.
+
 ## Tópico 10: Imports e Linkagem
 
