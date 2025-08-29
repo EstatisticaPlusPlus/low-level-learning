@@ -30,4 +30,4 @@ entusiastas das linguagens.
 
 UGH, Brian J.; STALLMAN, Richard M. An Introduction to GCC. Network Theory Ltd., 2004. ISBN 978-0954161798.
 
-TANFORD UNIVERSITY. **ME 200C - Basics of the Finite Element Method**. Disponível em: [https://web.stanford.edu/class/me200c/](https://web.stanford.edu/class/me200c/). Acesso em: 10 jul. 2025.
+STANFORD UNIVERSITY. **ME 200C - Basics of the Finite Element Method**. Disponível em: [https://web.stanford.edu/class/me200c/](https://web.stanford.edu/class/me200c/). Acesso em: 10 jul. 2025.
