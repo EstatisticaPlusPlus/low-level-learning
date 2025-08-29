@@ -142,31 +142,104 @@ para sairmos de um código fonte a um binário executável:
 
 ### Como instalar um compilador (gfortran)
 
-[instruções de instalação em inglês](https://fortran-lang.org/learn/os_setup/install_gfortran/)
+#### No Linux
+
+As instalações no Linux costumam ser bem diretas, e dependem um pouco
+da distribuição que você está utilizando
+
+Se você estiver utilizando distribuições baseadas em **Debian (Debian, Ubuntu, Mint, etc…)**, provavelmente você já tem o compilador pré-instalado. Para verificar,
+rode no terminal o comando:
+
+```
+gfortran --version
+```
+
+Se o comando retornar a versão do compilador, então já existe uma instalação. 
+Mas se retornar um erro, ou exibir uma versão antiga e você quiser uma mais nova, então você pode instalar o compilador (ou uma nova versão dele) usando:
+
+```
+sudo apt install gfortran
+```
+
+E verificar se tudo ocorreu corretamente verificando a versão que foi instalada:
+
+```
+gfortran --version
+```
+
+Se você usa uma distribuição Linux baseada em **RPM (Red Hat Enterprise Linux, CentOS, Fedora, openSUSE)**, use
+
+```
+sudo yum install gcc-gfortran
+```
+
+Ou, caso esteja utilizando Fedora 22 e Red Hat Enterprise Linux 8, utilize
+
+```
+sudo dnf install gcc-gfortran
+```
+
+Por fim, se estiver usando alguma distribuição baseada em **Arch (Arch Linux, EndeavourOS, Manjaro, etc…)**, use
+
+```
+sudo pacman -S gcc-fortran
+```
+
+#### No Windows
+
+No caso de querer compilar no Windows, você irá instalar um programa que 
+irá ofertar um terminal que funciona de forma bem parecida com os terminais
+do Linux, mas adaptado para o Windows: o [MSYS2](https://www.msys2.org/).
+
+Baixe o programa no link do projeto acima e siga as instruções do instalador.
+Terminada a instalação, você deverá ter acesso à várias shells do MSYS2: 
+MSYS2 MSTS, MSYS2 MINGW64, MSYS2 CLANG64, etc. Abra a **MSYS2 MINGW64**
+
+Nela, você irá instalar a coleção de compiladores GCC utilizando o comando:
+
+```
+pacman -S mingw-w64-x86_64-gcc-fortran
+```
+
+Confirme a instalação digitando `Y` e aguarde. Terminada a instalação, feche
+e abra novamente a shell MINGW64. Se tudo ocorreu corretamente, ao digitar
+no terminal o comando:
+
+```
+gfortran --version
+```
+
+Será exibida uma mensagem informando nome do pacote, versão e Copyright. Isso
+indica que a instalação foi bem sucedida. Os arquivos do caminho padrão 
+se encontram em C:\\msys64\\home\\<nome_do_seu_usuario\>. Colocar os arquivos
+de código-fonte fortran neste caminho facilita a compilação, mas é possível 
+utilizá-los de qualquer pasta do computador.
+
+[referência das instruções de instalação (em inglês)](https://fortran-lang.org/learn/os_setup/install_gfortran/)
 
 ### Como compilar um código-fonte utilizando o compilador
 
-Instalado o compilador, e com o arquivo executável em mãos, podemos compilar
-o arquivo com:
+Instalado o compilador, e com o código-fonte em mãos (isto é, no diretório
+no qual iremos rodar o comando, normalmente a home do usuário), podemos compilar o arquivo com:
 
 ```
 gfortran <nome do arquivo> -o <nome de saída do arquivo>
 ```
 
-Se salvássemos o programa acima, que calcula a área de um cilindro, como
-"cilindro.f90", poderíamos fazer:
+Se salvarmos o programa apresentado no início desse tópico, que calcula a área de
+um cilindro, como "cilindro.f90", podemos fazer:
 
 ```
 gfortran cilindro.90 -o cilindro
 ```
 
 E teríamos um arquivo binário chamado `cilindro` para executar no Linux. 
-A depender do sistema, este arquivo talvez precise receber uma extensão 
-específica, como `.exe` para executáveis em Windows.
+A depender do sistema, este arquivo receber uma extensão específica, como `.exe` 
+para executáveis em Windows.
 
 #### Flags de Compilação
 
-
+(flags)[https://gcc.gnu.org/onlinedocs/gfortran/Option-Summary.html]
 
 ### Executando o arquivo executável gerado pela compilação
 
