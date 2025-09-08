@@ -6,21 +6,21 @@ Uso de estruturas de repetição
 
 Uma **loop** ou uma **estrutura de repetição** é um comando de uma linguagem de programação que permite a execução das mesmas linhas de código repetidas vezes.
 
-As estruturas de repetição mais comuns em linguagens de programação são o **`while`** e o **`for`**.
+As estruturas de repetição mais comuns em linguagens de programação são o **`while`**, o **`do while`** e o **`for`**.
 
 ## `while`
 
 O `while` executa o mesmo comando **enquanto sua condição for verdadeira**. Ele sempre tem a forma:
 
 ```cpp
-while(condição) comando
+while (condição) comando
 ````
 
 Assim como o `if`, o comando pode ser substituído por uma sequência de comandos com o uso de `{}`. Seguem alguns exemplos de uso do `while`:
 
 ```cpp
 int x = 0;
-while(x < 5) {
+while (x < 5) {
     cout << x << ' ';
     x++;
 }
@@ -30,7 +30,7 @@ cout << '\n';
 
 ```cpp
 int x = 8;
-while(x != 1) {
+while (x != 1) {
     cout << x << ' ';
     x /= 2;
 }
@@ -40,7 +40,7 @@ cout << '\n';
 
 ```cpp
 int x = 2;
-while(x < 1000) {
+while (x < 1000) {
     cout << x << ' ';
     x *= x;
 }
@@ -49,7 +49,7 @@ cout << '\n';
 ```
 
 ```cpp
-while(true) {
+while (true) {
     cout << a;
 }
 // aaaa...
@@ -58,7 +58,7 @@ while(true) {
 Loops podem executar infinitamente, caso a condição permita.
 
 ```cpp
-while(false) {
+while (false) {
     cout << a;
 }
 // (nunca executa)
@@ -66,7 +66,7 @@ while(false) {
 
 ```cpp
 int x = 5;
-while(x) {
+while (x) {
     cout << x << ' ';
     x--;
 }
@@ -74,18 +74,42 @@ cout << '\n';
 // 5 4 3 2 1
 ```
 
+## `do while`
+
+O `do while` quase exatamente igual o `while`. A única diferença entre eles é que uma execução do comando é realizada antes da primeira avaliação da condição. Ele é da forma:
+
+```cpp
+do comando while (condição);
+```
+
+Que equivale a um `while` com, anteriormente ao seu início, uma execução do comando:
+
+```cpp
+comando
+while (condição) comando;
+```
+
+Dessa forma, mesmo se a condição for inicialmente falsa, o comando será executado, então ao menos uma execução do comando sempre é realizada.
+
+```cpp
+bool cond = false;
+do {
+	cout << "Aqui!\n";
+} while (cond);
+```
+
 ## `for`
 
 O `for` faz o mesmo que o `while`, mas sua estrutura permite a declaração de uma ou mais variáveis do mesmo tipo e um comando para a alteração de valores a cada iteração. Ele sempre tem a forma:
 
 ```cpp
-for(declaração; condição; alteração) comando
+for (declaração; condição; alteração) comando
 ```
 
 Quando o programa chega ao `for`, são executadas a declaração e a condição. Caso a condição seja verdadeira, o comando é executado. Após o comando, o comando de alteração é executado e a condição é verificada novamente. Quando a condição for falsa, o programa continua após o `for`. Seguem exemplos de uso:
 
 ```cpp
-for(int i = 0; i < 5; i++) {
+for (int i = 0; i < 5; i++) {
     cout << i << ' ';
 }
 cout << '\n';
@@ -93,7 +117,7 @@ cout << '\n';
 ```
 
 ```cpp
-for(int i = 0, j = 10; i != j; i++, j--) {
+for (int i = 0, j = 10; i != j; i++, j--) {
     cout << i << ' ' << j << '\n';
 }
 // 0 10
@@ -108,9 +132,9 @@ for(int i = 0, j = 10; i != j; i++, j--) {
 É possível aninhar loops dentro de outros loops:
 
 ```cpp
-for(int i = 0; i < 5; i++) {
+for (int i = 0; i < 5; i++) {
     cout << i << '\n';
-    for(int j = 0; j < 3; j++) {
+    for (int j = 0; j < 3; j++) {
         cout << "    " << j << '\n';
     }
 }
@@ -138,11 +162,11 @@ for(int i = 0; i < 5; i++) {
 
 ## `break`
 
-O comando `break` pode finalizar a execução de um loop:
+O comando `break` pode finalizar forçadamente a execução de um loop:
 
 ```cpp
-for(int i = 0; i < 5; i++) {
-    if(i == 3) break;
+for (int i = 0; i < 5; i++) {
+    if (i == 3) break;
     cout << i << ' ';
 }
 cout << '\n';
@@ -150,10 +174,10 @@ cout << '\n';
 ```
 
 ```cpp
-while(true) {
+while (true) {
     string entrada;
     cin >> entrada;
-    if(entrada == "PARE!") break;
+    if (entrada == "PARE!") break;
 }
 ```
 
@@ -162,8 +186,8 @@ while(true) {
 O comando `continue` pode pular para a próxima iteração de um loop:
 
 ```cpp
-for(int i = 0; i < 5; i++) {
-    if(i == 3) continue;
+for (int i = 0; i < 5; i++) {
+    if (i == 3) continue;
     cout << i << ' ';
 }
 cout << '\n';
