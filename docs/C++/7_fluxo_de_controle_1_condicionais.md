@@ -4,28 +4,29 @@ Introdução ao fluxo de controle e condicionais.
 
 ## Fluxo de Controle
 
-**Fluxo de controle** é a ordem em que comandos são executados em um programa. Com as ferramentas apresentadas até o momento, um programa sempre executa, linha a linha, todos os seus comandos de cima para baixo. Porém, existem ferramentas em linguagens de programação para modificar o fluxo de controle.
+**Fluxo de controle** é a ordem em que comandos são executados em um programa. Com as ferramentas apresentadas até o momento, um programa sempre executa, linha a linha, todos os seus comandos. Porém, existem ferramentas para modificar esse fluxo de execução.
 
 As duas categorias de comandos de fluxo de controle mais comuns nas linguagens de programação são **condicionais** e **loops**.
 
 ## Condicionais
 
-**Condicionais** permitem que comandos sejam executados se, e somente se, determinada condição for verdadeira. São exemplos de uso da execução condicional de comandos:
+**Condicionais** permitem que comandos sejam executados se, e somente se, determinada condição for verdadeira. Com eles, pode-se:
+
 - Logar um usuário somente se a senha inserida estiver correta.
 - Desligar o computador somente se não houver programas abertos.
-- Atualizar o computador somente se estiver carregando.
+- Atualizar o computador somente se estiver conectado à tomada.
 
-Os condicionais mais comuns no C++ são o **`if`**, o **`else`** e o **`else if`**.
+O C++ disponibiliza como comandos condicionais o **`if`**, **`else if`**, **`else`** e **`switch`**.
 
 ### `if`
 
 O `if` permite a execução de um comando se, e somente se, uma condição for verdadeira. Ele sempre tem a forma:
 
 ```cpp
-if(condição) comando
+if (condição) comando
 ````
 
-A condição é uma expressão que deve retornar um `bool`, cujo valor ditará a execução do comando. Seguem exemplos de uso:
+A condição é uma expressão que deve retornar um `bool` (ou valor conversível para `bool`), cujo valor ditará a execução do comando. Seguem exemplos de seu uso:
 
 ```cpp
 if (1 < 5) cout << 1 << '\n';            // 1
@@ -33,6 +34,8 @@ if (1 > 5) cout << 1 << '\n';            // não executa
 if (1 < 5 && 2 < 3) cout << "aqui\n";    // aqui
 if (true) cout << "bla\n";               // bla
 if (false) cout << "ble\n";              // não executa
+if (1+1) cout << "Ok\n";                 // Ok
+if (1-1) cout << "Ok\n";                 // não executa
 ```
 
 ```cpp
@@ -43,9 +46,7 @@ if (input == senha)
     cout << "Logado!\n";
 ```
 
-É boa prática indentar os comandos para explicitar sua associação ao `if`.
-
-Também é possível agrupar múltiplos comandos com `{}`:
+É boa prática indentar o comando associado a um `if`, explicitando esse relacionamento. Além disso, é possível agrupar múltiplos comandos em um **bloco** com `{}`. Isto é, onde pode-se inserir apenas inserir um comando, torna-se possível inserir vários. Essa prática é conveniente em vários dos comandos que veremos a frente.
 
 ```cpp
 string senha = "12345";
@@ -78,73 +79,231 @@ if (op == '/') {
 }
 ```
 
+### `else if`
+
+Um `else if` é sempre precedido por um `if`. Ele é da forma.
+
+```cpp
+if (condição)
+	comando
+else if (condição)
+	comando
+````
+
+Caso a condição do `if` seja verdadeira, ele executa seu comando e ignora o `else if`, pulando para seu fim. Caso contrário, o comando do `if` é ignorado e a condição do `else if` é avaliada, determinando se o programa executa seu comando ou não.
+
+```cpp
+string usuario = "User1";
+
+if (usuario == "User1") {           // avalia para true
+	cout << 1 << '\n';             // imprime
+}else if (usuario == "User2") {     // pulado
+	cout << 2 << '\n';             // pulado
+}
+```
+
+```cpp
+string usuario = "User2";
+
+if (usuario == "User1") {           // avalia para false
+	cout << 1 << '\n';             // pulado
+}else if (usuario == "User2") {     // avalia para true
+	cout << 2 << '\n';             // imprime
+}
+```
+
+```cpp
+string usuario = "User3";
+
+if (usuario == "User1") {           // avalia para false
+	cout << 1 << '\n';             // pulado
+}else if (usuario == "User2") {     // avalia para false
+	cout << 2 << '\n';             // pulado
+}
+```
+
+Múltiplos `else if` podem ser encadeados. Caso a condição de um deles avalie para verdadeira, seu comando é executado e a execução pula para o fim do **último `else if` na cadeia`.
+
+```cpp
+int num = 3;
+bool multiplo_de_3 = (num % 3 == 0);   // true
+bool multiplo_de_5 = (num % 5 == 0);   // false
+
+if (multiplo_de_3 && multiplo_de_5) {  // avalia para false
+    cout << "Múltiplo de 3 e de 5\n";  // pulado
+} else if (multiplo_de_3) {            // avalia para true
+    cout << "Múltiplo de 3\n";         // imprime
+} else if (multiplo_de_5) {            // pulado
+    cout << "Múltiplo de 5\n";         // pulado
+}
+```
+
+```cpp
+int num = 15;
+bool multiplo_de_3 = (num % 3 == 0);   // true
+bool multiplo_de_5 = (num % 5 == 0);   // true
+
+if (multiplo_de_3 && multiplo_de_5) {  // avalia para false
+    cout << "Múltiplo de 3 e de 5\n";  // imprime
+} else if (multiplo_de_3) {            // pulado
+    cout << "Múltiplo de 3\n";         // pulado
+} else if (multiplo_de_5) {            // pulado
+    cout << "Múltiplo de 5\n";         // pulado
+}
+```
+
+Note que, apesar de 15 ser múltiplo de 3, a primeira condição foi verdadeira, então o restante é pulado.
+
 ### `else`
 
-Um `else` acompanha um `if` para ser executado caso sua condição seja falsa:
+Um `else` sempre vem precedido de um `if` ou `else if`.  Ele é da forma:
+
+```cpp
+<if ou else if> (condição)
+	comando
+else
+	comando
+````
+
+Seu comando sempre é executado caso a condição anterior avalie para `false`:
 
 ```cpp
 string nome;
 cin >> nome;
 if (nome.size() <= 10) {
     cout << "OK!\n";
-} else {
+}else {
     cout << "Grande demais!\n";
 }
 ```
 
 ```cpp
-if (true) {
-    cout << "Sempre executa!\n";
+int num = 17;
+bool multiplo_de_3 = (num % 3 == 0);       // true
+bool multiplo_de_5 = (num % 5 == 0);       // true
+
+if (multiplo_de_3 && multiplo_de_5) {      // avalia para false
+    cout << "Múltiplo de 3 e de 5\n";      // pulado
+} else if (multiplo_de_3) {                // avalia para false
+    cout << "Múltiplo de 3\n";             // pulado
+} else if (multiplo_de_5) {                // avalia para false
+    cout << "Múltiplo de 5\n";             // pulado
 } else {
-    cout << "Nunca executa!\n";
+	cout << "Não é múltiplo de 3 nem 5\n"; // imprime
 }
 ```
 
-### `else if`
+### `switch`
 
-Um `else if` é avaliado apenas se a condição do `if` anterior for falsa:
+O `switch` permite pular a execução para um lugar a depender do valor de uma variável ou expressão **do tipo `int`**. Ele é da forma:
 
 ```cpp
-string usuario;
-cin >> usuario;
+switch (<variável ou expressão>) {
+	case valor:
+		comandos
+		break;
+	case valor:
+		comandos
+		break;
+	...
+}
+```
 
-if (usuario == "wylson789") {
-    cout << "Bem Vindo!\n";
-} else if (usuario == "mhjmbs") {
-    cout << "Ew...\n";
+A execução pula para o caso associado ao valor da variável ou expressão, pulando para o fim do `switch` ao atingir o `break`. É possível que nenhum dos casos explicitamente definidos seja igual ao valor desejado. Nesse caso, a execução continua após o `switch` normalmente.
+
+```cpp
+int num = 1;
+switch (num) {
+    case 1:
+        cout << "Entrei no 1\n"; // imprime
+        break;                   // pula para o fim do switch
+    case 2:
+        cout << "Entrei no 2\n";
+        break;
 }
 ```
 
 ```cpp
-int idade;
-string olhos;
-cin >> idade >> olhos;
-
-if (40 <= idade && idade <= 55) {
-    cout << "Você está na meia-idade\n";
-} else if (olhos == "verdes") {
-    cout << "Você tem olhos verdes\n";
+int num = 2;
+switch (num) {
+    case 1: 
+        cout << "Entrei no 1\n";
+        break;
+    case 2:
+        cout << "Entrei no 2\n"; //imprime
+        break;                   //pula para o fim do switch
 }
 ```
 
-Note que se a pessoa está na meia-idade e tem olhos verdes, o programa apenas dirá que ela está na meia-idade!
+#### `default`
 
-Múltiplos `else if` podem ser encadeados, e você pode adicionar um `else` final para capturar qualquer outro caso:
+O comando `default` especifica um caso a ser executado se nenhum `case` corresponder à variável. Por convenção, o `default` é colocado como último caso, quando aparece.
 
 ```cpp
-double altura;
-cin >> altura;
-
-if (altura < 1.90) {
-    cout << "Você é normal\n";
-} else if (altura < 2.00) {
-    cout << "Você é muito alto\n";
-} else if (altura < 2.10) {
-    cout << "Você é alto demais\n";
-} else {
-    cout << "?????\n";
+int num = 3;
+switch (num) {
+    case 1: 
+        cout << "Entrei no 1\n";
+        break;
+    case 2:
+        cout << "Entrei no 2\n";
+        break;                   
+	default:
+		cout << "Não entrei acima\n" //imprime
+		break;
 }
 ```
 
-Ao avaliar `altura < 2.00`, já sabemos que `altura` é ao menos `1.90`, pois, caso contrário, o bloco do primeiro `if` teria sido executado e o restante pulado.
+#### declarações nos case's
 
+Um erro de compilação é gerado quando ao se tentar declarar variáveis dentro de um caso do `switch` que não seja o último.
+
+```cpp
+switch (2) {
+    case 1:
+        int x = 0;
+        cout << "Entrei no 1" << '\n';
+        break;
+    case 2:
+	    //x está no escopo, mas não é declarada caso o case 2 execute
+        cout << "Entrei no 2" << '\n';
+        break;
+}
+```
+
+Isso porque o escopo dos casos é o mesmo, assim, o caso 2 vê `x`, mas `x` nunca é declarada porque o caso 1 nunca foi executado. Isso pode ser consertado envelopando os casos em blocos:
+
+```cpp
+switch (2) {
+    case 1: {
+        int x = 0;
+        cout << "Entrei no 1" << '\n';
+        break;
+    }
+    case 2: {
+        cout << "Entrei no 2" << '\n';
+        break;
+    }
+}
+```
+
+Dessa forma, cada caso tem seu próprio escopo.
+
+#### Fallthrough
+
+Os `break`'s em cada caso não são obrigatórios. Se um caso não tiver um `break` ao seu fim, a execução continuará até o próximo caso, e o próximo, até encontrar um `break` ou chegar ao fim do `switch`. Isso é chamado de *fallthrough*.
+
+```cpp
+switch (2) {
+    case 1:
+        cout << "Entrei no 1" << '\n';
+        break;
+    case 2:
+        cout << "Entrei no 2" << '\n'; //imprime
+    case 3
+	    cout << "Entrei no 2" << '\n'; //imprime
+	    break;
+    default:
+        cout << "No default\n";
+}
+```
