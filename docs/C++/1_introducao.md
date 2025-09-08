@@ -20,7 +20,7 @@ Desses, um editor muito comum entre programadores e simples de utilizar é o **V
 
 ## Compiladores
 
-Apesar de utilizarmos uma linguagem de programação, o computador ainda não consegue executar instruções. Um computador entende apenas instruções em **linguagem de máquina**, codificadas apenas com sequências de caracteres 0 e 1. Este é o único formato em que um computador é capaz de executar uma instrução.
+Apesar de utilizarmos uma linguagem de programação, o computador ainda não consegue executar instruções. Um computador entende apenas instruções em **linguagem de máquina**, sequências de caracteres 0 e 1. Este é o único formato em que um computador é capaz de executar uma instrução.
 
 A **compilação** é o processo de transformar instruções em uma linguagem de programação em um arquivo executável com instruções em linguagem de máquina.
 
