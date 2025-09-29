@@ -237,10 +237,6 @@ E teríamos um arquivo binário chamado `cilindro` para executar no Linux.
 A depender do sistema, este arquivo receber uma extensão específica, como `.exe` 
 para executáveis em Windows.
 
-#### Flags de Compilação
-
-(flags)[https://gcc.gnu.org/onlinedocs/gfortran/Option-Summary.html]
-
 ### Executando o arquivo executável gerado pela compilação
 
 Para executar um binário, fazemos
@@ -2228,3 +2224,76 @@ Para alguns outros problemas, onde a solução exata não é conhecida, podería
 
 ## Tópico 10: Imports e Linkagem
 
+No Tópico 3 foram introduzidas as noções de funções e módulos como forma de compartimentar e modularizar nossos programas. Porém, até o momento, todo nosso código-fonte está em apenas 1 único arquivo, o que faz com que tenhamos que recompilar todo o código caso façamos mínimas mudanças. Em nossos exemplos, onde o código é pequeno, isso é irrelevante, já que o tempo de compilação é minúsculo. Mas para grandes projetos, essa questão deixa de ser uma trivialidade. Vamos ver, então, como podemos unir vários trechos de código em um único programa.
+
+### Unindo arquivos de código-fonte
+
+Começemos segmentando nosso código (como o presente no tópico 7.2) da seguinte maneira: cada módulo em seu próprio arquivo separado, bem como o programa principal. Dessa maneira teremos 3 arquivos:  `main.f90` onde está a chamada do programa principal, `metodos.f90` onde estão as funções e rotinas principais do método e `funcao.90` onde informaremos a função dada como entrada para o método.
+
+Para gerarmos um arquivo executável que junte estes 3 arquivos em uma única saída fazemos:
+
+```
+gfortran funcao.90 metodos.f90 main.f90 -o bissecao
+```
+
+E será gerado um binário final chamado `bissecao`, que pode ser executado e funcionará como nossos programas anteriores. Alguns outros arquivos colaterais `.mod` também serão gerados; eles servem para informar ao compilador se as funções externas estão sendo utilizadas corretamente em seu código, mas não iremos nos preocupar com isso no momento. 
+
+Vale ressaltar que a ordem em que os arquivos são passados é importante, já que arquivos que dependem da declaração de outros módulos devem ser precedidos por esses módulos. Assim, já demos um primeiro passo em direção a compartimentar trechos do código, já que agora podemos trocar e juntar difentes trechos em diferentes programas. Nosso arquivo `funcao.f90` pode ser utilizado em outro programa, e nosso programa `main.f90` pode ser linkado a outras funções de entrada, bastando informarmos um arquivo diferente. 
+
+Por exemplo, podemos criar um novo arquivo chamado `funcao_cos.f90` contendo:
+
+```
+module funcoes
+	use, intrinsic :: iso_fortran_env
+	implicit none
+
+contains    
+    function f(x) result(y)
+        real(real64), intent(in) :: x
+        real(real64) :: y
+
+        y = ((cos(x) * x**5) / exp(x)) + 1
+    end function f
+end module funcoes
+```
+
+E ao chamar na linha de comando
+
+```
+gfortran funcao_cos.90 metodos.f90 main.f90 -o bissecao
+```
+
+Geramos um programa que utiliza esta função em vez do polinômio cúbico, e só foi preciso alterar o arquivo referente a função de entrada, sem mexer em qualquer outra parte do programa. Arquivos modelo estarão disponíveis no repositório para que você consiga reproduzir estes testes. 
+
+Este processo também pode ser feito em 2 etapas: primeiro gerando arquivos objeto `.o` e depois juntando estes arquivos para gerar o executável final:
+
+```
+gfortran -c funcao.f90 metodos.f90
+# Gera os arquivos intermediarios
+
+gfortran funcao.o metodos.o main.f90 -o bissecao
+# Junta tudo no arquivo final
+```
+
+Perceba que os arquivos `.mod` possuem os nomes dos módulos como de fato declarados dentro dos arquivos, enquanto que os arquivos `.o` possuem o nome dos arquivos. Mas por que alguém faria esse passo intermediário a mais? 
+
+* Códigos-fonte são legíveis por seres humanos (que sabem Fortran), enquanto que códigos objetos são informações binárias. Ao compartilhar arquivos objetos você consegue exportar uma funcionalidade sem revelar como ela foi implementada, caso seja de seu interesse (o que é muito comum em projetos que não são de código-aberto). Porém, código objeto é específico para certas arquiteturas e sistemas, portanto é preciso gerar várias versões para várias platarformas se assim ele for distribuído (Windows, Linux, Mac, 32 ou 64 bits, etc).
+
+* Códigos objeto já são pré-compilados, o que pode economizar bastante tempo na instalação. Esta diferença é bem perceptível ao comparar o tempo de instalação de um grande projeto quando se compila manualmente o código fonte e quando se instala os binários pré-compilados.
+
+### Unindo código-fonte e bibliotecas estaticamente
+
+[referência para incorporação estática e dinâmica de bibliotecas personalizadas](https://fortran-lang.org/learn/building_programs/managing_libraries/)
+
+### Unindo código-fonte e bibliotecas dinamicamente
+
+[referência para incorporação estática e dinâmica de bibliotecas personalizadas](https://fortran-lang.org/learn/building_programs/managing_libraries/)
+
+### Build e Make
+
+[referência bem completa pra building, dá pra apresentar só o básico](https://fortran-lang.org/learn/building_programs/build_tools/)
+[referência pra uso do make](https://fortran-lang.org/learn/building_programs/project_make/)
+
+## Tópico 11: Flags de Compilação
+
+[referência com lista de flags suportadas](https://gcc.gnu.org/onlinedocs/gfortran/Option-Summary.html)
