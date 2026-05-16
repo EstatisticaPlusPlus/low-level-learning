@@ -23,7 +23,7 @@
     
     
       
-        <title>Capitulo 9 - Estatística++</title>
+        <title>9. Verificação do sinal do char - Estatística++</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#9-verificacao-do-sinal-do-char" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -104,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Capitulo 9
+              9. Verificação do sinal do char
             
           </span>
         </div>
@@ -586,6 +591,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Verificação do sinal do char
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -594,7 +619,7 @@
   <span class="md-ellipsis">
     
   
-    Capitulo 9
+    9. Verificação do sinal do char
   
 
     
@@ -603,6 +628,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-maneira-especifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. Maneira Especifica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1. Maneira Especifica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911-macros-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.1. Macros utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-maneira-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. Maneira Geral
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2. Maneira Geral">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-macro-utilizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.1. Macro utilizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1920,6 +2020,72 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-maneira-especifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. Maneira Especifica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1. Maneira Especifica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911-macros-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.1. Macros utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-maneira-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. Maneira Geral
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2. Maneira Geral">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-macro-utilizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.1. Macro utilizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1939,7 +2105,116 @@
   
 
 
-  <h1>Capitulo 9</h1>
+<h1 id="9-verificacao-do-sinal-do-char">9. Verificação do sinal do char</h1>
+<p>Em algumas circunstâncias, o tipo char pode ser definido
+como signed ou unsigned. Uma diferença simples que pode
+acarreta em grandes mudanças na forma como funções com
+retorno char podem ser usadas.</p>
+<p>Dessa forma, é necessário descobrir como detectar essa
+diferença, e como um bônus, também descobriremos outros
+tipos que poderão ser analisados com o método a ser
+apresentado</p>
+<p>Testaremos de duas maneiras: a primeira especifica para o
+tipo char e a segunda sendo mais geral</p>
+<h2 id="91-maneira-especifica">9.1. Maneira Especifica</h2>
+<h3 id="911-macros-utilizadas">9.1.1. Macros utilizadas</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># configure.ac
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>AC_INIT([epp], [7.38])
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>AC_PROG_CC
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>m4_include([m4/check.m4])
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>check_char_sign
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>AC_OUTPUT
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># m4/check.m4
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>AC_DEFUN(check_char_sign, [
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    AC_MSG_CHECKING([if char is signed])
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    AC_RUN_IFELSE([AC_LANG_PROGRAM([],
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    [[
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        #include &lt;stdio.h&gt;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        int main(int argc, char *argv[]) {
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            char bbb = 0;
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            --bbb;
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            if (bbb == -1) {
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                return 1;
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            } else {
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                return 0;
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            }
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        }
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    ]]
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    )],
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    [AC_MSG_RESULT(signed)],
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    [AC_MSG_RESULT(unsigned)])
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>])
+</span></code></pre></div>
+<p>O primeiro exemplo dado se utiliza de um evento simples que
+acontece ao tentar diminuir 1 de uma variável unsigned com o
+valor 0: integer overflow.</p>
+<p>O programa acima define uma macro que compila e executa um
+programa simples que tenta subtrair 1 da variável char
+definida inicialmente como 0. Após a subtração, caso a
+variável seja -1, o programa retorna 1 e o macro
+AC_RUN_IFELSE executa o primeiro ramo da condicional, caso
+contrário, a variável será 255 e o programa retornará 0,
+executando o segundo ramo da condicional</p>
+<p>Essa maneira de verificar é aceitável, pois obtém o
+resultado esperado, porém há compiladores e flags que podem
+se recusar a executar um programa com um overflow ou
+underflow, por isso é necessário pensar em uma maneira
+diferente de resolver esse problema</p>
+<h2 id="92-maneira-geral">9.2. Maneira Geral</h2>
+<h3 id="921-macro-utilizada">9.2.1. Macro utilizada</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># configure.ac
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>AC_INIT([epp], [20.08])
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>AC_PROG_CC
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>m4_include([m4/check.m4])
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>check_char_sign
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>AC_OUTPUT
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># m4/check.m4
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>AC_DEFUN(check_char_sign, [
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    AC_MSG_CHECKING([if char is signed])
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    AC_RUN_IFELSE([AC_LANG_PROGRAM([],
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    [[
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        #include &lt;limits.h&gt;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        int main(int argc, char *argv[]) {
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            if(CHAR_MIN &lt; 0) {
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                return 1;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            } else {
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                return 0;
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            }
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    ]]
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    )],
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    [AC_MSG_RESULT(signed)],
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    [AC_MSG_RESULT(unsigned)])
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>])
+</span></code></pre></div>
+<p>O programa acima segue uma filosofia diferente, não há
+nenhum truque de aritmética com o tipo char, apenas uma
+condicional simples com um header padrão do C.</p>
+<p><code>CHAR_MIN</code> é definido dentro do header <code>limits.h</code>, junto de
+muitos mínimos, máximos e alguns outros limites do sistema.
+Caso <code>CHAR_MIN</code> seja menor que 0, é simples concluir que
+<code>char</code> é signed, então retornamos 1 e a compilação
+condicional do <code>AC_RUN_IFELSE</code> executa o primeiro ramo, caso
+contrário concluímos que <code>char</code> é unsigned e retornamos 0 do
+programa, executando o segundo ramo do macro.</p>
+<p>Essa forma de testar evita alguns problemas com compiladores
+e flags que possam impedir o programa anterior de executar e
+acabar retornando o resultado errado.</p>
+<p>Outros limites podem ser testados, como <code>int</code> e <code>float</code>, de
+uma forma similar.</p>
 
 
 
@@ -1947,7 +2222,8 @@
 
 
 
-
+  
+  
 
 
 
