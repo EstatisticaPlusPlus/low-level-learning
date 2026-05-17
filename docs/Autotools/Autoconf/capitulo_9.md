@@ -78,6 +78,27 @@ se recusar a executar um programa com um overflow ou
 underflow, por isso é necessário pensar em uma maneira
 diferente de resolver esse problema
 
+Aqui está a saída desse programa:
+
+```
+$ autoconf
+$ ./configure
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C23 features... none needed
+checking if char is signed... unsigned
+configure: creating ./config.status
+```
+
+Como esperado, a saída obtida foi `unsigned`, correto para o
+sistema x86 sendo utilizado para esta documentação.
+
 ## 9.2. Maneira Geral
 
 ### 9.2.1. Macro utilizada
@@ -134,3 +155,23 @@ acabar retornando o resultado errado.
 
 Outros limites podem ser testados, como `int` e `float`, de
 uma forma similar.
+
+Por fim, aqui está a saída desse programa:
+
+```
+$ autoconf
+$ ./configure
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C23 features... none needed
+checking if char is signed... unsigned
+configure: creating ./config.status
+```
+
+Como esperado e de acordo com o resultado anterior.
