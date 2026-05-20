@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../capitulo_7/">
+        <link rel="prev" href="../capitulo_07/">
       
       
-        <link rel="next" href="../../../C/capitulo_1/">
+        <link rel="next" href="../capitulo_09/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>9. Verificação do sinal do char - Estatística++</title>
+        <title>8. Verificação de Tamanhos de Tipos em C e Fortran - Estatística++</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#9-verificacao-do-sinal-do-char" class="md-skip">
+        <a href="#8-verificacao-de-tamanhos-de-tipos" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              9. Verificação do sinal do char
+              8. Verificação de Tamanhos de Tipos em C e Fortran
             
           </span>
         </div>
@@ -389,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../capitulo_1/" class="md-nav__link">
+      <a href="../capitulo_01/" class="md-nav__link">
         
   
   
@@ -417,35 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../capitulo_10/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    10. Comparação de tamanhos de variáveis
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../capitulo_2/" class="md-nav__link">
+      <a href="../capitulo_02/" class="md-nav__link">
         
   
   
@@ -473,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../capitulo_3/" class="md-nav__link">
+      <a href="../capitulo_03/" class="md-nav__link">
         
   
   
@@ -501,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../capitulo_4/" class="md-nav__link">
+      <a href="../capitulo_04/" class="md-nav__link">
         
   
   
@@ -529,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../capitulo_5/" class="md-nav__link">
+      <a href="../capitulo_05/" class="md-nav__link">
         
   
   
@@ -557,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../capitulo_6/" class="md-nav__link">
+      <a href="../capitulo_06/" class="md-nav__link">
         
   
   
@@ -585,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../capitulo_7/" class="md-nav__link">
+      <a href="../capitulo_07/" class="md-nav__link">
         
   
   
@@ -629,7 +601,7 @@
   <span class="md-ellipsis">
     
   
-    9. Verificação do sinal do char
+    8. Verificação de Tamanhos de Tipos em C e Fortran
   
 
     
@@ -647,7 +619,7 @@
   <span class="md-ellipsis">
     
   
-    9. Verificação do sinal do char
+    8. Verificação de Tamanhos de Tipos em C e Fortran
   
 
     
@@ -673,22 +645,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#91-maneira-especifica" class="md-nav__link">
+  <a href="#81-macros-utilizadas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.1. Maneira Especifica
+        8.1. Macros Utilizadas
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="9.1. Maneira Especifica">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-descricao-das-macros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Descrição das Macros
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2. Descrição das Macros">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#911-macros-utilizadas" class="md-nav__link">
+  <a href="#821-tipos-c-ac_check_sizeof" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.1.1. Macros utilizadas
+        8.2.1. Tipos C — AC_CHECK_SIZEOF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822-tipos-fortran-check_fc_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.2. Tipos Fortran — check_fc_size
       
     </span>
   </a>
@@ -701,30 +695,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#92-maneira-geral" class="md-nav__link">
+  <a href="#83-saida-esperada" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.2. Maneira Geral
+        8.3. Saída Esperada
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="9.2. Maneira Geral">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#921-macro-utilizada" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9.2.1. Macro utilizada
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -732,6 +709,62 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capitulo_09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Verificação do sinal do char
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capitulo_10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Comparação de tamanhos de variáveis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2058,22 +2091,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#91-maneira-especifica" class="md-nav__link">
+  <a href="#81-macros-utilizadas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.1. Maneira Especifica
+        8.1. Macros Utilizadas
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="9.1. Maneira Especifica">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-descricao-das-macros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Descrição das Macros
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2. Descrição das Macros">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#911-macros-utilizadas" class="md-nav__link">
+  <a href="#821-tipos-c-ac_check_sizeof" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.1.1. Macros utilizadas
+        8.2.1. Tipos C — AC_CHECK_SIZEOF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822-tipos-fortran-check_fc_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.2. Tipos Fortran — check_fc_size
       
     </span>
   </a>
@@ -2086,30 +2141,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#92-maneira-geral" class="md-nav__link">
+  <a href="#83-saida-esperada" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.2. Maneira Geral
+        8.3. Saída Esperada
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="9.2. Maneira Geral">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#921-macro-utilizada" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9.2.1. Macro utilizada
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2133,149 +2171,148 @@
   
 
 
-<h1 id="9-verificacao-do-sinal-do-char">9. Verificação do sinal do char</h1>
-<p>Em algumas circunstâncias, o tipo char pode ser definido
-como signed ou unsigned. Uma diferença simples que pode
-acarreta em grandes mudanças na forma como funções com
-retorno char podem ser usadas.</p>
-<p>Dessa forma, é necessário descobrir como detectar essa
-diferença, e como um bônus, também descobriremos outros
-tipos que poderão ser analisados com o método a ser
-apresentado</p>
-<p>Testaremos de duas maneiras: a primeira especifica para o
-tipo char e a segunda sendo mais geral</p>
-<h2 id="91-maneira-especifica">9.1. Maneira Especifica</h2>
-<h3 id="911-macros-utilizadas">9.1.1. Macros utilizadas</h3>
+<h1 id="8-verificacao-de-tamanhos-de-tipos">8. Verificação de Tamanhos de Tipos</h1>
+<p>Saber o tamanho em bytes de um tipo é essencial em diversas
+situações: interoperabilidade entre linguagens, serialização
+de dados, alocação de memória e portabilidade entre
+arquiteturas diferentes.</p>
+<p>O Autoconf oferece uma forma nativa de verificar o tamanho
+de tipos C, enquanto para o Fortran é necessário definir
+nossa própria macro, já que não existe suporte nativo para
+isso.</p>
+<h2 id="81-macros-utilizadas">8.1. Macros Utilizadas</h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># configure.ac
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>AC_INIT([epp], [7.38])
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>AC_PROG_CC
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>m4_include([m4/check.m4])
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>check_char_sign
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>AC_OUTPUT
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>AC_INIT([epp], [2.78])
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>m4_include([m4/check.m4])
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>AC_CHECK_SIZEOF([int])
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>AC_CHECK_SIZEOF([int *])
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>AC_CHECK_SIZEOF([double])
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>AC_CHECK_SIZEOF([double *])
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>AC_CHECK_SIZEOF([float])
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>AC_CHECK_SIZEOF([float *])
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>AC_CHECK_SIZEOF([char])
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>AC_CHECK_SIZEOF([char *])
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>AC_CHECK_SIZEOF([long])
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>AC_CHECK_SIZEOF([long *])
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>AC_CHECK_SIZEOF([long long])
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>AC_CHECK_SIZEOF([long long *])
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>AC_CHECK_SIZEOF([short])
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>AC_CHECK_SIZEOF([short *])
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>AC_CHECK_SIZEOF([void])
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>AC_CHECK_SIZEOF([void *])
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>AC_CHECK_SIZEOF([BBB])
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>AC_CHECK_SIZEOF([BBB *])
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>AC_CHECK_SIZEOF([MB])
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>AC_CHECK_SIZEOF([MB *])
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>AC_LANG_PUSH([Fortran])
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>check_fc_size([integer])
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>check_fc_size([real])
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>check_fc_size([real64])
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>check_fc_size([complex])
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>AC_LANG_POP([Fortran])
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>AC_OUTPUT
 </span></code></pre></div>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># m4/check.m4
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>AC_DEFUN(check_char_sign, [
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    AC_MSG_CHECKING([if char is signed])
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    AC_RUN_IFELSE([AC_LANG_PROGRAM([],
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    [[
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        #include &lt;stdio.h&gt;
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        int main(int argc, char *argv[]) {
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            char bbb = 0;
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            --bbb;
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            if (bbb == -1) {
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                return 1;
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            } else {
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                return 0;
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            }
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        }
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    ]]
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    )],
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    [AC_MSG_RESULT(signed)],
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    [AC_MSG_RESULT(unsigned)])
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>])
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>AC_DEFUN(check_fc_size, [
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    AC_MSG_CHECKING([size of $1])
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    AC_RUN_IFELSE([AC_LANG_PROGRAM([],
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    [[      $1 :: x
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            print *, storage_size(x) / 8
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    ]])],
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    [AC_MSG_RESULT($ac_runval)],
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    [AC_MSG_RESULT(unknown)])
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>])
 </span></code></pre></div>
-<p>O primeiro exemplo dado se utiliza de um evento simples que
-acontece ao tentar diminuir 1 de uma variável unsigned com o
-valor 0: integer overflow.</p>
-<p>O programa acima define uma macro que compila e executa um
-programa simples que tenta subtrair 1 da variável char
-definida inicialmente como 0. Após a subtração, caso a
-variável seja -1, o programa retorna 1 e o macro
-AC_RUN_IFELSE executa o primeiro ramo da condicional, caso
-contrário, a variável será 255 e o programa retornará 0,
-executando o segundo ramo da condicional</p>
-<p>Essa maneira de verificar é aceitável, pois obtém o
-resultado esperado, porém há compiladores e flags que podem
-se recusar a executar um programa com um overflow ou
-underflow, por isso é necessário pensar em uma maneira
-diferente de resolver esse problema</p>
-<p>Aqui está a saída desse programa:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ autoconf
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$ ./configure
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>checking for gcc... gcc
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>checking whether the C compiler works... yes
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>checking for C compiler default output file name... a.out
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>checking for suffix of executables...
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>checking whether we are cross compiling... no
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>checking for suffix of object files... o
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>checking whether the compiler supports GNU C... yes
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>checking whether gcc accepts -g... yes
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>checking for gcc option to enable C23 features... none needed
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>checking if char is signed... unsigned
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>configure: creating ./config.status
+<h2 id="82-descricao-das-macros">8.2. Descrição das Macros</h2>
+<h3 id="821-tipos-c-ac_check_sizeof">8.2.1. Tipos C — <code>AC_CHECK_SIZEOF</code></h3>
+<ul>
+<li><code>AC_CHECK_SIZEOF([tipo])</code>: Macro nativa do Autoconf que
+  verifica o tamanho em bytes de um tipo C. O resultado é
+  armazenado na variável <code>ac_cv_sizeof_{tipo}</code>, que pode ser
+  reutilizada em outros macros. Caso o tipo não exista no
+  sistema, o tamanho retornado será <code>0</code></li>
+</ul>
+<p>No programa acima, são verificados os tipos primitivos mais
+comuns do C (<code>int</code>, <code>double</code>, <code>float</code>, <code>char</code>, <code>long</code>,
+<code>long long</code>, <code>short</code>, <code>void</code>) e seus respectivos ponteiros.
+Também são verificados os tipos <code>BBB</code> e <code>MB</code>, que não
+existem em C, para demonstrar que a macro retorna <code>0</code> para
+tipos desconhecidos.</p>
+<h3 id="822-tipos-fortran-check_fc_size">8.2.2. Tipos Fortran — <code>check_fc_size</code></h3>
+<p>Como o Autoconf não possui uma forma nativa de obter o
+tamanho de tipos Fortran, é necessário definir nossa própria
+macro. O fluxo da macro <code>check_fc_size</code> é:</p>
+<ol>
+<li>Exibe uma mensagem de verificação com <code>AC_MSG_CHECKING</code></li>
+<li>Compila e executa um pequeno programa Fortran com
+   <code>AC_RUN_IFELSE</code>, que declara uma variável do tipo
+   recebido como argumento (<code>$1</code>) e imprime seu tamanho em
+   bytes via <code>storage_size(x) / 8</code> (a função <code>storage_size</code>
+   retorna o valor em bits, por isso a divisão por 8)</li>
+<li>Caso a execução tenha sucesso, exibe o valor capturado
+   em <code>$ac_runval</code>. Caso contrário, exibe <code>unknown</code></li>
+</ol>
+<p>O contexto Fortran é ativado com <code>AC_LANG_PUSH([Fortran])</code>
+antes das chamadas e encerrado com <code>AC_LANG_POP([Fortran])</code>
+ao final, indicando ao Autoconf qual compilador deve ser
+utilizado durante as verificações.</p>
+<h2 id="83-saida-esperada">8.3. Saída Esperada</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>checking for gcc... gcc
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>checking whether the C compiler works... yes
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>checking for C compiler default output file name... a.out
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>checking for suffix of executables... 
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>checking whether we are cross compiling... no
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>checking for suffix of object files... o
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>checking whether the compiler supports GNU C... yes
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>checking whether gcc accepts -g... yes
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>checking for gcc option to enable C11 features... none needed
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>checking for stdio.h... yes
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>checking for stdlib.h... yes
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>checking for string.h... yes
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>checking for inttypes.h... yes
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>checking for stdint.h... yes
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>checking for strings.h... yes
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>checking for sys/stat.h... yes
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>checking for sys/types.h... yes
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>checking for unistd.h... yes
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>checking size of int... 4
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>checking size of int *... 8
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>checking size of double... 8
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>checking size of double *... 8
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>checking size of float... 4
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>checking size of float *... 8
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>checking size of char... 1
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>checking size of char *... 8
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>checking size of long... 8
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>checking size of long *... 8
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>checking size of long long... 8
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>checking size of long long *... 8
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>checking size of short... 2
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>checking size of short *... 8
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>checking size of void... 1
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>checking size of void *... 8
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>checking size of BBB... 0
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>checking size of BBB *... 0
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>checking size of MB... 0
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>checking size of MB *... 0
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>checking for gfortran... gfortran
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>checking whether the compiler supports GNU Fortran... yes
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>checking whether gfortran accepts -g... yes
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>checking size of integer...            4
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>checking size of real...            4
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>checking size of real64... unknown
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>checking size of complex...            8
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>configure: creating ./config.status
 </span></code></pre></div>
-<p>Como esperado, a saída obtida foi <code>unsigned</code>, correto para o
-sistema x86 sendo utilizado para esta documentação.</p>
-<h2 id="92-maneira-geral">9.2. Maneira Geral</h2>
-<h3 id="921-macro-utilizada">9.2.1. Macro utilizada</h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># configure.ac
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>AC_INIT([epp], [20.08])
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>AC_PROG_CC
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>m4_include([m4/check.m4])
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>check_char_sign
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>AC_OUTPUT
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># m4/check.m4
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>AC_DEFUN(check_char_sign, [
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    AC_MSG_CHECKING([if char is signed])
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    AC_RUN_IFELSE([AC_LANG_PROGRAM([],
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    [[
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        #include &lt;limits.h&gt;
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        int main(int argc, char *argv[]) {
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            if(CHAR_MIN &lt; 0) {
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                return 1;
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            } else {
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>                return 0;
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>            }
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    ]]
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    )],
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    [AC_MSG_RESULT(signed)],
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    [AC_MSG_RESULT(unsigned)])
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>])
-</span></code></pre></div>
-<p>O programa acima segue uma filosofia diferente, não há
-nenhum truque de aritmética com o tipo char, apenas uma
-condicional simples com um header padrão do C.</p>
-<p><code>CHAR_MIN</code> é definido dentro do header <code>limits.h</code>, junto de
-muitos mínimos, máximos e alguns outros limites do sistema.
-Caso <code>CHAR_MIN</code> seja menor que 0, é simples concluir que
-<code>char</code> é signed, então retornamos 1 e a compilação
-condicional do <code>AC_RUN_IFELSE</code> executa o primeiro ramo, caso
-contrário concluímos que <code>char</code> é unsigned e retornamos 0 do
-programa, executando o segundo ramo do macro.</p>
-<p>Essa forma de testar evita alguns problemas com compiladores
-e flags que possam impedir o programa anterior de executar e
-acabar retornando o resultado errado.</p>
-<p>Outros limites podem ser testados, como <code>int</code> e <code>float</code>, de
-uma forma similar.</p>
-<p>Por fim, aqui está a saída desse programa:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ autoconf
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$ ./configure
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>checking for gcc... gcc
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>checking whether the C compiler works... yes
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>checking for C compiler default output file name... a.out
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>checking for suffix of executables...
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>checking whether we are cross compiling... no
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>checking for suffix of object files... o
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>checking whether the compiler supports GNU C... yes
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>checking whether gcc accepts -g... yes
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>checking for gcc option to enable C23 features... none needed
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>checking if char is signed... unsigned
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>configure: creating ./config.status
-</span></code></pre></div>
-<p>Como esperado e de acordo com o resultado anterior.</p>
 
 
 
