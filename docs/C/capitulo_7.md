@@ -1,6 +1,6 @@
 
 ---
-title: "7. Introdução a ponteiros"
+title: "7. Introdução a Ponteiros"
 ---
 
 # 7. Ponteiros
@@ -58,7 +58,7 @@ o tamanho do ponteiro é : 8
 o tamanho do ponteiro é : 8
 ```
 ---
-#7.4. Porque ponteiros têm Tipos?
+# 7.4. Porque ponteiros têm Tipos?
 
 Diferentes tipos de dados requerem diferentes quantidades de bytes para armazenar os seus conteúdos. A declaração do tipo de dado para um ponteiro indica para o compilador quantos bytes serão necessarios para armazenar o endereço de memória de uma certa variável.
 ```c
@@ -69,7 +69,7 @@ float e = 2.718281; //4 bytes
 Obs : O numero de bytes que um tipo de dado usa depende da arquitetura do seu computador.
 
 ---
-#7.5. Comandos de atribuição
+# 7.5. Comandos de atribuição
 
 Como qualquer outra variável, um ponteiro também pode ser usado para passar o seu valor para outro ponteiro, ou até mesmo para passar o conteúdo presente no endereço que ele armazena para outra variável.
 
@@ -95,7 +95,7 @@ x = 200, p1 = 200 e p2 = 200
 ```
 
 ---
-#7.6. Uso dos operadores & e *
+# 7.6. Uso dos operadores & e *
 
 ```c
 int x = 1, y = 3, z[2];
@@ -106,7 +106,7 @@ y = *p; //y recebe o valor de x
 p = &z[0]; //agora p aponta para z[0]
 ```
 ---
-#7.7. Inicialização de ponteiros
+# 7.7. Inicialização de ponteiros
 Existe um valor especial para ponteiros conhecido como **valor nulo** ou **NULL**. Esse valor indica que um ponteiro não aponta para nenhuma variável. Quando criamos um ponteiro devemos inicializa-lo atribuindo a ele o valor do endereço de uma variável ou o valor **Null**. Caso contrário, o ponteiro não inicializado passa a conter um valor de "lixo", ou seja, qualquer endereço de memória aleatória que estava sobrando na RAM.
 
 Ponteiros não devem ser utilizados sem prévia inicialização. Para casos em que queremos inicializar os ponteiros com valores nulos é preciso incluir a biblioteca ``<stdlib.h>``:
@@ -127,7 +127,7 @@ ptr = &b; // correto
 ```
 
 ---
-#7.8. Aritmética de Ponteiros
+# 7.8. Aritmética de Ponteiros
 
 É possível realizar um numero limitado de operações com ponteiros. É possível:
 
