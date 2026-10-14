@@ -1,6 +1,6 @@
 
 ---
-title: "7. Introdução a Ponteiros"
+title: "7. Ponteiros"
 ---
 
 # 7. Ponteiros
