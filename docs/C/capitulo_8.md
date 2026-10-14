@@ -3,10 +3,10 @@
 title: "8. Alocação Dinâmica de memória"
 ---
 
-#8. Alocação Dinâmica de Memória
+# 8. Alocação Dinâmica de Memória
 
 
-##8.1. O Limite das Variáveis Tradicionais
+## 8.1. O Limite das Variáveis Tradicionais
 
 Como vimos anteriormente, quando declaramos variáveis comuns ou vetores (como int notas[50];), o compilador reserva o espaço necessário na memória de forma automática. Essa abordagem é chamada de alocação estática ou automática (geralmente armazenada em uma região da memória chamada Stack).
 
@@ -20,7 +20,7 @@ Para utilizar as funções de alocação dinâmica em C, é obrigatório incluir
 c
 #include <stdlib.h>
 ```
-##8.2. A função malloc
+## 8.2. A função malloc
 
 A função malloc (abreviação de memory allocation) é a principal ferramenta para solicitar memória. Ela pede ao sistema operacional um bloco de memória de um tamanho específico, em bytes.
 
@@ -49,7 +49,7 @@ if (vetor == NULL) {
 
 vetor[0] = 10; // Agora podemos usar 'vetor' normalmente
 ```
-##8.3. A função free
+## 8.3. A função free
 Uma regra de ouro na linguagem C é: toda memória alocada dinamicamente deve ser liberada manualmente.
 
 Diferente das variáveis comuns que desaparecem quando a função termina, a memória alocada no Heap continua reservada até que o programa acabe ou até que você diga explicitamente que não precisa mais dela. Se você perder o endereço dessa memória sem liberá-la, ocorrerá um Vazamento de Memória (Memory Leak), o que pode fazer seu programa consumir toda a RAM do computador.
