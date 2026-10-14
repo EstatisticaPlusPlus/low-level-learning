@@ -1,7 +1,7 @@
-
 ---
 title: "8. Alocação Dinâmica de memória"
 ---
+
 
 # 8. Alocação Dinâmica de Memória
 
