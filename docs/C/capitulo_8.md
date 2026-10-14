@@ -66,7 +66,7 @@ vetor = NULL;
 
 Dica de segurança: Sempre aponte seu ponteiro para NULL logo após o free. Isso evita que você tente acessar acidentalmente um endereço de memória que não pertence mais ao seu programa (erro conhecido como Dangling Pointer).
 
-##8.4. A função realloc
+## 8.4. A função realloc
 O que acontece se você alocou espaço para 5 inteiros usando malloc, mas durante a execução do programa você percebe que precisará armazenar 10?
 
 Você não precisa criar um vetor novo, copiar os dados do antigo e apagar o primeiro. A linguagem C fornece a função realloc (re-allocation), que tenta redimensionar um bloco de memória previamente alocado, mantendo os dados que já estavam lá.
