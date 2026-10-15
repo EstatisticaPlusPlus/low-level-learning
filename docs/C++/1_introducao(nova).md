@@ -226,30 +226,3 @@ de múltiplas linhas
 ```
 
 ```
-
-A ser excluido:
-Primeiro encontro com o básico de alguns conceitos de programação.
-
-## Programa de computador
-
-Um programa de computador é uma sequência de instruções que descreve tarefas a serem executadas por um computador. Uma receita de bolo está para um confeiteiro como um programa está para um computador.
-
-## Linguagem de programação
-
-Para escrever programas, utiliza-se linguagens especializadas em escrever instruções para computadores: as **linguagens de programação**. Nos concentraremos na linguagem **C++**.
-
-Às instruções escritas em uma linguagem de programação damos o nome de **código**.
-
-## Editor de texto
-
-Um programa pode ser escrito em qualquer editor de texto, como Word, bloco de notas, Google Docs e WordPad, por exemplo. Porém, existem editores de texto especializados no desenvolvimento de programas, trazendo consigo ferramentas indispensáveis.
-
-Desses, um editor muito comum entre programadores e simples de utilizar é o **Visual Studio Code**. Segue um [tutorial de como baixar e instalar o Visual Studio Code no Windows](https://www.youtube.com/watch?v=QT-YWT1-YI4).
-
-## Compiladores
-
-Apesar de utilizarmos uma linguagem de programação, o computador ainda não consegue executar instruções. Um computador entende apenas instruções em **linguagem de máquina**, sequências de caracteres 0 e 1. Este é o único formato em que um computador é capaz de executar uma instrução.
-
-A **compilação** é o processo de transformar instruções em uma linguagem de programação em um arquivo executável com instruções em linguagem de máquina.
-
-Um **compilador** é um programa capaz de compilar um programa. O compilador de C++ que usaremos é o **G++**. Segue um [tutorial de como baixar e instalar o G++ no Windows](https://www.youtube.com/watch?v=BKsdbwGEsDM)
